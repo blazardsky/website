@@ -33,7 +33,7 @@ const GalleryCard = ({galleryData}) => {
                             <div className="max-h-[360px] bg-black border-black border-8 flex items-center justify-center overflow-hidden object-contain">
                                 <img 
                                     className="max-h-100 max-w-100" 
-                                    src={urlFor(image).width(250).auto('format').url()} 
+                                    src={urlFor(image).width(250).quality(60).auto('format').url()} 
                                     alt="" 
                                 />
                             </div>

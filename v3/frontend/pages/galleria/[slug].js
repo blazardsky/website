@@ -66,12 +66,13 @@ const Gallery = (props) => {
           <Navbar />
           <h1 className="text-6xl mx-auto fun-font relative p-3">{title}</h1>
           <p className="mx-auto font-semibold text-center max-w-prose text-xl">{description}</p>
+          <small className="mx-auto font-light text-sm mt-2 p-1 ease-bezier transition-all duration-100 hover:scale-125 hover:bg-pink-700 hover:font-normal">Clicca sulle immagini per vederle a schermo intero e per qualche info</small>
         </main>
         <div className="p-5 flex flex-row flex-wrap items-start justify-evenly overflow-x-hidden">
             {
                 //immmagini, captions e href sono sempre della stessa lunghezza
                 images.map((src,index) => (
-                    <GalleryImage src={src} desc={captions[index]} href={links[index]} />
+                    <GalleryImage key={`GI_0${index}`} src={src} desc={captions[index]} href={links[index]} />
                 ))
             }
         </div>

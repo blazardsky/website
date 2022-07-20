@@ -43,7 +43,7 @@ export default function Work({_data}) {
       translateY: '-10px;'
     });
 
-  },[]);
+  },[q]);
 
   return (
       <div className="bg-pink-700 relative min-h-screen">
@@ -68,11 +68,11 @@ export default function Work({_data}) {
               cliente
             } = arr;
             return (
-              <Link href={`/lavori/${slug}`}>
-              <article key={`key__${slug}`} title="Che aspetti, clicca!"
+              <Link key={`key__${slug}`} href={`/lavori/${slug}`}>
+              <article title="Che aspetti, clicca!"
               className="cursor-pointer p-3 break-inside-avoid block rougher-edges mx-0 mb-4 transition-all duration-300 hover:scale-105 hover:rotate-1 text-white bg-gradient-to-b from-black/80 via-rose-900/75 to-black/90 to">
                 <div className="hover:animate-pulse">
-                  <img src={urlFor(mainImage).width(620)} className="transition-all duration-200 roughest-edges ease hover:saturate-150 hover:hue-rotate-180 hover:contrast-125" alt=""/>
+                  <img src={urlFor(mainImage).width(620).auto('format').quality(70).url()} className="transition-all duration-200 roughest-edges ease hover:saturate-150 hover:hue-rotate-180 hover:contrast-125" alt=""/>
                   <h1 className="text-2xl p-3 cursive"><strong>{title}</strong> {`[${year.slice(0,4)}]`}</h1>
                 </div>
                 <h3 className="tracking-wide text-gray-200 px-3">Cliente: {cliente}</h3>

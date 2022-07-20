@@ -9,7 +9,7 @@ const ClientCard = ({clientData}) => {
 
   return (
     <div className="mx-auto w-fit h-fit max-w-sm flex flex-col items-center gap-6 text-white py-4 px-5 border-2 border-white mt-5">
-        <img src={urlFor(image).width(150)} className="rounded-full inline-block aspect-square object-cover" alt={`Immagine di ${name}`} />
+        <img src={urlFor(image).width(150).quality(80).auto('format').url()} className="rounded-full inline-block aspect-square object-cover" alt={`Immagine di ${name}`} />
         <div className="inline-block">
             <h4 className="text-xl font-bold mb-2">
               <a href={href} target="_blank" rel="noopener noreferrer nofollow" className="transition-all duration-75 ease-out border-b-2 border-transparent w-fit hover:border-yellow-400 hover:text-yellow-600">

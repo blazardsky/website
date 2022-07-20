@@ -10,6 +10,12 @@ const STUDIO_REWRITE = {
 
 
 const nextConfig = {
+  images: {
+    domains: [
+      'cdn.sanity.io',
+      'blazardsky.sanity.studio'
+    ],
+  },
   reactStrictMode: true,
   swcMinify: true,
   rewrites: () => [STUDIO_REWRITE],

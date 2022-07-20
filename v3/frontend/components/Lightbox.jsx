@@ -56,7 +56,7 @@ function Lightbox ({src,alt='',isSingle=false,desc}) {
                 }`
         }>
             <img
-                className={`transition-transform bezier duration-500 cursor-pointer mx-auto max-w-full ${isLightboxOpen? 'max-h-full border-2 border-white/50' : `shadow-lg shadow-black/40 hover:scale-110 max-h-[600px]`}`} 
+                className={`transition-transform ease-bezier duration-300 cursor-pointer mx-auto max-w-full ${isLightboxOpen? 'max-h-full border-2 border-white/50' : `shadow-lg shadow-black/40 hover:scale-110 max-h-[600px]`}`} 
                 src={src} 
                 alt={alt}
                 onClick={handleOnClick}
