@@ -8,7 +8,6 @@ function getRotation(num) {
     let rand = 3 + Math.floor(Math.random() * 3);
     let rotation = `rotate(${neg ? '-' : ''}${rand}deg)`;
 
-    console.log(rotation)
     return rotation
 }
 
