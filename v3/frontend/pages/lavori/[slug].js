@@ -44,7 +44,7 @@ export async function getStaticPaths() {
 
   return {
     paths: paths.map((slug) => ({params: {slug}})),
-    fallback: true,
+    fallback: false,
   }
 }
 
@@ -81,7 +81,7 @@ const Work = (props) => {
     clientData, 
     skills,
     seoDesc,
-  } = props._data || ['Errore',1900,{},{},{},{},{},'']
+  } = props._data
 
   return (
     <div className="bg-black text-white relative">

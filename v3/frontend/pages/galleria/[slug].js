@@ -21,7 +21,7 @@ export async function getStaticPaths() {
 
   return {
     paths: paths.map((slug) => ({params: {slug}})),
-    fallback: true,
+    fallback: false,
   }
 }
 
@@ -45,7 +45,7 @@ const Gallery = (props) => {
     images,
     captions,
     links
-  } = props._data || ['Errore','Forse hai visitato una pagina che non esiste o c\'è stato un problema di caricamento.',{},{},{}]
+  } = props._data
 
   return (
     <div className="bg-gray-800 text-white relative">
