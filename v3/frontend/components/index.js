@@ -1,3 +1,5 @@
+import ErrorBoundary from "./ErrorBoundary";
+
 export {default as Logo} from "./Logo";
 export {default as Main} from "./Main";
 export {default as Navbar} from "./Navbar";
@@ -11,3 +13,4 @@ export {default as GalleryCard} from "./GalleryCard";
 export {default as GalleryImage} from "./GalleryImage";
 export {default as SocialMedia} from "./SocialMedia";
 export {default as CategoryBoucingPoint} from "./CategoryBoucingPoint";
+export {default as ErrorBoundary} from './ErrorBoundary'

@@ -6,7 +6,7 @@ import {Navbar, Footer, Texture,  GalleryImage} from 'components';
 import {TbArrowBarLeft} from 'react-icons/tb';
 
 
-const query = groq`*[_type == "illustration" && slug.current == $slug][0]{
+const query = groq`*[_type == "illustration" && slug.current == $slug && !(_id in path("drafts.**"))][0]{
     title,
     description,
     "images": gallery[].asset,

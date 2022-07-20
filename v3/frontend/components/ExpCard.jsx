@@ -1,4 +1,4 @@
-import { CategoryBoucingPoint } from "./CategoryBoucingPoint";
+import { CategoryBoucingPoint } from "./";
 
 
 const getExpTypeColor = (expType) => {

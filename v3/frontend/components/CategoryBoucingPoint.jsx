@@ -17,4 +17,4 @@ const CategoryBoucingPoint = ({category,bounce=true,explicit=false}) => {
 }
 
 
-export {CategoryBoucingPoint};
+export default CategoryBoucingPoint;
