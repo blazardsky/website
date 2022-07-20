@@ -10,7 +10,7 @@ import {BsArrowDown} from 'react-icons/bs';
 import {TbArrowBarLeft} from 'react-icons/tb';
 
 
-const query = groq`*[_type == "work" && slug.current == $slug && !(_id in path("drafts.**"))][0]{
+const query = groq`*[_type == "work" && slug.current == $slug][0]{
   title, 
   year,
   mainImage {
@@ -39,7 +39,7 @@ const query = groq`*[_type == "work" && slug.current == $slug && !(_id in path("
 
 export async function getStaticPaths() {
   const paths = await client.fetch(
-    `*[_type == "work" && defined(slug.current)][].slug.current`
+    `*[_type == "work" && !(_id in path("drafts.**")) && defined(slug.current)][].slug.current`
   )
 
   return {

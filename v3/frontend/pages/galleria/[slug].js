@@ -6,7 +6,7 @@ import {Navbar, Footer, Texture,  GalleryImage} from 'components';
 import {TbArrowBarLeft} from 'react-icons/tb';
 
 
-const query = groq`*[_type == "illustration" && slug.current == $slug && !(_id in path("drafts.**"))][0]{
+const query = groq`*[_type == "illustration" && slug.current == $slug][0]{
     title,
     description,
     "images": gallery[].asset,
@@ -16,7 +16,7 @@ const query = groq`*[_type == "illustration" && slug.current == $slug && !(_id i
 
 export async function getStaticPaths() {
   const paths = await client.fetch(
-    `*[_type == "illustration" && defined(slug.current)][].slug.current`
+    `*[_type == "illustration" && !(_id in path("drafts.**")) && defined(slug.current)][].slug.current`
   )
 
   return {
