@@ -73,7 +73,7 @@ const Work = (props) => {
   }
 
   const { 
-    title = 'Senza titolo', 
+    title, 
     year,
     mainImage,
     body,
@@ -81,7 +81,7 @@ const Work = (props) => {
     clientData, 
     skills,
     seoDesc,
-  } = props._data
+  } = props._data || ['Errore',1900,{},{},{},{},{},'']
 
   return (
     <div className="bg-black text-white relative">

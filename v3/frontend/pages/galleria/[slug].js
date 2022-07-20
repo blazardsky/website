@@ -45,7 +45,7 @@ const Gallery = (props) => {
     images,
     captions,
     links
-  } = props._data
+  } = props._data || ['Errore','Forse hai visitato una pagina che non esiste o c\'è stato un problema di caricamento.',{},{},{}]
 
   return (
     <div className="bg-gray-800 text-white relative">
