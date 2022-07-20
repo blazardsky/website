@@ -33,7 +33,7 @@ export default function Gallery({_data}) {
         <meta name="description" content="Portfolio di disegni, illustrazioni e grafiche di vario tipo" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Texture blend='exclusion' opacity='70'/>
+      <Texture blend='mix-blend-exclusion' opacity='opacity-70'/>
       <Navbar />
       <Main h1="Galleria" h2="Un portfolio di disegni, illustrazioni e grafiche" />
       <section className="flex flex-row flex-wrap gap-10 justify-around items-center mx-auto w-fit">

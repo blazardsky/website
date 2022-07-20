@@ -30,4 +30,3 @@ function getCategoryOutlines(cat) {
 }
 
 export {getCategoryOutlines}
-

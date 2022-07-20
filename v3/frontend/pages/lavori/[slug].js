@@ -98,7 +98,7 @@ const Work = (props) => {
       </Link>
       <article>
         <main className="w-100 min-h-screen p-5 pb-10 flex flex-col justify-center relative rough-edges" style={{backgroundColor : mainImage["colorBg"]}}>
-        <Texture blend='exclusion' opacity='70'/>
+        <Texture blend='mix-blend-exclusion' opacity='opacity-70'/>
           <h1 className="text-6xl my-6 mx-auto fun-font relative p-3" style={{background: mainImage["colorFg"], color: mainImage["colorTxt"]}}>{title} [{year.slice(0,4)}]</h1>
           <Lightbox src={mainImage["src"]} alt={`Immagine per ${title}`} />
           <BsArrowDown 
