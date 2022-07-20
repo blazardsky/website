@@ -86,7 +86,7 @@ const Work = (props) => {
   return (
     <div className="bg-black text-white relative">
       <Head>
-        <title>{title} – {categories[0]}</title>
+        <title>{`${title} – ${categories[0]}`}</title>
         <meta name="keywords" content={[...categories,...skills[0]].map(key => ' '+key)} />
         <meta name="description" content={`${seoDesc}...`} />
         <link rel="icon" href="/favicon.ico" />

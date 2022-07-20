@@ -42,7 +42,7 @@ export default function Home(props) {
   return (
     <div className="bg-pink-600 bg-[url('https://i.pinimg.com/564x/89/8a/56/898a56461164016aed300f5fac1a52f9.jpg')] bg-cover bg-no-repeat bg-center bg-fixed min-h-screen">
       <Head>
-        <title>{title} &ndash; {tagline}</title>
+        <title>{`${title} – ${tagline}`}</title>
         <meta name="description" content="Ciao, mi chiamo Niccolò e sono uno sviluppatore web, grafico e illustratore digitale." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -59,7 +59,7 @@ export default function Home(props) {
               />
           </div>
         </div>
-        <div className="mx-auto w-fit py-5">
+        <div className="mx-auto w-fit py-5 flex flex-row flex-wrap justify-center">
           {
             props._socials.map(
               social => (

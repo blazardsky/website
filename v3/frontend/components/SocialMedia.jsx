@@ -21,7 +21,7 @@ const SocialMedia = ({socialData}) => {
   
     return (
       <a
-      className={`inline-block font-bold font-mono text-center mx-2 p-1 bg-yellow-400 -skew-x-6 border-2 border-black bezier transition-all hover:scale-105 hover:bg-rose-500`} 
+      className={`inline-block font-bold font-mono text-center m-2 p-1 bg-yellow-400 -skew-x-6 border-2 border-black bezier transition-all hover:scale-105 hover:bg-rose-500`} 
       href={href}>
           <span className="skew-x-6">{name}</span>
       </a>

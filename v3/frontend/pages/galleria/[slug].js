@@ -50,7 +50,7 @@ const Gallery = (props) => {
   return (
     <div className="bg-gray-800 text-white relative">
       <Head>
-        <title>"{title}" – Galleria di illustrazioni</title>
+        <title>{`"${title}" – Galleria di illustrazioni`}</title>
         <meta name="keywords" content="illustrazioni, grafica, disegno, illustratore, editoria, grafico, disegnatore" />
         <meta name="description" content={`${description}...`} />
         <link rel="icon" href="/favicon.ico" />
