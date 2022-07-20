@@ -68,7 +68,7 @@ export default function Work({_data}) {
               cliente
             } = arr;
             return (
-              <Link key={`key__${slug}`} href={`/lavori/${slug}`}>
+              <Link key={`WK__${slug}`} href={`/lavori/${slug}`}>
               <article title="Che aspetti, clicca!"
               className="cursor-pointer p-3 break-inside-avoid block rougher-edges mx-0 mb-4 transition-all duration-300 hover:scale-105 hover:rotate-1 text-white bg-gradient-to-b from-black/80 via-rose-900/75 to-black/90 to">
                 <div className="hover:animate-pulse">

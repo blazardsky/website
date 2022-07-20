@@ -35,7 +35,7 @@ const ExpCard = ({index, expData}) => {
   }
 
   return (
-    <div className={`relative origin-center mt-6 py-4 px-6 m-2 md:py-12 md:px-16 max-w-full w-fit h-fit flex flex-col items-center gap-6 border-2 border-white text-white bg-gray-900 ${getSkewSide(index)}`}>
+    <div className={`relative preserve-3d origin-center mt-6 py-4 px-6 m-2 md:py-12 md:px-16 max-w-full w-fit h-fit flex flex-col items-center gap-6 border-2 border-white text-white bg-gray-900 ${getSkewSide(index)}`}>
         <div className="absolute -right-2 -bottom-2 px-4 py-1 font-bold capitalize bg-gray-700 border-2 rounded-tl-xl">
             {getLocaleDate(startDate)} &ndash; {getLocaleDate(endDate)}
         </div>
