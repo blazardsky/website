@@ -1,0 +1,44 @@
+
+#grid-image-popup {
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	align-content: center;
+	text-align: left;
+	flex-direction: column;
+	position: fixed;
+	z-index: 999;
+	background: #000;
+	overflow-y: auto;
+}
+
+.card, 
+.card > .card-img-top {
+	border-radius: 0;
+}
+
+#grid-image-popup .card {
+	background: #0a0a0a;
+	color: #f1f1f1;
+	min-height: 100%;
+	padding: 2em;
+}
+#grid-image-popup .card > .card-img-top {
+	margin: .825em;
+	max-width: 75vw;
+	max-height: 60vh;
+	width: auto;
+	height: auto;
+	align-self: center;
+	object-fit: contain;
+}
+
+.grid-img-data {
+	cursor: pointer;
+}

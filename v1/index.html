@@ -1,0 +1,112 @@
+<!doctype html>
+
+<html lang="en">
+
+	<head>    
+
+		<!--meta-->
+		<meta charset="utf-8">
+		<meta name="location" content="Italy">
+		<meta name="description" content="Aspirant shoemaker, artisan and graphic designer. Hi!"/>
+		<meta name="keywords" content="blazardsky, design, Niccolò Agnoletti, grafico, graphic designer" />
+		<meta name="robots" content="index, follow, max-snippet:140, max-image-preview:large, max-video-preview:-1" />
+		<meta name="owner" content="Niccol&ograve; Agnoletti" />
+		<meta name="author" content="blazardsky.space" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="theme-color" content="#1a0d27" />
+		<meta name="googlebot-image" content="index" />
+		<meta name="MSNBot-Media" content="index" />
+		<meta property="og:locale" content="en_US" />
+		<meta property="og:type" content="website" />
+		<meta property="og:image" content="multimedia/png/website_share_thumbnail.png" />
+		<meta property="og:url" content="//blazardsky.space" />
+		<meta property="og:site_name" content="Blazardsky - Graphic Arts" />
+		<meta property="og:title" content="Blazardsky - Graphic Arts" />
+		<meta property="og:description" content="Aspirant shoemaker, artisan and graphic designer. Hi!" />
+		<meta name="twitter:title" content="Blazardsky - Graphic Arts" />
+		<meta name="twitter:description" content="Aspirant shoemaker, artisan and graphic designer. Hi!" />
+		<meta name="twitter:card" content="summary_large_image" />
+		
+		<!--page-->
+		<title>Blazardsky - Graphic Arts</title>
+		<link rel="icon" type="image/png" href="multimedia/icon16x16.png">
+		<link rel="canonical" href="http://blazardsky.space/" />
+		<link rel="me" href="http://blazardsky.space">
+		
+		
+		<!-- verifica -->
+		<meta name="p:domain_verify" content="920018f35487192c588f3c30457ca8d2"/>
+		<meta name="google-site-verification" content="yvzslw8qzegujLaH0dcNAPexFBXmWeJ5NgtqoeU4UEo"/>
+		
+
+		<!--css--> 
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<link rel="stylesheet" href="css/base.css">
+		<link rel="stylesheet" href="css/index.css">
+		<link rel="stylesheet" href="css/random-bg-images.css">
+		
+		<!--javascript-->
+		<script>
+		//video 
+		window.onload = function() {
+			if (window.innerWidth > 1080) 
+			document.getElementById("bgvideo").src = "multimedia/NASA_Apollo11.mp4";
+		}
+		
+		//audio
+		var audio = new Audio("multimedia/space.mp3");
+		
+		function toggleMusic(){
+			if (audio.paused){
+				audio.play();
+				document.getElementById("music").innerHTML = "stop";
+			} else {
+				audio.pause();
+				document.getElementById("music").innerHTML = "play";
+			};
+		}
+		</script>
+		<script src="js/menu_visibility.js"></script>
+	
+    </head>
+	
+	
+    <body>
+		
+		<video autoplay muted loop id="bgvideo">
+			<source src="" type="video/mp4">
+		</video>
+	
+		<header>
+			<img src="multimedia/menu/open.png" id="toggle-menu" class="btn d-block d-lg-none" onclick="toggleMenu()" />
+			
+			<nav id="menu" class="justify-content-between d-none d-lg-flex">
+				<div class="d-flex d-lg-inline"> 
+					<span class="h5"><a href="about.html">about</a> &nbsp; </span>
+					<span class="h5"><a href="works.html">works</a> &nbsp; </span>
+					<span class="h5"><a href="multimedia/curriculum.pdf" target="_blank">curriculum</a> &nbsp; </span>
+				</div>
+				<div class="d-flex d-lg-inline float-lg-right"> <!--questi vanno a destra-->
+					<span class="h5"><a href="https://t.me/blazardsky/" target="_blank">telegram</a> &nbsp; </span>
+					<span class="h5"><a href="https://instagram.com/blazardsky/" target="_blank">instagram</a> &nbsp; </span>
+					<span class="h5"><a href="https://fb.me/blazardsky/" target="_blank">facebook</a> &nbsp; </span>
+				</div>
+			</nav>
+		</header>
+		
+		<div class="container-fluid">
+		
+			<div id="blazardsky" class="d-flex justify-content-center">
+				<h1 class="font-weight-bold align-self-center">Blazardsky</h1>
+			</div>
+
+			<footer class="py-2">
+				<p class="d-inline color-6">Copyright 2020 | Niccol&ograve; Agnoletti - All rights reserved.</p>
+				<p id="music" class="m-auto float-right btn border-rounded font-weight-bold d-inline" onclick="toggleMusic()" >music</p>
+			</footer>
+			
+		</div>
+
+	</body>
+</html>
