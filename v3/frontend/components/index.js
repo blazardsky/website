@@ -12,5 +12,6 @@ export {default as SkillsBlock} from "./SkillsBlock";
 export {default as GalleryCard} from "./GalleryCard";
 export {default as GalleryImage} from "./GalleryImage";
 export {default as SocialMedia} from "./SocialMedia";
+export {default as WorkCard} from "./WorkCard";
 export {default as CategoryBoucingPoint} from "./CategoryBoucingPoint";
-export {default as ErrorBoundary} from './ErrorBoundary'
+export {default as ErrorBoundary} from "./ErrorBoundary";

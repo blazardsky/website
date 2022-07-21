@@ -1,18 +1,6 @@
 import { useState, useRef } from 'react';
-import { useSwipeable } from 'react-swipeable';
 
 import {BsInfoCircle} from 'react-icons/bs';
-
-const swipeConfig = {
-    delta: 12,                             // min distance(px) before a swipe starts. *See Notes*
-    preventScrollOnSwipe: false,           // prevents scroll during swipe (*See Details*)
-    trackTouch: true,                      // track touch input
-    trackMouse: true,                      // track mouse input
-    rotationAngle: 0,                      // set a rotation angle
-    swipeDuration: 3000,                   // allowable duration of a swipe (ms). *See Notes*
-    touchEventOptions: { passive: true },  // options for touch listeners (*See Details*)
-  }
-
 
 
 function Lightbox ({src,alt='',isSingle=false,desc}) {
@@ -41,11 +29,6 @@ function Lightbox ({src,alt='',isSingle=false,desc}) {
     }
 
 
-    const handlers = useSwipeable({
-        onSwiped: () => handleCloseAction(),
-        ...swipeConfig,
-    })
-
     return (
         <div 
             onClick={handleCloseAction}
@@ -60,7 +43,6 @@ function Lightbox ({src,alt='',isSingle=false,desc}) {
                 src={src} 
                 alt={alt}
                 onClick={handleOnClick}
-                {...handlers}
                 ref={scrollToRef}
             />
             {
@@ -68,8 +50,8 @@ function Lightbox ({src,alt='',isSingle=false,desc}) {
                     <BsInfoCircle 
                         onMouseOver={()=>setShowDesc(true)}
                         onMouseLeave={() => setShowDesc(false)}
-                        onClick={(e) => {e.stopPropagation(); setShowDesc(showDesc=>!showDesc)} }
-                        className="fill-white cursor-help w-8 h-8 absolute right-5 bottom-5 block transition-all duration-75 focus:fill-cyan-400 hover:fill-cyan-500 active:fill-cyan-600" 
+                        onClick={(e) => e.stopPropagation()}
+                        className="fill-white cursor-help w-8 h-8 absolute right-5 bottom-5 block transition-all duration-75 focus:fill-cyan-100 hover:fill-cyan-200 active:fill-cyan-300" 
                         aria-label="Informazioni aggiuntive"/>
                     <p 
                         style={{opacity: showDesc? '1' : '0'}}

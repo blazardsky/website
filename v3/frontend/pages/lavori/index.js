@@ -1,13 +1,9 @@
 import Head from 'next/head'
-import Link from 'next/link'
 import {useRef, useLayoutEffect } from 'react';
-import {Navbar, Footer, Main, Texture} from '../../components';
+import {Navbar, Footer, Main, Texture, WorkCard} from '../../components';
 import groq from 'groq';
 import { gsap } from "gsap";
-import {client, urlFor} from '@lib/client';
-import {getCategoryOutlines} from '@lib/utils'
-
-import '../../styles/Lavori.module.css';
+import {client} from '@lib/client';
 
 
 const query = groq`*[_type == "work" && !(_id in path("drafts.**"))] | order(_updatedAt desc, _createdAt desc)[]{
@@ -36,13 +32,21 @@ export default function Work({_data}) {
 
   // useLayoutEffect functions exactly the same as useEffect, but runs before the DOM has been painted
   useLayoutEffect (()=> {
-    
-    gsap.to(q('.animateThisGsap'), {
-      scrollTrigger: ".animateThisGsap",
-      opacity: '1',
-      translateY: '-10px;'
+    q('[data-gsapselector="workCard"]').forEach((workCard, index) => {
+      gsap.to(workCard, {
+        opacity: 1,
+        y: 0,
+        duration: (index+1)*0.05,
+        scrollTrigger: {
+          trigger : workCard,
+          start: 'top 10', //10px from top of elem
+          end: 'bottom 100',
+          toggleActions: 'play none none none', //onEnter, onLeave, onEnterBack, onLeaveBack
+          markers: false,
+          once: true,
+        },
+      });
     });
-
   },[q]);
 
   return (
@@ -57,36 +61,9 @@ export default function Work({_data}) {
       <Main h1="Lavori" h2="Una selezione di lavori realizzati negli anni" />
       <section ref={worksRef} className="relative columns-1 sm:columns-2 md:columns-3 2xl:columns-4 mx-auto w-11/12 max-w-screen-2xl p-4">
         {
-          _data.map((arr,index )=> {
-            console.log(arr)
-            const {
-              mainImage,
-              title,
-              slug,
-              year,
-              categories,
-              cliente
-            } = arr;
-            return (
-              <Link key={`WK__${slug}-${index}`} href={`/lavori/${slug}`}>
-              <article title="Che aspetti, clicca!"
-              className="cursor-pointer p-3 break-inside-avoid block rougher-edges mx-0 mb-4 transition-all duration-300 hover:scale-105 hover:rotate-1 text-white bg-gradient-to-b from-black/80 via-rose-900/75 to-black/90 to">
-                <div className="hover:animate-pulse">
-                  <img src={urlFor(mainImage).width(620).auto('format').quality(70).url()} className="transition-all duration-200 roughest-edges ease hover:saturate-150 hover:hue-rotate-180 hover:contrast-125" alt=""/>
-                  <h1 className="text-2xl p-3 cursive"><strong>{title}</strong> {`[${year.slice(0,4)}]`}</h1>
-                </div>
-                <h3 className="tracking-wide text-gray-200 px-3">Cliente: {cliente}</h3>
-                <div className="p-4 -skew-x-3">
-                  {categories.map(cat=>(
-                    <span key={`${title}-${year}-${cat}`} className={`py-1 px-2 text-sm font-medium mr-1 whitespace-nowrap border-2 ${ getCategoryOutlines(cat) }`}>
-                      {cat}
-                    </span>
-                  ))}
-                </div>
-              </article>
-              </Link>
-            )
-          })
+          _data.map( (arr, index) => (
+            <WorkCard workData={arr} index={index} key={`WK__${arr['slug']}-${index}`} />
+          ))
         }
       </section>
       <Footer />
