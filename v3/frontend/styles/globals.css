@@ -10,11 +10,12 @@
     }
 
     body::-webkit-scrollbar {
-        width: 1em;
+        width: .65em;
     }
     
     body::-webkit-scrollbar-track {
-        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        box-shadow: inset 0 0 6px rgba(130, 130, 0, 0.3);
+        background-color: black;
     }
     
     body::-webkit-scrollbar-thumb {

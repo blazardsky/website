@@ -46,7 +46,7 @@ export default function Work({_data}) {
   },[q]);
 
   return (
-      <div className="bg-pink-700 relative min-h-screen">
+      <div className="bg-pink-700 relative min-h-screen max-w-full">
       <Head>
         <title>Blazardsky &ndash; Portfolio Lavori</title>
         <meta name="description" content="Qui trovi una raccolta dei miei ultimi lavori di grafica e web development." />
@@ -55,9 +55,9 @@ export default function Work({_data}) {
       <Texture blend='mix-blend-exclusion' opacity='opacity-70'/>
       <Navbar />
       <Main h1="Lavori" h2="Una selezione di lavori realizzati negli anni" />
-      <section ref={worksRef} className="relative columns-1 md:columns-2 xl:columns-4 mx-auto min-w-fit w-11/12 max-w-7xl p-4">
+      <section ref={worksRef} className="relative columns-1 sm:columns-2 md:columns-3 2xl:columns-4 mx-auto w-11/12 max-w-screen-2xl p-4">
         {
-          _data.map(arr => {
+          _data.map((arr,index )=> {
             console.log(arr)
             const {
               mainImage,
@@ -68,7 +68,7 @@ export default function Work({_data}) {
               cliente
             } = arr;
             return (
-              <Link key={`WK__${slug}`} href={`/lavori/${slug}`}>
+              <Link key={`WK__${slug}-${index}`} href={`/lavori/${slug}`}>
               <article title="Che aspetti, clicca!"
               className="cursor-pointer p-3 break-inside-avoid block rougher-edges mx-0 mb-4 transition-all duration-300 hover:scale-105 hover:rotate-1 text-white bg-gradient-to-b from-black/80 via-rose-900/75 to-black/90 to">
                 <div className="hover:animate-pulse">
@@ -78,7 +78,7 @@ export default function Work({_data}) {
                 <h3 className="tracking-wide text-gray-200 px-3">Cliente: {cliente}</h3>
                 <div className="p-4 -skew-x-3">
                   {categories.map(cat=>(
-                    <span key={`${title}-${year}-${cat}`} className={`py-1 px-2 font-semibold mr-1 whitespace-nowrap border-2 ${ getCategoryOutlines(cat) }`}>
+                    <span key={`${title}-${year}-${cat}`} className={`py-1 px-2 text-sm font-medium mr-1 whitespace-nowrap border-2 ${ getCategoryOutlines(cat) }`}>
                       {cat}
                     </span>
                   ))}

@@ -52,7 +52,7 @@ function Lightbox ({src,alt='',isSingle=false,desc}) {
             className={`${
                 isLightboxOpen 
                 ? 'w-full h-screen fixed top-0 left-0 bg-black flex flex-col flew-wrap items-center justify-center overflow-hidden z-50 p-2' 
-                : 'max-w-100 max-h-screen mx-auto relative z-40'
+                : 'max-w-full max-h-screen mx-auto relative z-40'
                 }`
         }>
             <img
