@@ -1,0 +1,45 @@
+---
+import type { string } from "astro/zod";
+
+interface Props {
+  title: string;
+  body: string;
+  src: string;
+}
+
+const { title, body, src } = Astro.props;
+---
+
+<li class="card list-none p-1 inline-block flex-1">
+    <img src={`data:image/svg+xml,${src}`} class="p-1 mx-auto max-w-full" height="100" width="84"/>
+    <h3 class="uppercase font-extralight text-center text-2xl">
+        {title}
+    </h3>
+    <p class="font-cursive">
+        {body}
+    </p>
+</li>
+<style>
+  .card {
+    background-image: none;
+    background-size: 400%;
+    background-position: 100%;
+    transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  p {
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+  }
+  .link-card:is(:hover, :focus-within) {
+    background-position: 0;
+    background-image: var(--accent-gradient);
+  }
+  .link-card:is(:hover, :focus-within) h2 {
+    color: rgb(var(--accent-light));
+  }
+</style>

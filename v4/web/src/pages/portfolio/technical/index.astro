@@ -1,0 +1,30 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Card from '../../../components/Card.astro';
+
+const languages = [
+	{code:'it', name: 'italiano'},
+	{code:'en', name: 'english'}
+]
+
+---
+
+<Layout title="Niccolò Agnoletti - Developer, Designer, Illustrator" lang={languages}>
+    <section class="w-full bg-[url('/assets/punkwebdev.png')] bg-left bg-no-repeat bg-contain min-h-96 flex items-center">
+        <div class="text-center w-full mx-auto p-4">
+            <h1 class=" font-cursive text-lg">Technical stuff</h1>
+            <p class="leading-none text-2xl">
+                <strong>WEB DESIGN</strong> UI/UX<br/>
+                + <strong>DEVELOPEMENT</strong>
+            </p>
+        </div>
+    </section>
+    <section class="w-full flex flex-row items-center gap-4">
+        <img src="https://via.placeholder.com/900x600?text=CASO%20Studio" alt="" />
+        <div>
+            <h3 class="uppercase font-extrabold text-2xl">Titolo caso studio</h3>
+            <p>Anno/Cliente</p>
+            <a href="#" class="bg-white text-fuchsia-950 px-8 py-2 text-center mt-16 block">Apri progetto</a>
+        </div>
+    </section>
+</Layout>

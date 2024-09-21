@@ -1,0 +1,114 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const languages = [
+  { code: "it", name: "italiano" },
+  { code: "en", name: "english" },
+];
+---
+
+<Layout title="Credits & Info | Niccolò" lang={languages}>
+  <section class="p-8">
+    <h1 class="text-5xl">Crediti e attribuzioni</h1>
+    <ul class="mt-2 ml-4 list-disc text-lg">
+      <li>
+        <!-- <b>Musica:</b> <a href="https://soundcloud.com/sqveezie/sets/cowboy-bebop-soundtrack" target="_blank" rel="noopener">"Cowboy Bebop Soundtrack"</a>, by <a href="https://soundcloud.com/sqveezie" rel="noopener" target="_blank">Squeezie</a> on <a href="https://soundcloud.com/" rel="noopener" target="_blank"><img class="inline-block" src="/assets/images/logo-soundcloud.png" alt="SoundCloud"></a>. -->
+        <b>Musica:</b>
+        <a
+          href="https://open.spotify.com/intl-it/track/6ihAdkoMDK1xyrQCgH40mS"
+          target="_blank"
+          rel="noopener"
+          title="Symphony No.9, Op.125 Choral: II">Beethoven</a
+        >, <a 
+          href="https://open.spotify.com/intl-it/track/3By9jCy6b4dv5XnlhvIWwx" 
+          target="_blank" 
+          rel="noopener" 
+          title="Dies Irae">Verdi</a
+        >, <a
+          href="https://open.spotify.com/intl-it/track/3YUmaXADZY1wdTrGCF4Fdw"
+          target="_blank"
+          rel="noopener"
+          title="Romeo & Juliet, Op.64: No.13 Dance of the Knights">Prokofiev</a
+        >, <a
+          href="https://open.spotify.com/intl-it/track/1IM8x4lxZVOOP9gpQD6c5s"
+          target="_blank"
+          rel="noopener"
+          title="Danse Macabre, Op.40">Saint-Saëns</a
+        >, <a
+          href="https://open.spotify.com/intl-it/track/0BWJNm4TrO6H3qgiCmDBjM"
+          target="_blank"
+          rel="noopener"
+          title="Toccata and fugue in D minor">Bach</a
+        >, <a
+          href="https://open.spotify.com/intl-it/track/3sAYxq1986j3ydqLv6jwUJ"
+          target="_blank"
+          rel="noopener"
+          title="Serenade for Strings Op.22, B.52: II">Dvorák</a
+        > - from <a href="https://www.spotify.com" target="_blank" rel="noopener">Spotify</a>.
+      </li>
+      <a><b>Musica (fallback):</b> 
+        <a
+          href="https://www.youtube.com/watch?v=EoGz2GOtpCk"
+          target="_blank"
+          rel="noopener"
+          title="Prelude and Fugue in A minor, BWV 894">Bach</a
+        > da <a href="https://www.youtube.com/@classicalmusiccopyrightfre7561" target="_blank" rel="noopener">YouTube</a>
+      </li>
+      <li>
+        <b>Foto profilo:</b>
+        <a href="https://marcomugnai.it/" target="_blank" rel="noopener"
+          >Marco Mugnai Photographer</a
+        >.
+      </li>
+      <li>
+        <b>Illustrazioni, Design, Codice:</b> io 😅
+      </li>
+    </ul>
+    <h2 class="mt-16 text-5xl">Tech Stack</h2>
+    <ul class="mt-2 ml-4 list-disc text-lg">
+      <li>
+        <b>Framework:</b>
+        <a href="https://astro.build/" rel="noopener" target="_blank">Astro</a>
+      </li>
+      <li>
+        <b>Style:</b>
+        <a href="https://tailwindcss.com/" rel="noopener" target="_blank"
+          >TailwindCSS</a
+        >
+      </li>
+      <li>
+        <b>CMS:</b>
+        <a href="https://www.sanity.io/" rel="noopener" target="_blank"
+          >Sanity</a
+        >
+      </li>
+      <li>
+        <b>Animation:</b>
+        <a href="https://www.gsap.com/" rel="noopener" target="_blank">GSAP</a>
+      </li>
+      <li>
+        <b>API:</b>
+        <a href="https://www.rapidapi.com/" rel="noopener" target="_blank">RapidAPI</a>
+      </li>
+      <li>
+        <b>Altro:</b>
+        <a href="https://www.typescriptlang.org/" rel="noopener" target="_blank">TypeScript</a>, <a href="https://partytown.builder.io/" rel="noopener" target="_blank">PartyTown</a>
+      </li>
+    </ul>
+  </section>
+</Layout>
+
+<style>
+  b {
+    font-weight: 600;
+  }
+  a {
+    text-decoration: underline;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+  li {
+    margin: 0.25rem 0;
+  }
+</style>

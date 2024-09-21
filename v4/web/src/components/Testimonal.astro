@@ -1,0 +1,26 @@
+---
+import type { string } from 'astro/zod';
+
+interface Props {
+	name: string;
+    role: string;
+	body: string;
+	src: string;
+    alt?: string;
+    odd?: boolean;
+}
+
+const { src, name, role, body, alt = `Foto di ${name}`, odd = false } = Astro.props;
+
+---
+
+<li class="flex flex-row max-w-3xl mx-auto my-12 gap-8 items-center">
+    <img src=`https://via.placeholder.com/250x250?text=${src}` alt={alt} height="150" width="150" class={`rounded-full ${odd? 'order-last' : ''}`} />
+    <div>
+        <p class="uppercase leading-none">
+        <span class="font-extrabold text-xl">{name}</span><br/>
+        <span class="font-extralight text-lg">{role}</span>
+        </p>
+        <p class="mt-3 font-cursive">{body}</p>
+    </div>
+</li>
