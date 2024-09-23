@@ -1,0 +1,28 @@
+{
+    "testimonials" : [
+        {
+            "id": 1,
+            "by": "Giulio M.",
+            "role": "DJ per matrimoni ed eventi",
+            "link": "https://www.djmad.it",
+            "body": "Collaboro con Nic da diverso tempo, abbiamo praticamente iniziato insieme – riesce sempre a catturare la mia energia e il mio stile in un design che adoro.",
+            "img": "/assets/images/testimonials/giuliom.png"
+        },
+        {
+            "id": 2,
+            "by": "Lorenzo C.",
+            "role": "Esperto di marketing",
+            "link": "https://www.kipoproduzioni.it",
+            "body": "Lavoro con Nic da qualche anno, abbiamo anche uno studio insieme – è senza dubbi il mio socio preferito. È molto bravo anche se dovrebbe farmi lavorare invece di chiedermi di fare queste recensioni...",
+            "img": "/assets/images/testimonials/lorenzoc.jpg"
+        },
+        {
+            "id": 3,
+            "by": "Cristina A.",
+            "role": "Mamma di Niccolò",
+            "link": "",
+            "body": "È bravo, anzi bravissimo. Garantisco io!",
+            "img": "/assets/images/testimonials/mamma.png"
+        }
+    ]
+}

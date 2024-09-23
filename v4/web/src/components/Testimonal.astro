@@ -2,25 +2,38 @@
 import type { string } from 'astro/zod';
 
 interface Props {
+    id: number;
 	name: string;
     role: string;
 	body: string;
 	src: string;
     alt?: string;
-    odd?: boolean;
+    link: string;
 }
 
-const { src, name, role, body, alt = `Foto di ${name}`, odd = false } = Astro.props;
+const { id, src, name, role, body, alt = `Foto di ${name}`, link } = Astro.props;
 
 ---
 
-<li class="flex flex-row max-w-3xl mx-auto my-12 gap-8 items-center">
-    <img src=`https://via.placeholder.com/250x250?text=${src}` alt={alt} height="150" width="150" class={`rounded-full ${odd? 'order-last' : ''}`} />
+<li class="flex flex-col sm:flex-row max-w-3xl mx-auto my-12 gap-8 sm:items-center w-full">
+    <img src={src} alt={alt} height="150" width="150" 
+    class={`rounded-full self-center ${id % 2 == 0 ? 'sm:order-last' : ''}`} />
     <div>
         <p class="uppercase leading-none">
-        <span class="font-extrabold text-xl">{name}</span><br/>
-        <span class="font-extralight text-lg">{role}</span>
+          {link != '' ? (
+            <a href={link} target="_blank" rel="noopener">
+                <span class="font-extrabold text-xl tracking-wide">{name}</span>
+            </a>)
+            : <span class="font-extrabold text-xl tracking-wide">{name}</span>
+          }
+          <br/>
+          <span class="font-extralight text-lg">{role}</span>
         </p>
         <p class="mt-3 font-cursive">{body}</p>
     </div>
+</li>
+<li class="my-12 last-of-type:hidden" aria-hidden="true">
+    <svg width="278" height="22" viewBox="0 0 278 22" fill="none" xmlns="http://www.w3.org/2000/svg" class="mx-auto">
+        <path opacity="0.3" d="M2 15.3377C2.41083 12.4954 4.24323 6.63161 8.00877 7.02336C9.89641 7.21975 11.088 9.10446 12.4152 10.1907C16.9597 13.9103 21.0374 13.8732 26.0351 10.7186C30.7532 7.74049 35.784 -1.01527 41.925 3.06417C46.3081 5.97593 52.2694 12.5552 58.2154 11.5105C64.7206 10.3674 69.2337 2.39781 76.5088 7.8152C79.5722 10.0964 82.9969 17.3388 87.8587 14.8098C91.4924 12.9196 95.8895 6.25667 100.544 7.02336C103.356 7.48656 105.853 10.9047 108.556 11.9064C114.701 14.184 119.586 11.4743 124.712 8.34309C129.199 5.60311 131.219 5.06244 135.395 8.47507C137.901 10.5231 143.182 18.901 146.478 18.901C149.402 18.901 152.327 16.6997 155.157 16.1295C160.228 15.1077 164.267 16.5426 168.777 18.637C176.118 22.0464 178.717 18.1502 185.601 16.7894C189.301 16.058 191.924 19.3346 195.616 18.637C205.059 16.8527 211.846 7.61635 220.185 14.8098C229.501 22.8452 248.389 9.54559 258.775 8.07915C265.612 7.11372 270.101 12.2064 276 14.1499" stroke="#F7F6DF" stroke-width="3" stroke-linecap="round"/>
+    </svg>
 </li>

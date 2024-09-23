@@ -1,0 +1,105 @@
+---
+
+function getRandomElement(array: any[]) {
+	return array[Math.floor(Math.random() * array.length)]
+}
+
+let music_data = null;
+
+const spotifyAPI = [
+	// 'spotify-data',
+	'spotify-web2',
+	'spotify23'
+]
+const currentSpotifyAPI = getRandomElement(spotifyAPI) // uso una qualsiasi di queste api tanto sono tutte uguali
+
+// IDs delle tracce audio da Spotify
+const tracks = [
+	'7HSs4srn1qnZhh7WRWBVOk', //romeo & juliet - prokofiev
+	'1IM8x4lxZVOOP9gpQD6c5s', //danse macabre - saint-saëns
+	'3By9jCy6b4dv5XnlhvIWwx', //dies irea - verdi
+	'0BWJNm4TrO6H3qgiCmDBjM', //toccata e fuga - bach
+	'6ihAdkoMDK1xyrQCgH40mS', //sinfonia n9 - beethoven
+	'3sAYxq1986j3ydqLv6jwUJ', //serenade for strings - dvorák
+]
+
+// fetch delle api
+const url = `https://${currentSpotifyAPI}.p.rapidapi.com/tracks/?ids=${getRandomElement(tracks)}`;
+
+const options = {
+	method: 'GET',
+	headers: {
+		'x-rapidapi-key': import.meta.env.PUBLIC_RAPIDAPI_KEY,
+		'x-rapidapi-host': `${currentSpotifyAPI}.p.rapidapi.com`
+	}
+};
+
+// try {
+// 	// faccio la richiesta
+// 	const response = await fetch(url, options);
+// 	const result = await response.json();
+
+// 	if (response.ok) {
+// 		music_data = result.tracks[0];
+// 	}
+
+// } catch (error) {
+// 	console.error(error);
+// }
+
+---
+
+
+
+
+<div id="nicplayer" class="relative group my-12 mx-auto w-fit rounded-full hover:animate-spin transition-all after:block after:w-5 after:h-5 after:top-16 after:left-16 after:rounded-full after:absolute after:bg-transparent hover:after:bg-background after:transition-transform after:will-change-transform after:duration-100 after:origin-center" title="In onda: Bach - Prelude and Fugue in A minor, BWV 894">
+	<img src="/assets/images/foto-nic-tonda.png" alt="Una mia foto vera :)" height="148" width="148" class="bg-black rounded-full border-black group-hover:border-4" />
+	<audio preload="none">
+		<source src="/assets/audio/Bach_BWV894-EoGz2GOtpCk.mp3" type="audio/mpeg">
+	</audio> 
+</div>
+
+
+<style>
+	#nicplayer {
+		will-change: transform;
+		transition-behaviour: allow-discrete;
+	}
+
+	#nicplayer audio {
+		display: none;
+	}
+</style>
+
+
+
+<script define:vars={{music_data}}>
+
+	/** {wrapper: HTMLElement, image: HTMLImageElement, audio: HTMLAudioElement} */
+	const nicplayer = {
+		wrapper: document.getElementById('nicplayer'), // div contenitore
+		image: document.querySelector('#nicplayer > img'), //immagine profilo/album
+		audio: document.querySelector('#nicplayer > audio') //tag audio nascosto
+	}
+	const original_image = nicplayer.image.src; //salvo il src della foto profilo
+
+	if (music_data) {
+		nicplayer.wrapper.title = `In onda: ${music_data.name}`;
+		nicplayer.audio.src = music_data.preview_url;
+		nicplayer.audio.preload = 'auto';
+	}
+
+	// se l'utente va sopra con il mouse cambio immagine con quella dell'album (se l'ho presa da spotify) e avvio l'audio
+	nicplayer.wrapper.addEventListener('mouseover', (event)=>{
+		nicplayer.image.src = music_data ? music_data.album.images[1].url : '/assets/images/bach.jpg'; // cambio l'immagine con quella dell'album spotify o con un quadro di bach per il fallback
+		nicplayer.audio.volume = 0.5; // dimezzo per non dare troppo fastidio
+		nicplayer.audio.currentTime = 0; // riavvio ogni volta l'audio (durano tutti poco...)
+		nicplayer.audio.play();
+	})
+	
+	// quando il mouse va via stoppo la musica e rimetto l'immagine originale
+	nicplayer.wrapper.addEventListener('mouseleave', (event)=>{
+		nicplayer.image.src = original_image;
+		nicplayer.audio.pause();
+	})
+</script>

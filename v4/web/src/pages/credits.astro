@@ -1,15 +1,11 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from "@layouts/Layout.astro";
 
-const languages = [
-  { code: "it", name: "italiano" },
-  { code: "en", name: "english" },
-];
 ---
 
-<Layout title="Credits & Info | Niccolò" lang={languages}>
-  <section class="p-8">
-    <h1 class="text-5xl">Crediti e attribuzioni</h1>
+<Layout title="Credits & Info | Niccolò">
+  <h1 class="mt-16 m-4 uppercase font-extrabold text-6xl">Crediti e attribuzioni</h1>
+  <section class="m-8">
     <ul class="mt-2 ml-4 list-disc text-lg">
       <li>
         <!-- <b>Musica:</b> <a href="https://soundcloud.com/sqveezie/sets/cowboy-bebop-soundtrack" target="_blank" rel="noopener">"Cowboy Bebop Soundtrack"</a>, by <a href="https://soundcloud.com/sqveezie" rel="noopener" target="_blank">Squeezie</a> on <a href="https://soundcloud.com/" rel="noopener" target="_blank"><img class="inline-block" src="/assets/images/logo-soundcloud.png" alt="SoundCloud"></a>. -->
@@ -46,13 +42,17 @@ const languages = [
           title="Serenade for Strings Op.22, B.52: II">Dvorák</a
         > - from <a href="https://www.spotify.com" target="_blank" rel="noopener">Spotify</a>.
       </li>
-      <a><b>Musica (fallback):</b> 
+      <li><b>Musica (fallback):</b> 
         <a
           href="https://www.youtube.com/watch?v=EoGz2GOtpCk"
           target="_blank"
           rel="noopener"
           title="Prelude and Fugue in A minor, BWV 894">Bach</a
         > da <a href="https://www.youtube.com/@classicalmusiccopyrightfre7561" target="_blank" rel="noopener">YouTube</a>
+      </li>
+      <li><b>Ritratto Bach (su fallback):</b>
+        <a href="https://it.wikipedia.org/wiki/Johann_Sebastian_Bach#/media/File:Johann_Sebastian_Bach.png" title="Elias Gottlob Haussmann, Ritratto di Johann Sebastian Bach 1748, olio su tela - Lipsia " target="_blank"
+        rel="noopener">originale da Wikipedia/Wikimedia</a>
       </li>
       <li>
         <b>Foto profilo:</b>
@@ -80,7 +80,9 @@ const languages = [
         <b>CMS:</b>
         <a href="https://www.sanity.io/" rel="noopener" target="_blank"
           >Sanity</a
-        >
+        >, <a href="https://microcms.io/" rel="noopener" target="_blank"
+        >MicroCMS</a
+      >
       </li>
       <li>
         <b>Animation:</b>
@@ -97,18 +99,3 @@ const languages = [
     </ul>
   </section>
 </Layout>
-
-<style>
-  b {
-    font-weight: 600;
-  }
-  a {
-    text-decoration: underline;
-  }
-  a:hover {
-    text-decoration: none;
-  }
-  li {
-    margin: 0.25rem 0;
-  }
-</style>

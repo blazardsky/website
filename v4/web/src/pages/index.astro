@@ -1,35 +1,29 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import PortfolioButtons from '../components/PortfolioButtons.astro'
-import Testimonal from '../components/Testimonal.astro';
-import CardIcon from '../components/CardIcon.astro';
-import BigPortfolioButton from '../components/BigPortfolioButton.astro';
+import Layout from '@layouts/Layout.astro';
+import PortfolioButtons from '@components/PortfolioButtons.astro'
+import Testimonal from '@components/Testimonal.astro';
+import CardIcon from '@components/CardIcon.astro';
+import BigPortfolioButton from '@components/BigPortfolioButton.astro';
 
-import clip01 from '../svg/PortfolioClip_01.svg?raw';
-import clip02 from '../svg/PortfolioClip_02.svg?raw';
-
-const languages = [
-	{code:'it', name: 'italiano'},
-	{code:'en', name: 'english'}
-]
+import PAGEDATA from '@data/index.json';
 
 ---
 
-<Layout title="Niccolò Agnoletti - Developer, Designer, Illustrator" lang={languages}>
+<Layout title="Niccolò Agnoletti - Developer, Designer, Illustrator">
 	<main>
 		<h1 class="uppercase font-extrabold leading-none text-[3.5rem] md:text-8xl p-4 m-auto">
 			Ciao! Se sei qui immagino tu stia cercando<wbr/> il mio portfolio. Ecco qui:
 		</h1>
-		<ul class="flex flex-row flex-wrap mt-16 w-full overflow-x-clip">
+		<ul class="flex flex-row flex-wrap mt-16 w-full overflow-x-clip px-3">
 			<BigPortfolioButton 
-			href="#"
+			href="/portfolio/technical"
 			title="Technical Stuff"
 			src="/assets/images/punkwebdev.png"
 			type="technical">
 					<strong>WEB DESIGN</strong> UI/UX<br/> + <strong>DEVELOPEMENT.</strong>
 			</BigPortfolioButton>			
 			<BigPortfolioButton 
-			href="#"
+			href="/portfolio/creative"
 			title="Creative Stuff"
 			src="/assets/images/creativecat.png"
 			type="creative">
@@ -38,7 +32,7 @@ const languages = [
 			</BigPortfolioButton>
 		</ul>
 	</main>
-	<section class="bg-accent px-4 py-24 mt-4 clip01">
+	<section class="bg-accent px-4 py-24 mt-2 clip01">
 		<h2 class="text-center font-extrabold uppercase text-6xl">O forse ti stai chiedendo<br>“scusa ma, chi c** sei?”</h2>
 		<div class="flex flex-row mt-8 md:gap-12 mx-auto max-w-5xl items-center">
 			<img src="/assets/images/weirdnic.png" height="200px" width="200px" alt="" class="w-full max-w-md h-auto" />
@@ -60,35 +54,22 @@ const languages = [
 		<h2 class="text-center font-light uppercase text-6xl mt-24">
 			No? va beh, allora<br/> continua a scrollare 
 		</h2>
-		<h3 class="text-center font-extrabold uppercase text-5xl mt-36">
+		<h3 class="text-center font-extrabold uppercase text-5xl mt-44">
 			1. Perché lavorare con me :)
 		</h3>
-		<ul class="group list-none">
-		<Testimonal 
-		name="Nome C." 
-		role="Ruolo/Qualifica"
-		body="Pizza ipsum dolor meat lovers buffalo. Mushrooms dolor NY ham mouth marinara anchovies. Hand bell beef pork buffalo mouth. Thin and spinach bacon tossed. Sauce."
-		src="FOTO DI"
-		/>
-		<li><svg width="278" height="22" viewBox="0 0 278 22" fill="none" xmlns="http://www.w3.org/2000/svg" class="mx-auto">
-			<path opacity="0.3" d="M2 15.3377C2.41083 12.4954 4.24323 6.63161 8.00877 7.02336C9.89641 7.21975 11.088 9.10446 12.4152 10.1907C16.9597 13.9103 21.0374 13.8732 26.0351 10.7186C30.7532 7.74049 35.784 -1.01527 41.925 3.06417C46.3081 5.97593 52.2694 12.5552 58.2154 11.5105C64.7206 10.3674 69.2337 2.39781 76.5088 7.8152C79.5722 10.0964 82.9969 17.3388 87.8587 14.8098C91.4924 12.9196 95.8895 6.25667 100.544 7.02336C103.356 7.48656 105.853 10.9047 108.556 11.9064C114.701 14.184 119.586 11.4743 124.712 8.34309C129.199 5.60311 131.219 5.06244 135.395 8.47507C137.901 10.5231 143.182 18.901 146.478 18.901C149.402 18.901 152.327 16.6997 155.157 16.1295C160.228 15.1077 164.267 16.5426 168.777 18.637C176.118 22.0464 178.717 18.1502 185.601 16.7894C189.301 16.058 191.924 19.3346 195.616 18.637C205.059 16.8527 211.846 7.61635 220.185 14.8098C229.501 22.8452 248.389 9.54559 258.775 8.07915C265.612 7.11372 270.101 12.2064 276 14.1499" stroke="#F7F6DF" stroke-width="3" stroke-linecap="round"/>
-		</svg></li>
-		<Testimonal 
-		name="Nome C." 
-		role="Ruolo/Qualifica"
-		body="Pizza ipsum dolor meat lovers buffalo. Mushrooms dolor NY ham mouth marinara anchovies. Hand bell beef pork buffalo mouth. Thin and spinach bacon tossed. Sauce."
-		src="FOTO DI"
-		odd={true}
-		/>
-		<li><svg width="278" height="22" viewBox="0 0 278 22" fill="none" xmlns="http://www.w3.org/2000/svg" class="mx-auto">
-			<path opacity="0.3" d="M2 15.3377C2.41083 12.4954 4.24323 6.63161 8.00877 7.02336C9.89641 7.21975 11.088 9.10446 12.4152 10.1907C16.9597 13.9103 21.0374 13.8732 26.0351 10.7186C30.7532 7.74049 35.784 -1.01527 41.925 3.06417C46.3081 5.97593 52.2694 12.5552 58.2154 11.5105C64.7206 10.3674 69.2337 2.39781 76.5088 7.8152C79.5722 10.0964 82.9969 17.3388 87.8587 14.8098C91.4924 12.9196 95.8895 6.25667 100.544 7.02336C103.356 7.48656 105.853 10.9047 108.556 11.9064C114.701 14.184 119.586 11.4743 124.712 8.34309C129.199 5.60311 131.219 5.06244 135.395 8.47507C137.901 10.5231 143.182 18.901 146.478 18.901C149.402 18.901 152.327 16.6997 155.157 16.1295C160.228 15.1077 164.267 16.5426 168.777 18.637C176.118 22.0464 178.717 18.1502 185.601 16.7894C189.301 16.058 191.924 19.3346 195.616 18.637C205.059 16.8527 211.846 7.61635 220.185 14.8098C229.501 22.8452 248.389 9.54559 258.775 8.07915C265.612 7.11372 270.101 12.2064 276 14.1499" stroke="#F7F6DF" stroke-width="3" stroke-linecap="round"/>
-		</svg></li>
-		<Testimonal 
-		name="Nome C." 
-		role="Ruolo/Qualifica"
-		body="Pizza ipsum dolor meat lovers buffalo. Mushrooms dolor NY ham mouth marinara anchovies. Hand bell beef pork buffalo mouth. Thin and spinach bacon tossed. Sauce."
-		src="FOTO DI"
-		/>
+		<ul class="group list-none p-2">
+			{
+				PAGEDATA.testimonials.map(testimonial => (
+				  <Testimonal 
+				  	id={testimonial.id}
+					name={testimonial.by} 
+					role={testimonial.role}
+					body={testimonial.body}
+					src={testimonial.img}
+					link={testimonial.link}
+				  />
+				))
+			}
 		</ul>
 		<h4 class="text-center font-extrabold uppercase text-4xl mt-36">
 			I miei punti di forza
@@ -107,26 +88,26 @@ const languages = [
 		</h3>
 
 		<div class="mx-auto max-w-4xl my-12">
-			<span class="text-technical uppercase font-bold">TECH</span>
-			<h4 class="uppercase text-3xl">
+			<span class="bg-technical rounded-md p-1 uppercase font-bold">TECH</span>
+			<h4 class="mt-1 uppercase text-3xl">
 				Progettazione e realizzazione di <strong>siti web</strong> completa sia come <strong>codice</strong> che come <strong>ui/ux</strong>.
 			</h4>
 			<p class="font-cursive text-lg">Conosco bene CSS, SASS, JS, REACT, HTML, oltre a Python e PHP. I miei framework preferiti in ambito js sono NextJS e Astro. Ho una certa esperienza con WordPress e Shopify (sia in ambito “code” che “no-code”) ma solitamente uso Sanity come CMS headless per creare soluzioni totalmente custom. <br />Cerco di creare sempre esperienze web accessibili e ben strutturate (alcune parole chiave: semantic html, responsive, adaptive, a11y, tailwindcss).</p>
 		</div>
 
 		<div class="mx-auto max-w-4xl my-12">
-			<span class="text-creative uppercase font-bold">Creative</span>
-			<h4 class="uppercase text-3xl">
-				Progettazione e realizzazione di <strong>grafiche e illustrazioni</strong> per la stampa e per il digitale.
+			<span class="bg-creative rounded-md p-1 uppercase font-bold">Creative</span>
+			<h4 class="mt-1 uppercase text-3xl">
+				Progettazione e realizzazione di <strong>grafiche</strong> e <strong>illustrazioni</strong> per la stampa e per il digitale.
 			</h4>
-			<p class="font-cursive text-lg">Conosco bene Photoshop, Illustrator, InDesign. Uso spesso anche Procreate e Figma. I miei ambiti preferiti per cui creare artwork sono abbigliamento, magazine e libri, album musicali. Ho una certa esperienza anche con varie AI generative che ho sperimentato fin dai loro primi esordi.</p>
+			<p class="font-cursive text-lg">Conosco bene Photoshop, Illustrator, InDesign e in generale i programmi Adobe. Ultimamente mi sto spostando sulla suite Affinity by Serif. Uso spesso anche Procreate e Figma. I miei ambiti preferiti per cui creare artwork sono abbigliamento, magazine e libri, album musicali. Ho una certa esperienza anche con varie AI generative che ho sperimentato fin dai loro primi esordi.</p>
 		</div>
 
 		<div class="mx-auto max-w-4xl my-12 flex flex-row">
-		<p class="uppercase opacity-70">
-			Se ti interessa sapere altro puoi guardare il mio <a href="#" rel="me noopeener noreferrer" target="_blank" class="underline">profilo LinkedIn</a> e mandarmi una richiesta oppure scaricare un estratto del mio <a href="#" target="_blank" rel="noopener" download="true" class="underline">curriculum.</a>
-		</p>
-		<img src="/assets/images/fiorellini.png" alt="due fiorellini con una faccia sorridente" height="390" width="390" />
+			<p class="uppercase opacity-70">
+				Se ti interessa sapere altro puoi guardare il mio <a href="https://www.linkedin.com/in/nic-agnoletti/" rel="me noopener" target="_blank" class="underline">profilo LinkedIn</a> e mandarmi una richiesta oppure scaricare un estratto del mio <a href="#" target="_blank" rel="noopener" download="true" class="underline">curriculum.</a>
+			</p>
+			<img src="/assets/images/fiorellini.png" alt="due fiorellini con una faccia sorridente" height="190" width="190" />
 		</div>
 		<img class="w-full max-w-5xl mx-auto" src="/assets/images/friends_garden.png" alt="Illustrazione dei vari strumenti che uso per lavorare con le gambe e una faccia per renderli buffi" height="777" width="1234" />
 	</section>
@@ -135,7 +116,7 @@ const languages = [
 			3. PS: Ho anche delle certificazioni
 		</h3>
 
-		<ul class="mx-auto max-w-4xl grid grid-flow-row grid-cols-3 gap-9 my-12 text-center">
+		<ul class="mx-auto max-w-4xl grid grid-flow-row sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-9 my-12 text-center">
 			<!-- border-l-2 border-zinc-700/50 pl-4 relative after:absolute after:w-3 after:h-3 after:bg-zinc-700/50 after:rounded-full after:-bottom-8 after:-left-1.5 -->
 			<li class="p-2 border-foreground border rounded-md">
 				<h4 class="block uppercase font-extrabold text-3xl leading-none">E-Design<br/>Illustrazione</h4>
@@ -145,7 +126,7 @@ const languages = [
 				<h4 class="block uppercase font-extrabold text-3xl leading-none">Joy of<br/>React</h4>
 				<p class="mt-2 font-cursive text-xs">Josh W. Comeau</p>
 			</li>
-			<li class="p-2 border-foreground border rounded-md">
+			<li class="p-2 border-foreground border rounded-md sm:col-span-2 lg:col-span-1">
 				<h4 class="block uppercase font-extrabold text-3xl leading-none">Landing Page<br/>Academy</h4>
 				<p class="mt-2 font-cursive text-xs">Erik D. Kennedy</p>
 			</li>
@@ -177,20 +158,7 @@ const languages = [
 				<path d="M69.656 164.36C73.0322 162.679 76.0629 161.169 78.9082 158.675C82.0364 155.933 84.6013 152.79 87.197 149.632" stroke="#222222" stroke-width="5" stroke-linecap="round"/>
 				</svg>
 		</div>
-		<p class="font-cursive max-w-sm mx-auto px-8">In particolare per progetti editoriali artistici o se rappresenti uno studio creativo in cerca di collaboratori: <a href="mailto:ciao@nicc-olo.com" class="underline text-nowrap">ciao@nicc-olo.com</a></p>
+		<p class="font-cursive max-w-sm mx-auto px-8">In particolare per progetti editoriali artistici o se rappresenti uno studio creativo in cerca di collaboratori. 
+		<br/>Se invece hai bisogno di esperti di marketing e comunicazione, <a href="mailto:info@kipoproduzioni.it" class="underline">scrivi ai ragazzi di Kìpo</a></p>
 	</section>
-
-	<!-- clip path svg per portfolio e blocchi vari -->
-	<Fragment set:html={clip01} />
-	<Fragment set:html={clip02} />
 </Layout>
-
-<style>
-
-	.clip01 {
-		clip-path: url(#containerClip01);
-		/* scale: 1.035;
-		overflow-x: clip; */
-	}
-
-</style>

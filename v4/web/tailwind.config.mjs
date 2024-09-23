@@ -10,7 +10,7 @@ export default {
 				'technical': '#FBA0FA',
 				'technical-light': '#FFBCFE',
 				'technical-dark': '#FA88F9',
-				'accent': '#F0E71A',
+				'accent': '#e9e017', //'#F0E71A',
 				'accent-dark': '#7E7909',
 				'midground': '#F7F6DF',
 				'foreground': '#18181B',

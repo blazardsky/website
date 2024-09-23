@@ -14,7 +14,7 @@ const { href, title, type, src, alt = '' } = Astro.props;
 ---
 
 <li class="list-none flex-grow sm:max-w-[50%] relative group">
-  <a href={href} class="w-full block group">
+  <a href={href} class="w-full block group no-underline">
     <div class={`${
     type === 'creative' 
     ? 'bg-creative group-focus:bg-creative-dark items-start' 
@@ -45,8 +45,7 @@ const { href, title, type, src, alt = '' } = Astro.props;
 <style>
 
 	.clip02 {
-		clip-path: url(#containerClip02);
-        scale: 1.05;
+        scale: 1.015;
         padding: 1rem;
 	}
 

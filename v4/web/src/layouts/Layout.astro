@@ -1,17 +1,28 @@
 ---
 interface Props {
 	title: string;
-	lang: 
-	{code: string, name: string}[];
+	bodyClass?: string;
 }
 
-const { title, lang } = Astro.props;
+const { title, bodyClass = "bg-background text-foreground" } = Astro.props;
+
+
+import NicPlayer from '@components/global/NicPlayer.astro';
+import AccessibilityIcon from '@svg/accessibility.svg?raw'
+
+// importo le svg che uso come clip-path per i BigPortfolioButton e per le sezioni colorate e in altri posti nel sito
+import clip01 from '@svg/PortfolioClip_01.svg?raw';
+import clip02 from '@svg/PortfolioClip_02.svg?raw';
+
+
+import PAGEDATA from '@data/layout.json'
+
 ---
 
 <!doctype html>
-<html lang={lang[0].code}>
+<html lang={PAGEDATA.languanges[0].code}>
 	<head>
-		<meta charset="UTF-8" />
+		<meta charset="utf-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -19,21 +30,30 @@ const { title, lang } = Astro.props;
 		<title>{title}</title>
 		<link href="https://api.fontshare.com/v2/css?f[]=clash-display@1&f[]=kalam@400&display=swap" rel="stylesheet">  
 	</head>
-	<body class="bg-background text-foreground">
-		<header>
+	<body class={bodyClass}>
+		<header class="flex flex-row z-20">
+			{Astro.url.pathname !== '/' && (<a class="px-4" href="/">
+				<span class="border-foreground border-x-2 border-b-2 text-foreground py-1 px-8 font-extrabold text-base uppercase block transition-all ease-out hover:scale-y-110 origin-top">HOME</span></a>
+			)}
 			<nav class="w-full flex justify-end px-4">
 				<ul class="flex flex-row gap-1">
-					<li class="bg-foreground text-background p-1 font-extrabold text-base uppercase">
-						<span aria-label="switch language" title={lang[1].name}>
-							{lang[1].code}
-						</span>
+					<li class="border-foreground border-x-2 border-b-2 bg-foreground fill-background p-1 transition-all ease-out hover:scale-y-110 origin-top flex m-0 has-[:active]:active:bg-accent has-[:active]:active:border-accent">
+						<button onclick="toggleReadabilityImprovement()" title="Rendi il testo più leggibile">
+							<span class="sr-only">Tasto accessibilità</span>
+							<Fragment set:html={AccessibilityIcon} />
+						</button>
 					</li>
-					<!-- <li class="bg-foreground fill-background p-1 flex">
+					<!-- <li class="border-foreground border-x-2 border-b-2 bg-foreground text-background p-1 font-extrabold text-base uppercase block transition-all ease-out hover:scale-y-110 origin-top m-0">
+						<span aria-label="switch language" title={PAGEDATA.languanges[1].name}>
+							{PAGEDATA.languanges[1].code}
+						</span>
+					</li> -->
+					<!-- <li class="border-foreground border-x-2 border-b-2 bg-foreground fill-background p-1 flex m-0">
 						<svg width="16" height="16" viewBox="0 0 16 16" fill="none" class="m-auto" xmlns="http://www.w3.org/2000/svg">
 							<path fill-rule="evenodd" clip-rule="evenodd" d="M8 16C12.4183 16 16 12.4183 16 8C16 3.58172 12.4183 0 8 0C3.58172 0 0 3.58172 0 8C0 12.4183 3.58172 16 8 16ZM13.0973 5.88864C12.82 5.21926 12.4136 4.61104 11.9013 4.09872L8.00002 8L4.09874 11.9013C4.61106 12.4136 5.21928 12.82 5.88866 13.0973C6.55804 13.3745 7.27548 13.5172 8.00002 13.5172C8.72455 13.5172 9.44199 13.3745 10.1114 13.0973C10.7808 12.82 11.389 12.4136 11.9013 11.9013C12.4136 11.389 12.82 10.7807 13.0973 10.1114C13.3746 9.44197 13.5173 8.72453 13.5173 8C13.5173 7.27547 13.3746 6.55803 13.0973 5.88864Z" fill="#EDE1CA"/>
 							</svg>							
 					</li> -->
-					<li class="bg-foreground text-background p-1 font-extrabold text-base uppercase">
+					<li class="border-foreground border-x-2 border-b-2 bg-foreground text-background p-1 font-extrabold text-base uppercase block transition-all ease-out hover:scale-y-110 origin-top m-0">
 						<span aria-label="apri il menu" class="px-8">
 							menu
 						</span>
@@ -50,39 +70,18 @@ const { title, lang } = Astro.props;
 						</svg>
 						
 				<ul class="flex flex-row gap-6 mx-auto w-fit p-2">
-						<li class="mix-blend-multiply">
-							<a href="#" rel="me noopener" target="_blank" class="hover:animate-pulse focus:animate-pulse">
-							<img src="/assets/images/social/behance.png" alt="Behance" height="48" width="48" />
-							</a>
-						</li>
-						<li class="mix-blend-multiply">
-							<a href="#" rel="me noopener" target="_blank" class="hover:animate-pulse focus:animate-pulse">
-							<img src="/assets/images/social/linkedin.png" alt="LinkedIn" height="48" width="48" />
-							</a>
-						</li>
-						<li class="mix-blend-multiply">
-							<a href="#" rel="me noopener" target="_blank" class="hover:animate-pulse focus:animate-pulse">
-							<img src="/assets/images/social/medium.png" alt="Medium" height="48" width="48" />
-							</a>
-						</li>
-						<li class="mix-blend-multiply">
-							<a href="#" rel="me noopener" target="_blank" class="hover:animate-pulse focus:animate-pulse">
-							<img src="/assets/images/social/github.png" alt="Github" height="48" width="48" />
-							</a>
-						</li>
-						<li class="mix-blend-multiply">
-							<a href="#" rel="me noopener" target="_blank" class="hover:animate-pulse focus:animate-pulse">
-							<img src="/assets/images/social/instagram.png" alt="Instagram" height="48" width="48" />
-							</a>
-						</li>
+					{
+						PAGEDATA.socials.map(({name, link, img}) => (
+							<li class="mix-blend-multiply">
+								<a href={link} rel="me noopener" target="_blank" class="hover:animate-pulse focus:animate-pulse">
+									<img src={img} alt={name} height="48" width="48" />
+								</a>
+							</li>
+						)
+					)}
 				</ul>
 				
-				<div id="nicplayer" class="relative group my-12 mx-auto w-fit rounded-full hover:animate-spin transition-all after:block after:w-5 after:h-5 after:top-16 after:left-16 after:rounded-full after:absolute after:bg-transparent hover:after:bg-background after:transition-transform after:will-change-transform after:duration-100 after:origin-center" title="In onda: Bach - Prelude and Fugue in A minor, BWV 894">
-					<img src="/assets/images/foto-nic-tonda.png" alt="Una mia foto vera :)" height="148" width="148" class="bg-black rounded-full border-black group-hover:border-4" />
-					<audio preload="none">
-						<source src="/assets/audio/Bach_BWV894-EoGz2GOtpCk.mp3" type="audio/mpeg">
-					</audio> 
-				</div>
+				<NicPlayer />
 
 				<div class="w-100 checkerboard-wrapper">
 					<div class="w-100 checkerboard"></div>
@@ -101,6 +100,9 @@ const { title, lang } = Astro.props;
 					</p>
 				</div> 
 		</footer>
+		<!-- clip path svg per portfolio e blocchi vari -->
+		<Fragment set:html={clip01} />
+		<Fragment set:html={clip02} />
 	</body>
 </html>
 
@@ -116,22 +118,13 @@ const { title, lang } = Astro.props;
 		background: repeating-linear-gradient(90deg,var(--color-1) 0,var(--color-1) var(--size),var(--color-2) var(--size),var(--color-2) calc(var(--size) * 2));
 	}
 
-	#nicplayer {
-		will-change: transform;
-		transition-behaviour: allow-discrete;
-	}
-
-	#nicplayer audio {
-		display: none;
-	}
-
 </style>
 <style is:global>
 
 	@font-face {
       font-family: 'NISCRIPT';
-      src: url('assets/fonts/NISCRIPT-Regular.woff2') format('woff2'),
-        url('assets/fonts/NISCRIPT-Regular.woff') format('woff');
+      src: url('/assets/fonts/NISCRIPT-Regular.woff2') format('woff2'),
+        url('/assets/fonts/NISCRIPT-Regular.woff') format('woff');
       font-weight: normal;
       font-style: normal;
       font-display: swap;
@@ -144,7 +137,7 @@ const { title, lang } = Astro.props;
 	}
 	.font-cursive {
 		font-size: 165%;
-		font-family: 'NISCRIPT', 'Courier New', monospace;
+		font-family: 'NISCRIPT', serif;
 	}
 	code {
 		font-family:
@@ -157,83 +150,55 @@ const { title, lang } = Astro.props;
 			Courier New,
 			monospace;
 	}
+
+	.clip01 {
+		clip-path: url(#containerClip01);
+	}
+	.clip02 {
+		clip-path: url(#containerClip02);
+	}
+
+
+	b {
+    font-weight: 600;
+	}
+	li > a,
+	p > a {
+		text-decoration: underline;
+	}
+	li > a:hover,
+	p > a:hover {
+		text-decoration: none;
+	}
+	li {
+		margin: 0.25rem 0;
+	}
 </style>
 
 
-<script>
-
-const nicplayer: {wrapper: HTMLElement, image: HTMLImageElement, audio: HTMLAudioElement} = {
-	wrapper: document.getElementById('nicplayer')!, // div contenitore
-	image: document.querySelector('#nicplayer > img')!, //immagine profilo/album
-	audio: document.querySelector('#nicplayer > audio')! //tag audio nascosto
-}
-const original_image = nicplayer.image.src; //salvo il src della foto profilo
-let music_data;
-
-
-const spotifyAPI = [
-	'spotify-data',
-	'spotify-web2',
-	'spotify23'
-]
-const currentSpotifyAPI = spotifyAPI[Math.floor(Math.random() * spotifyAPI.length)] // uso una qualsiasi di queste api tanto sono tutte uguali
-
-// IDs delle tracce audio da Spotify
-const tracks = [
-	'7HSs4srn1qnZhh7WRWBVOk', //romeo & juliet - prokofiev
-	'1IM8x4lxZVOOP9gpQD6c5s', //danse macabre - saint-saëns
-	'3By9jCy6b4dv5XnlhvIWwx', //dies irea - verdi
-	'0BWJNm4TrO6H3qgiCmDBjM', //toccata e fuga - bach
-	'6ihAdkoMDK1xyrQCgH40mS', //sinfonia n9 - beethoven
-	'3sAYxq1986j3ydqLv6jwUJ', //serenade for strings - dvorák
-]
-
-// fetch delle api
-const url = `https://${currentSpotifyAPI}.p.rapidapi.com/tracks/?ids=${tracks[Math.floor(Math.random() * tracks.length)]}`;
-
-
-const options = {
-	method: 'GET',
-	headers: {
-		'x-rapidapi-key': `${import.meta.env.PUBLIC_RAPIDAPI_KEY}`,
-		'x-rapidapi-host': `${currentSpotifyAPI}.p.rapidapi.com`
-	}
-};
-
-try {
-	// faccio la richiesta
-	const response = await fetch(url, options);
-	const result = await response.json();
-
-	// vado direttamente all'oggetto che mi interessa
-	music_data = result.tracks[0] || false; //esplicito il false per chiarezza quando controllo nell'evento mouseover per verificare che ci siano dati
+<script is:inline>
+	const readabilityStyle = new CSSStyleSheet();
+	readabilityStyle.replaceSync('.font-cursive { font-family: monospace !important; font-size: 100% !important; }');
 	
-	// se va bene cambio il titolo e la src dell'audio e metto che gestisca da se il preload
-	if (response.ok && music_data.preview_url) {
-		nicplayer.wrapper.title = `In onda: ${music_data.name}`;
-		nicplayer.audio.src = music_data.preview_url;
-		nicplayer.audio.preload = 'auto';
+	let improveReadability = 'off'; //di base è "spento"
+
+	if (typeof localStorage !== "undefined" && localStorage.getItem('improveReadability') ) {
+		improveReadability = localStorage.getItem('improveReadability');
+		setReadabilityImprovement() //avvio il toggle a ogni pagina in base al local storage precedente
 	}
 
-} catch (error) {
-	music_data = false;
-	console.error(error);
-} 
-
-// se l'utente va sopra con il mouse cambio immagine con quella dell'album (se l'ho presa da spotify) e avvio l'audio
-nicplayer.wrapper.addEventListener('mouseover', (event)=>{
-	if (music_data) {
-		nicplayer.image.src = music_data.album.images[1].url;
+	function toggleReadabilityImprovement(){
+		improveReadability = (improveReadability === "off") ? "on" : "off"; // faccio il toggle
+		localStorage.setItem('improveReadability', improveReadability);
+		setReadabilityImprovement() //attivo o disattivo
 	}
-	nicplayer.audio.volume = 0.5; // dimezzo per non dare troppo fastidio
-	nicplayer.audio.currentTime = 0; // riavvio ogni volta l'audio (durano tutti poco...)
-	nicplayer.audio.play();
-})
 
-// quando il mouse va via stoppo la musica e rimetto l'immagine originale
-nicplayer.wrapper.addEventListener('mouseleave', (event)=>{
-	nicplayer.image.src = original_image;
-	nicplayer.audio.pause();
-})
+	function setReadabilityImprovement(){
+		if (improveReadability === "on") {
+			document.adoptedStyleSheets = [readabilityStyle];
+		} else {
+			document.adoptedStyleSheets  = [];
+		}
+	}
 
 </script>
