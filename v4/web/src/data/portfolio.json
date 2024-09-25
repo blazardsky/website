@@ -1,0 +1,14 @@
+{
+    "creative": {
+        "title": "Creative stuff",
+        "subtitle": "digital <strong>ILLUSTRATIONS,<br /> GAMES, MAGAZINES.</strong>" ,
+        "bodyClass": "bg-creative text-foreground",
+        "style": "background-position: max(-5vw, -20px) bottom; background-size: max(15vw, 150px); background-image: url('/assets/images/creativecat.png');"
+    },
+    "technical": {
+        "title": "Technical stuff",
+        "subtitle": "<strong>FRONT END</strong> WEB<br/><strong>DEVELOPEMENT</strong>" ,
+        "bodyClass": "bg-technical text-foreground",
+        "style": "background-position: -2.5vw bottom; background-size: max(20vw, 200px); background-image: url('/assets/images/punkwebdev.png');"
+    }
+}

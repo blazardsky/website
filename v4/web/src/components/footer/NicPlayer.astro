@@ -29,7 +29,7 @@ const url = `https://${currentSpotifyAPI}.p.rapidapi.com/tracks/?ids=${getRandom
 const options = {
 	method: 'GET',
 	headers: {
-		'x-rapidapi-key': import.meta.env.PUBLIC_RAPIDAPI_KEY,
+		'x-rapidapi-key': import.meta.env.RAPIDAPI_KEY,
 		'x-rapidapi-host': `${currentSpotifyAPI}.p.rapidapi.com`
 	}
 };
