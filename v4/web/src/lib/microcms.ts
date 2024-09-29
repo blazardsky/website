@@ -15,7 +15,7 @@ type MicroCMSDocument = {
     title: string;
 }
 
-type MicroImage = {
+export type MicroImage = {
     url: string;
     height: number;
     width: number;

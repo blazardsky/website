@@ -35,7 +35,7 @@ import PAGEDATA from '@data/layout.json'
 			{Astro.url.pathname !== '/' && (<a class="px-4" href="/">
 				<span class="border-foreground border-x-2 border-b-2 text-foreground py-1 px-4 md:px-8 font-extrabold text-base uppercase block transition-all ease-out hover:scale-y-110 origin-top">HOME</span></a>
 			)}
-			<nav class="w-full flex justify-end px-4">
+			<div role="menu" class="w-full flex justify-end px-4">
 				<ul class="flex flex-row gap-1">
 					<li class="border-foreground border-x-2 border-b-2 bg-foreground fill-background p-1 transition-all ease-out hover:scale-y-110 origin-top flex m-0 has-[:active]:active:bg-accent has-[:active]:active:border-accent">
 						<button onclick="toggleReadabilityImprovement()" title="Rendi il testo più leggibile">
@@ -59,7 +59,7 @@ import PAGEDATA from '@data/layout.json'
 						</span>
 					</li>
 				</ul>
-			</nav>
+			</div>
 		</header>
 		<slot />
 		<footer class="mt-12">
@@ -87,7 +87,7 @@ import PAGEDATA from '@data/layout.json'
 					<div class="w-100 checkerboard"></div>
 					<div class="w-100 checkerboard rotate-180"></div>
 				</div>
-				<div class="bg-accent text-accent-dark uppercase px-2 pt-4 pb-0.5 w-full flex flex-col md:flex-row gap-2 items-end">
+				<div class="bg-accent text-accent-dark uppercase px-2 pt-4 pb-0.5 w-full flex flex-col md:flex-row gap-2 md:items-end">
 					<p class="font-extrabold text-5xl">Niccolò Agnoletti</p>
 					<p class="p-1 text-xs">Copyright © 2024 &mdash; Privacy policy | Sitemap<br/>
 					   <strong>P.IVA 02487460517</strong> - "blazardsky.space" / "nicc-olo.com"

@@ -3,7 +3,7 @@
         "title": "Creative stuff",
         "subtitle": "digital <strong>ILLUSTRATIONS,<br /> GAMES, MAGAZINES.</strong>" ,
         "bodyClass": "bg-creative text-foreground",
-        "style": "background-position: max(-5vw, -20px) bottom; background-size: max(15vw, 150px); background-image: url('/assets/images/creativecat.png');"
+        "style": "background-position: max(-5vw, -20px) bottom; background-size: max(15vw, 130px); background-image: url('/assets/images/creativecat.png');"
     },
     "technical": {
         "title": "Technical stuff",
