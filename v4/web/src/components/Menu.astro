@@ -1,12 +1,52 @@
 ---
+import niccoloSvg from '@svg/niccolo.svg?raw';
 
-const englishLink = `https://nicc-olo-com.translate.goog/${Astro.url.pathname}?_x_tr_sl=it&_x_tr_tl=en&_x_tr_hl=it&_x_tr_pto=wapp&_x_tr_hist=true`
+import { isMenuOpen } from '@lib/store';
+
+const initialState = isMenuOpen.get()
+const baseUrl = Astro.url.host;
 
 ---
 
-<nav>
+<section role="dialog" aria-labelledby="menuTitle" class="z-20 absolute top-0 w-full min-h-screen p-12 overflow-y-auto bg-background text-foreground flex-col justify-center items-center transition-transform duration-300 delay-75" id="menu" style={initialState === false ? "display: none;" : undefined}>
+    <span id="menuTitle" class="sr-only">Menu aperto: link rapidi per contattarmi</span>
+    <Fragment set:html={niccoloSvg} />
+    <div class="flex flex-row md:-ml-8">
+        <div class="hidden md:block">
+            <span class="font-cursive -rotate-6 -ml-2 inline-block">Contattami</span>
+            <svg width="81" height="77" viewBox="0 0 81 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_313_5)">
+                <path d="M79.5877 72.0624C80.0599 71.776 80.2106 71.161 79.9243 70.6888L75.258 62.993C74.9716 62.5207 74.3567 62.37 73.8844 62.6564C73.4121 62.9427 73.2614 63.5577 73.5478 64.0299L77.6956 70.8707L70.8549 75.0185C70.3826 75.3048 70.2319 75.9198 70.5183 76.392C70.8046 76.8643 71.4196 77.015 71.8918 76.7287L79.5877 72.0624ZM3.66146 0.901695C-0.863915 8.76835 -2.31715 21.7221 7.58788 35.1531C17.455 48.5329 38.5237 62.3006 78.8312 72.1785L79.3072 70.236C39.1937 60.4056 18.661 46.7984 9.1975 33.9661C-0.228131 21.185 1.25868 9.08947 5.39508 1.89898L3.66146 0.901695Z" fill="black"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_313_5">
+                <rect width="81" height="77" fill="white"/>
+                </clipPath>
+                </defs>
+            </svg>
+        </div>
+    <a href="mailto:ciao@nicc-olo.com" class="uppercase p-4 border-2 border-foreground my-8 text-xl md:text-5xl font-bold hover:bg-foreground focus:border-accent hover:text-background transition-colors ease-out">ciao@nicc-olo.com</a>
+    </div>
+    <nav>
+        <ul class="flex flex-row gap-4">
+            <li class="m-0"><a href={`${baseUrl}/projects`}>Projects</a></li>
+            <li class="m-0"><a href={`${baseUrl}/skills`}>Skills</a></li>
+            <li class="m-0"><a href="https://blazardsky.space" target="_blank" rel="noopener me" hreflang="en">Gallery</a> &UpperRightArrow;</li>
+        </ul>
+    </nav>
+</section>
 
-    <ul>
-        <li></li>
-    </ul>
-</nav>
+<script>
+    import { isMenuOpen } from '../lib/store.ts';
+  
+    const menu = document.getElementById('menu')!;
+    isMenuOpen.subscribe(open => {
+      if (open) {
+        menu.style.display = 'flex';
+        menu.style.transform = 'translateY(0%)';
+      } else {
+        menu.style.display = 'none';
+        menu.style.transform = 'translateY(-100%)';
+      }
+    })
+  </script>

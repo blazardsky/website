@@ -1,5 +1,5 @@
 ---
-import type { string } from 'astro/zod';
+import { cn } from '@lib/utils';
 
 interface Props {
 	title: string;
@@ -33,12 +33,11 @@ const { href, title, type, src, alt = '' } = Astro.props;
   alt={alt}
   height="384"
   width="384"
-  class={`
-  ${type === 'creative' 
-    ? 'right-5 md:right-20' 
-    : 'left-5 md:left-20'
-  } absolute top-0 md:top-5 w-auto h-60 lg:h-96 group-hover:scale-125 transition-transform ease-out will-change-transform pointer-events-none z-10
-  `}
+  class={cn(
+    type === 'creative' && 'right-5 md:right-20',
+    type === 'technical' && 'left-5 md:left-20',
+    "absolute top-0 md:top-5 w-auto h-60 lg:h-96 group-hover:scale-125 transition-transform ease-out will-change-transform pointer-events-none z-10"
+  )}
 />
 </li>
 

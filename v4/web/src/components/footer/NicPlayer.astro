@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 
 function getRandomElement(array: any[]) {
 	return array[Math.floor(Math.random() * array.length)]
@@ -49,11 +50,8 @@ const options = {
 
 ---
 
-
-
-
 <div id="nicplayer" class="relative group my-12 mx-auto w-fit rounded-full hover:animate-spin transition-all after:block after:w-5 after:h-5 after:top-16 after:left-16 after:rounded-full after:absolute after:bg-transparent hover:after:bg-background after:transition-transform after:will-change-transform after:duration-100 after:origin-center" title="In onda: Bach - Prelude and Fugue in A minor, BWV 894">
-	<img src="/assets/images/foto-nic-tonda.png" alt="Una mia foto vera :)" height="148" width="148" class="bg-black rounded-full border-black group-hover:border-4" />
+	<Image loading="lazy"  src="/assets/images/foto-nic-tonda.png" alt="Una mia foto vera :)" height="148" width="148" class="bg-black rounded-full border-black group-hover:border-4" />
 	<audio preload="none">
 		<source src="/assets/audio/Bach_BWV894-EoGz2GOtpCk.mp3" type="audio/mpeg">
 	</audio> 

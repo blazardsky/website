@@ -5,14 +5,22 @@ import react from "@astrojs/react";
 import partytown from "@astrojs/partytown";
 import tailwind from "@astrojs/tailwind";
 
+import icon from "astro-icon";
+
 // https://astro.build/config
 export default defineConfig({
   integrations: [
-  // sanity(), 
+    // sanity(), 
     react(), 
     partytown(), 
-    tailwind()
+    tailwind(), 
+    icon({
+      iconDir: "src/svg",
+    })
   ],
+  image: {
+    domains: ["fmzwhatqbs.microcms.io", "cdn.sanity.io"],
+  }
   // adapter: vercel({
   //   webAnalytics: {
   //     enabled: true,

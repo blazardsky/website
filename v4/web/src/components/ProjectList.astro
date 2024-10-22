@@ -1,0 +1,31 @@
+---
+interface Props {
+    key: string
+	data: {
+        titolo: string
+        descrizione: string
+        status: string
+        link: string
+    }[]
+}
+import { Icon } from 'astro-icon/components'
+
+const { key, data } = Astro.props;
+---
+
+<h2 class="mt-12 text-3xl">{key}</h2>
+<ul class="mt-2 ml-4 list-disc">
+{
+    data.map(({titolo, descrizione, status, link})=> (
+        <li class="my-6">
+            <p class="text-xl">
+            {link != '' ? <a href={link || '#'} rel="noopener" target="_blank"><b>{titolo}</b></a><Icon class="inline" name="arrowupright" /> : <b>{titolo}</b>
+            } {
+                status != '' && <span class="ml-2 text-xs p-1 border border-foreground rounded-md uppercase">{status}</span>
+            }
+            </p>
+            <p class="mt-2 font-cursive">({descrizione})</p> 
+        </li>
+    ))
+}
+</ul>

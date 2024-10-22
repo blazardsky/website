@@ -1,0 +1,28 @@
+---
+import Layout from '@layouts/Layout.astro';
+import PAGEDATA from '@data/skills.json';
+
+/**
+ * TODO: implementare ricerca skills / filtri (fuse.js?)
+ */
+
+---
+
+<Layout title="Niccolò Agnoletti - Skills">
+	<main class="mx-auto p-4 max-w-3xl">
+        <h1 class="my-20 uppercase font-extrabold text-6xl"> Le mie competenze :) </h1>
+        <div class="grid gap-8">
+            {PAGEDATA.map(field => (
+                <section>
+                    <h2 class="uppercase font-extrabold text-2xl px-2 rounded-md w-fit mb-2" style={{
+                        backgroundColor: `rgb(${field.meta.bg})`,
+                        color: `rgb(${field.meta.color})`
+                    }}>{field.type}</h2>
+                    <ul class="flex flex-row gap-2 flex-wrap">
+                        {field.skills.map(skill => <li class="border rounded-md p-2 border-foreground font-cursive m-0">{skill}</li>)}
+                    </ul>
+                </section>
+            ))}
+        </div>
+    </main>
+</Layout>

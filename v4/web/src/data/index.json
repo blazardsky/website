@@ -24,5 +24,17 @@
             "body": "È bravo, anzi bravissimo. Garantisco io!",
             "img": "/assets/images/testimonials/mamma.png"
         }
+    ],
+    "selectedWorks" : [
+        {
+            "image": "https://cdn.sanity.io/images/zlcfxbew/production/ce0075a86c4d8ef2ad156114c1657bf0bf76d527-1240x1754.png?w=2000&fit=max&auto=format&dpr=2",
+            "thumbnail": "https://cdn.sanity.io/images/zlcfxbew/production/ce0075a86c4d8ef2ad156114c1657bf0bf76d527-1240x1754.png?w=50&fit=max&auto=format&dpr=2&blur=10",
+            "link": "/portfolio/creative/283d80fjdur-pentolino-dell-oste"
+        },
+        {
+            "image": "https://cdn.sanity.io/images/zlcfxbew/production/ce0075a86c4d8ef2ad156114c1657bf0bf76d527-1240x1754.png?w=2000&fit=max&auto=format&dpr=2",
+            "thumbnail": "https://cdn.sanity.io/images/zlcfxbew/production/ce0075a86c4d8ef2ad156114c1657bf0bf76d527-1240x1754.png?w=50&fit=max&auto=format&dpr=2&blur=10",
+            "link": "/portfolio/creative/283d80fjdur-pentolino-dell-oste"
+        }
     ]
 }

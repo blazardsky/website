@@ -1,17 +1,17 @@
 ---
-import type { string } from "astro/zod";
+import { Icon } from 'astro-icon/components'
 
 interface Props {
   title: string;
   body: string;
-  src: string;
+  icon: string;
 }
 
-const { title, body, src } = Astro.props;
+const { title, body, icon } = Astro.props;
 ---
 
 <li class="card list-none p-1 inline-block flex-1">
-    <img src={`data:image/svg+xml,${src}`} class="p-1 mx-auto max-w-full" height="100" width="84"/>
+    <Icon name={icon} class="p-1 mx-auto max-w-full" />
     <h3 class="uppercase font-extralight text-center text-2xl">
         {title}
     </h3>

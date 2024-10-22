@@ -11,13 +11,15 @@ const { images } = Astro.props;
   <p class="border border-foreground rounded-md text-center mt-8 w-fit mx-auto py-1 px-4 text-sm md:hidden">Scorri <b>{images.length-1}</b> immagin{images.length === 2 ? 'e' : 'i'} &Rarr;</p>
 )}
 
-<section role="group" id="gallery" aria-label="galleria di immagini legate al progetto" class="w-full p-2 md:p-4 mx-auto snap-proximity snap-always snap-x flex flex-row flex-nowrap overflow-x-scroll md:block md:columns-2 md:mt-24">
+<ul role="group" id="gallery" aria-label="galleria di immagini legate al progetto" class="w-full p-2 md:p-4 mx-auto snap-proximity snap-always snap-x flex flex-row flex-nowrap overflow-x-scroll md:block md:columns-2 md:mt-24">
   { images.map((image, index) => 
-    <button onclick={`lightbox_open(); lightbox_setImage(${index})`} class="snap-center m-1 md:my-4 md:first:mt-12 md:mx-0 block min-w-fit">
-      <Image class="object-contain w-full" loading="lazy" src={image.url} height={image.height} width={image.width} alt="" style={`aspect-ratio: ${image.width}/${image.height}`} data-index={index} />
-  </button> 
+    <li class="snap-center m-1 md:my-4 md:first:mt-12 md:mx-0 block min-w-fit">
+      <button onclick={`lightbox_open(); lightbox_setImage(${index})`} >
+        <Image class="object-contain w-full" loading="lazy" src={image.url} height={image.height} width={image.width} alt="" style={`aspect-ratio: ${image.width}/${image.height}`} data-index={index} />
+    </button> 
+  </li>
   )}
-</section>
+</ul>
 
 <div role="dialog" aria-modal="false" class="hidden fixed z-50 top-0 left-0 w-screen h-screen items-center justify-center p-4 bg-foreground/90" id="lightbox" data-gallery={JSON.stringify(images)} data-currentid="0">
     <button autofocus class="bg-background focus:bg-accent p-2 fixed top-5 right-5 font-sans text-lg font-light text-foreground leading-none" onclick="lightbox_close()" aria-label="chiudi popup galleria">X</button>
