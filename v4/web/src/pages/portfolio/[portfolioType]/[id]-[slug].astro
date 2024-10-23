@@ -22,6 +22,8 @@ const { portfolioType, id } = Astro.params;
 const document = await getDocumentDetail<Work>('works', id as string);
 const DATA = PAGEDATA[portfolioType as Portfolio];
 
+const BASEURL = Astro.url.origin;
+
 ---
 
 <Layout title={`Progetto ${document.title} [${portfolioType} portfolio]`} bodyClass={DATA.bodyClass}>
@@ -31,7 +33,7 @@ const DATA = PAGEDATA[portfolioType as Portfolio];
             <h1 slot="p" class="leading-none text-4xl">
                 {document.title.split(' ').map((word) => <span class="odd:font-bold last:font-bold"> {word} </span>)}
             </h1>
-            <a class="mt-4 px-4 block w-fit mx-auto" href={`${Astro.url.origin}/portfolio/${portfolioType}/`}>
+            <a class="mt-4 px-4 block w-fit mx-auto" href={`${BASEURL}/portfolio/${portfolioType}/`}>
                 <span class="text-foreground py-1 px-8 font-extrabold text-base uppercase block transition-all ease-out hover:scale-y-110 origin-top">&larr; torna al portfolio</span>
             </a>
         </div>
