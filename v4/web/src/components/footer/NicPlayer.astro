@@ -35,26 +35,28 @@ const options = {
 	}
 };
 
-// try {
-// 	// faccio la richiesta
-// 	const response = await fetch(url, options);
-// 	const result = await response.json();
+try {
+	// faccio la richiesta
+	const response = await fetch(url, options);
+	const result = await response.json();
 
-// 	if (response.ok) {
-// 		music_data = result.tracks[0];
-// 	}
+	if (response.ok) {
+		music_data = result.tracks[0];
+	}
 
-// } catch (error) {
-// 	console.error(error);
-// }
+} catch (error) {
+	console.error(error);
+}
 
 ---
-
-<div id="nicplayer" class="relative group my-12 mx-auto w-fit rounded-full hover:animate-spin transition-all after:block after:w-5 after:h-5 after:top-16 after:left-16 after:rounded-full after:absolute after:bg-transparent hover:after:bg-background after:transition-transform after:will-change-transform after:duration-100 after:origin-center" title="In onda: Bach - Prelude and Fugue in A minor, BWV 894">
-	<Image loading="lazy"  src="/assets/images/foto-nic-tonda.png" alt="Una mia foto vera :)" height="148" width="148" class="bg-black rounded-full border-black group-hover:border-4" />
-	<audio preload="none">
-		<source src="/assets/audio/Bach_BWV894-EoGz2GOtpCk.mp3" type="audio/mpeg">
-	</audio> 
+<div class="overflow-y-clip">
+	<span id="player-trigger" aria-hidden="true"></span>
+	<div id="nicplayer" class="relative group my-12 mx-auto w-fit rounded-full transition-all after:block after:w-5 after:h-5 after:top-16 after:left-16 after:rounded-full after:absolute after:bg-transparent hover:after:bg-background after:transition-transform after:will-change-transform after:duration-100 after:origin-center" title="In onda: Bach - Prelude and Fugue in A minor, BWV 894">
+		<Image loading="lazy"  src="/assets/images/foto-nic-tonda.png" alt="Una mia foto vera :)" height="148" width="148" class="bg-black rounded-full border-black group-hover:border-4 hover:animate-spin" />
+		<audio preload="none">
+			<source src="/assets/audio/Bach_BWV894-EoGz2GOtpCk.mp3" type="audio/mpeg">
+		</audio> 
+	</div>
 </div>
 
 
@@ -70,6 +72,27 @@ const options = {
 </style>
 
 
+<script>
+	import { gsap } from "gsap";
+	import { ScrollTrigger } from "gsap/ScrollTrigger";
+	gsap.registerPlugin(ScrollTrigger) ;
+
+		
+	gsap.fromTo('#nicplayer', {
+		y: 1000,
+		scale: 0.9,
+		rotate: 720,
+	}, {
+		y: 0,
+		scale: 1,
+		rotate: 0,
+		delay: 0.2,
+		duration: 1,
+		ease: 'bounce.out',
+		scrollTrigger: '#player-trigger',
+	});
+	
+</script>
 
 <script define:vars={{music_data}}>
 

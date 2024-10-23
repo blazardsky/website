@@ -20,13 +20,13 @@ import clip02 from '@svg/PortfolioClip_02.svg?raw';
 // English link traduzione google
 const englishLink = `https://nicc-olo-com.translate.goog${Astro.url.pathname}?_x_tr_sl=it&_x_tr_tl=en&_x_tr_hl=it&_x_tr_pto=wapp&_x_tr_hist=true`
 
-import PAGEDATA from '@data/layout.json'
+import SOCIALS from '@data/socials.json'
 import Menu from "@components/Menu.astro";
 
 ---
 
 <!doctype html>
-<html lang={PAGEDATA.languanges[0].code}>
+<html lang="it">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="description" content="Astro description" />
@@ -75,7 +75,7 @@ import Menu from "@components/Menu.astro";
 						
 				<ul class="flex flex-row gap-6 mx-auto w-fit p-2 mt-8">
 					{
-						PAGEDATA.socials.map(({name, link, img}) => (
+						SOCIALS.map(({name, link, img}) => (
 							<li class="mix-blend-multiply">
 								<a href={link} rel="me noopener" target="_blank" class="hover:animate-pulse focus:animate-pulse">
 									<Image loading="lazy" src={img} alt={name} height="48" width="48" />
@@ -93,7 +93,7 @@ import Menu from "@components/Menu.astro";
 				</div>
 				<div class="bg-accent text-accent-dark uppercase px-2 pt-4 pb-0.5 w-full flex flex-col md:flex-row gap-2 md:items-end">
 					<p class="font-extrabold text-5xl">Niccolò Agnoletti</p>
-					<p class="p-1 text-xs">Copyright © 2024 &mdash; Privacy policy | Sitemap<br/>
+					<p class="p-1 text-xs">Copyright © 2024 &mdash; Privacy policy | (⚠️ Work In Progress ⚠️)<br/>
 					   <strong>P.IVA 02487460517</strong> - "blazardsky.space" / "nicc-olo.com"
 					</p>
 					<p class="flex-grow md:text-right">
@@ -110,6 +110,8 @@ import Menu from "@components/Menu.astro";
 		<Fragment set:html={clip02} />
 	</body>
 </html>
+
+
 
 <style>
 	.checkerboard-wrapper {

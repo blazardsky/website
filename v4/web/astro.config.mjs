@@ -4,7 +4,6 @@ import react from "@astrojs/react";
 //import vercel from '@astrojs/vercel/static';
 import partytown from "@astrojs/partytown";
 import tailwind from "@astrojs/tailwind";
-
 import icon from "astro-icon";
 
 // https://astro.build/config

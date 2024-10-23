@@ -13,7 +13,7 @@
             "by": "Lorenzo C.",
             "role": "Esperto di marketing",
             "link": "https://www.kipoproduzioni.it",
-            "body": "Lavoro con Nic da qualche anno, abbiamo anche uno studio insieme – è senza dubbi il mio socio preferito. È molto bravo anche se dovrebbe farmi lavorare invece di chiedermi di fare queste recensioni...",
+            "body": "Lavoro con Nic da qualche anno, abbiamo anche uno studio insieme – è senza dubbi il mio socio preferito. È molto bravo anche se dovrebbe lasciarmi lavorare invece di chiedermi di fare queste recensioni...",
             "img": "/assets/images/testimonials/lorenzoc.jpg"
         },
         {
@@ -23,18 +23,6 @@
             "link": "",
             "body": "È bravo, anzi bravissimo. Garantisco io!",
             "img": "/assets/images/testimonials/mamma.png"
-        }
-    ],
-    "selectedWorks" : [
-        {
-            "image": "https://cdn.sanity.io/images/zlcfxbew/production/ce0075a86c4d8ef2ad156114c1657bf0bf76d527-1240x1754.png?w=2000&fit=max&auto=format&dpr=2",
-            "thumbnail": "https://cdn.sanity.io/images/zlcfxbew/production/ce0075a86c4d8ef2ad156114c1657bf0bf76d527-1240x1754.png?w=50&fit=max&auto=format&dpr=2&blur=10",
-            "link": "/portfolio/creative/283d80fjdur-pentolino-dell-oste"
-        },
-        {
-            "image": "https://cdn.sanity.io/images/zlcfxbew/production/ce0075a86c4d8ef2ad156114c1657bf0bf76d527-1240x1754.png?w=2000&fit=max&auto=format&dpr=2",
-            "thumbnail": "https://cdn.sanity.io/images/zlcfxbew/production/ce0075a86c4d8ef2ad156114c1657bf0bf76d527-1240x1754.png?w=50&fit=max&auto=format&dpr=2&blur=10",
-            "link": "/portfolio/creative/283d80fjdur-pentolino-dell-oste"
         }
     ]
 }

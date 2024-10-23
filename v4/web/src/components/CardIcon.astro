@@ -1,5 +1,6 @@
 ---
-import { Icon } from 'astro-icon/components'
+
+import { Icon } from 'astro-icon/components';
 
 interface Props {
   title: string;
@@ -19,6 +20,7 @@ const { title, body, icon } = Astro.props;
         {body}
     </p>
 </li>
+
 <style>
   .card {
     background-image: none;
@@ -41,5 +43,9 @@ const { title, body, icon } = Astro.props;
   }
   .link-card:is(:hover, :focus-within) h2 {
     color: rgb(var(--accent-light));
+  }
+
+  [data-icon] {
+      font-size: 5rem;
   }
 </style>

@@ -8,37 +8,5 @@
             "code":"en", 
             "name": "english"
         }
-    ],
-    "socials": [
-        {
-            "id": 1,
-            "name": "Bēhance",
-            "link": "https://www.behance.net/blazardsky",
-            "img": "/assets/images/social/behance.png"
-        },
-        {
-            "id": 2,
-            "name": "LinkedIn",
-            "link": "https://www.linkedin.com/in/nic-agnoletti/",
-            "img": "/assets/images/social/linkedin.png"
-        },
-        {
-            "id": 3,
-            "name": "Medium",
-            "link": "https://medium.com/@nic.agnoletti",
-            "img": "/assets/images/social/medium.png"
-        },
-        {
-            "id": 4,
-            "name": "GitHub",
-            "link": "https://github.com/blazardsky",
-            "img": "/assets/images/social/github.png"
-        },
-        {
-            "id": 5,
-            "name": "Instagram",
-            "link": "https://www.instagram.com/blazardsky",
-            "img": "/assets/images/social/instagram.png"
-        }
     ]
 }
