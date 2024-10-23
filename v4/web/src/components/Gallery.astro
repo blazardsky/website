@@ -12,7 +12,7 @@ const { images } = Astro.props;
 )}
 
 <ul role="group" id="gallery" aria-label="galleria di immagini legate al progetto" class="w-full p-2 md:p-4 mx-auto snap-proximity snap-always snap-x flex flex-row flex-nowrap overflow-x-scroll md:block md:columns-2 md:mt-24">
-  { images.map((image, index) => 
+  {images.map((image, index) => 
     <li class="snap-center m-1 md:my-4 md:first:mt-12 md:mx-0 block min-w-fit">
       <button onclick={`lightbox_open(); lightbox_setImage(${index})`} >
         <Image class="object-contain w-full" loading="lazy" src={image.url} height={image.height} width={image.width} alt="" style={`aspect-ratio: ${image.width}/${image.height}`} data-index={index} />

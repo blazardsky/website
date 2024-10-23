@@ -31,7 +31,7 @@ export type Work = MicroCMSDocument & {
     client: string;
     description: string;
     image: MicroImage;
-    gallery?: MicroImage[];
+    gallery: MicroImage[];
     link?: string;
     notes?: string
 };
