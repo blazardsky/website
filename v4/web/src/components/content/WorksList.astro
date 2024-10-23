@@ -1,6 +1,8 @@
 ---
 import {getDocuments, type Work} from '@lib/microcms.ts';
-import {type Portfolio} from '@lib/types.ts'
+import {type Portfolio} from '@lib/types'
+import {cn} from '@lib/utils'
+import { Image } from 'astro:assets';
 
 interface Props {
   portfolio: Portfolio
@@ -15,18 +17,50 @@ const works = await getDocuments<WorkPreview>('works',{ fields: ["id","slug", "d
 
 ---
 
-<ul class="md:grid md:grid-flow-row md:grid-cols-2 xl:grid-cols-3 -mt-10 mx-4">
+<ul class="grid grid-flow-row -mt-10 mx-4">
 {
-  works.contents.map(work => (
-    <li class={`first-of-type:col-span-3 w-full flex flex-col first-of-type:md:flex-row items-center gap-4 p-4 md:p-6 lg:p-8 first-of-type:lg:p-12 clip01 ${portfolio === 'creative' ? 'bg-creative-light' : 'bg-technical-light' }`}>
-      <img src={work.image.url} height={work.image.height} width={work.image.width} alt="" class="transition-transform will-change-transform duration-200 ease-in w-full max-w-4xl" style="clip-path: polygon(0 0,6.85% .75%,13.72% .1%,38.51% .13%,49.5% .37%,56.73% 2.55%,63.31% .16%,95% 1.45%,99.01% .75%,99.75% 4.99%,98.2% 24.43%,99.33% 57.85%,99.01% 99.75%,95.76% 96.51%,95.62% 99.75%,83.54% 94.52%,82.62% 99.99%,59.36% 98.17%,48.81% 99.75%,38.15% 99.75%,38.15% 96.51%,33.17% 99.75%,29.68% 98.96%,.23% 99.5%,.2% 98.17%,0 84.29%,.23% 53.62%,2.92% 45.64%,0 43.39%,2% 31.15%,0 25.19%,4.33% 23.74%,.46% 22.94%,2% 15.46%,.17% 8.98%)" />
-      <div class="w-full md:max-w-md mx-auto peer px-4 py-8">
-          <p class="font-sm uppercase font-medium">{new Date(work.start_date).getFullYear()}/{work.client}</p>
+  works.contents.map((work, index) => (
+    <li class={cn(
+      "clip01 md:w-full flex flex-col gap-4 p-4 md:p-6 lg:p-8",
+      index === 0 && 'md:col-span-2 xl:col-span-3 md:flex-row lg:p-12 md:items-center',
+      // (index % 2 !== 0) && 'n__last',
+      portfolio === 'creative' && 'bg-creative-light',
+      portfolio === 'technical' && 'bg-technical-light',
+    )}>
+      <Image src={work.image.url} height={work.image.height/2} width={work.image.width/2} alt="Immagine di anteprima del lavoro" class="w-full max-w-4xl" style="clip-path: polygon(0 0,6.85% .75%,13.72% .1%,38.51% .13%,49.5% .37%,56.73% 2.55%,63.31% .16%,95% 1.45%,99.01% .75%,99.75% 4.99%,98.2% 24.43%,99.33% 57.85%,99.01% 99.75%,95.76% 96.51%,95.62% 99.75%,83.54% 94.52%,82.62% 99.99%,59.36% 98.17%,48.81% 99.75%,38.15% 99.75%,38.15% 96.51%,33.17% 99.75%,29.68% 98.96%,.23% 99.5%,.2% 98.17%,0 84.29%,.23% 53.62%,2.92% 45.64%,0 43.39%,2% 31.15%,0 25.19%,4.33% 23.74%,.46% 22.94%,2% 15.46%,.17% 8.98%); aspect-ratio: 16/12;" />
+
+      <div class="w-full h-full flex flex-col md:max-w-md mx-auto p-4">
+          <p class={cn(
+            "font-sm uppercase font-medium",
+            index === 0 && "mt-auto"
+          )}>{new Date(work.start_date).getFullYear()}/{work.client}</p>
           <h3 class="uppercase font-extrabold text-4xl leading-none">{work.title}</h3>
           <p class="mt-2 font-cursive">{work.description.slice(0,120)}&hellip;</p>
-          <a href={`${Astro.url.origin}/portfolio/${portfolio}/${work.id}-${work.slug}`} class={`${portfolio === 'creative' ? 'bg-creative text-orange-950 active:bg-creative-dark ' : 'bg-technical text-purple-950 active:bg-technical-dark' } px-8 py-2 text-center mt-8 block uppercase font-bold tracking-wide hover:shadow-sm hover:scale-105 active:scale-95 transition-all ease-in-out duration-300`}>Approfondisci progetto</a>
+          <a href={`${Astro.url.origin}/portfolio/${portfolio}/${work.id}-${work.slug}`} class={cn(
+            portfolio === 'creative' && 'bg-creative text-orange-950 active:bg-creative-dark',
+            portfolio === 'technical' && 'bg-technical text-purple-950 active:bg-technical-dark',
+            "px-8 py-2 text-center mt-6 mb-0 block uppercase font-bold tracking-wide hover:shadow-sm hover:scale-105 active:scale-95 transition-all ease-in-out duration-300",
+            index === 0 && "mb-auto"
+          )}>Approfondisci progetto</a>
       </div>
     </li>
   ))
 }
 </ul>
+
+<!-- <style>
+@media (min-width: 768px) {
+  .n__last:last-of-type {
+    flex-direction: row;
+    padding: 3rem;
+    align-items: center;
+    grid-column: span 2 / span 2;
+  }
+}
+
+@media (min-width: 1280px) {
+  .n__last:last-of-type {
+      grid-column: span 1 / span 1;
+  }
+}
+</style> -->
