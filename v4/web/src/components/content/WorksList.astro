@@ -21,7 +21,7 @@ const works = await getDocuments<WorkPreview>('works',{ fields: ["id","slug", "d
 {
   works.contents.map((work, index) => (
     <li class={cn(
-      "clip01 flex gap-4 p-4 md:p-6 lg:p-8",
+      "clip01 flex flex-col gap-4 p-4 md:p-6 lg:p-8",
       //"md:w-full flex-col ",
       //index === 0 && 'md:col-span-2 xl:col-span-3',
       'md:flex-row lg:p-12 md:items-center',
