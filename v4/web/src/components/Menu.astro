@@ -4,7 +4,6 @@ import niccoloSvg from '@svg/niccolo.svg?raw';
 import { isMenuOpen } from '@lib/store';
 
 const initialState = isMenuOpen.get()
-const baseUrl = Astro.url.host;
 
 ---
 
@@ -29,8 +28,8 @@ const baseUrl = Astro.url.host;
     </div>
     <nav>
         <ul class="flex flex-row gap-4">
-            <li class="m-0"><a href={`${baseUrl}/projects`}>Projects</a></li>
-            <li class="m-0"><a href={`${baseUrl}/skills`}>Skills</a></li>
+            <li class="m-0"><a href={`/projects`}>Projects</a></li>
+            <li class="m-0"><a href={`/skills`}>Skills</a></li>
             <li class="m-0"><a href="https://blazardsky.space" target="_blank" rel="noopener me" hreflang="en">Gallery</a> &UpperRightArrow;</li>
         </ul>
     </nav>
