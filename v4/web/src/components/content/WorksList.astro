@@ -36,7 +36,7 @@ const works = await getDocuments<WorkPreview>('works',{ fields: ["id","slug", "d
           )}>{new Date(work.start_date).getFullYear()}/{work.client}</p>
           <h3 class="uppercase font-extrabold text-4xl leading-none">{work.title}</h3>
           <p class="mt-2 font-cursive">{work.description.slice(0,120)}&hellip;</p>
-          <a href={`${Astro.url.origin}/portfolio/${portfolio}/${work.id}-${work.slug}`} class={cn(
+          <a href={`https://nicc-olo.com/portfolio/${portfolio}/${work.id}-${work.slug}`} class={cn(
             portfolio === 'creative' && 'bg-creative text-orange-950 active:bg-creative-dark',
             portfolio === 'technical' && 'bg-technical text-purple-950 active:bg-technical-dark',
             "px-8 py-2 text-center mt-6 mb-0 block uppercase font-bold tracking-wide hover:shadow-sm hover:scale-105 active:scale-95 transition-all ease-in-out duration-300",
