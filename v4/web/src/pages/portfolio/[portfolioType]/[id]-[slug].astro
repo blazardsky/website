@@ -22,9 +22,7 @@ const { portfolioType, id } = Astro.params;
 const document = await getDocumentDetail<Work>('works', id as string);
 const DATA = PAGEDATA[portfolioType as Portfolio];
 
-const BASEURL = Astro.url.origin;
-
-console.log(document.gallery)
+const BASEURL = 'https://nicc-olo.com';
 
 ---
 
