@@ -70,9 +70,7 @@ import Menu from "@components/Menu.astro";
 		<Menu />
 		<slot />
 		<footer class="mt-12 pt-32">
-
 				<Fragment set:html={niccoloSvg} />
-						
 				<ul class="flex flex-row gap-6 mx-auto w-fit p-2 mt-8">
 					{
 						SOCIALS.map(({name, link, img}) => (
@@ -93,14 +91,14 @@ import Menu from "@components/Menu.astro";
 				</div>
 				<div class="bg-accent text-accent-dark uppercase px-2 pt-4 pb-0.5 w-full flex flex-col md:flex-row gap-2 md:items-end">
 					<p class="font-extrabold text-5xl">Niccolò Agnoletti</p>
-					<p class="p-1 text-xs">Copyright © 2024 &mdash; Privacy policy | (⚠️ Work In Progress ⚠️)<br/>
-					   <strong>P.IVA 02487460517</strong> - "blazardsky.space" / "nicc-olo.com"
+					<p class="p-1 text-xs">Copyright © 2024 &mdash; <a href="/provacy-policy">Privacy policy</a><br/>
+					   <strong>IT02487460517</strong> - <a href="https://blazardsky.space" rel="me">blazardsky.space</a> // <span class="text-nowrap">nicc-olo.com</span>
 					</p>
 					<p class="flex-grow md:text-right">
 						<a href="/credits">
 							Credits
-						</a><br/>
-						❤️‍🔥 San Giovanni V.no - <span class="font-extrabold">Italia</span>
+						</a><br class="hidden md:block"/>
+						San Giovanni V.no - <span class="font-extrabold">❤️‍🔥  Italia</span>
 					</p>
 				</div> 
 		</footer>

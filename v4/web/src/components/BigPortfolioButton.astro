@@ -13,15 +13,14 @@ const { href, title, type, src, alt = '' } = Astro.props;
 
 ---
 
-<li class="list-none flex-grow sm:max-w-[50%] relative group">
+<li class="list-none flex-grow sm:w-[50%] relative group">
   <a href={href} class="w-full block group no-underline">
-    <div class={`${
-    type === 'creative' 
-    ? 'bg-creative group-focus:bg-creative-dark items-start' 
-    : 'bg-technical group-focus:bg-technical-dark items-end'
-    } w-full h-full min-h-[20rem] md:min-h-[28rem] flex flex-col justify-end clip02`}>
-      <div class="p-8">
-        <h2 class="font-cursive text-center font-bold ">{title}</h2>
+    <div class={cn(
+    type === 'creative' && 'bg-creative group-focus:bg-creative-dark items-start',
+    type === 'technical' && 'bg-technical group-focus:bg-technical-dark items-end',
+    "w-full h-full min-h-[20rem] xs:min-h-[24rem] xl:min-h-[26rem] flex flex-col justify-end clip02")}>
+      <div class="p-8 sm:p-4 md:p-8 text-center w-full md:w-fit">
+        <h2 class="font-cursive font-bold ">{title}</h2>
         <p class="text-xl md:text-2xl !leading-none">
             <slot />
         </p>
@@ -34,9 +33,9 @@ const { href, title, type, src, alt = '' } = Astro.props;
   height="384"
   width="384"
   class={cn(
-    type === 'creative' && 'right-5 md:right-20',
-    type === 'technical' && 'left-5 md:left-20',
-    "absolute top-0 md:top-5 w-auto h-40 sm:h-60 lg:h-96 group-hover:scale-125 transition-transform ease-out will-change-transform pointer-events-none z-10"
+    type === 'creative' && 'w-[30vw] sm:max-w-[25vw] md:max-w-[20vw] left-[25vw] sm:left-auto sm:right-10',
+    type === 'technical' && 'w-[50vw] sm:max-w-[40vw] md:max-w-[30vw] left-[20vw] sm:left-5',
+    "absolute top-5 h-auto group-hover:scale-125 transition-transform ease-out will-change-transform pointer-events-none z-10"
   )}
 />
 </li>

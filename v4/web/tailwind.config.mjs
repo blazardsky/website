@@ -15,6 +15,9 @@ export default {
 				'midground': '#F7F6DF',
 				'foreground': '#18181B',
 				'background': '#EEE2CB',
+			},
+			screens: {
+				'xs': '490px'
 			}
 		},
 	},
