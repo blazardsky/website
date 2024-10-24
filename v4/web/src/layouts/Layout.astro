@@ -3,12 +3,10 @@ interface Props {
 	title: string;
 	bodyClass?: string;
 }
-
 const { title, bodyClass } = Astro.props;
+
 import {cn} from "@lib/utils"
-
 import { Image } from 'astro:assets';
-
 import NicPlayer from '@components/footer/NicPlayer.astro';
 import AccessibilityIcon from '@svg/accessibility.svg?raw'
 import niccoloSvg from '@svg/niccolo.svg?raw'
@@ -22,7 +20,6 @@ const englishLink = `https://nicc--olo-com.translate.goog${Astro.url.pathname}?_
 
 import SOCIALS from '@data/socials.json'
 import Menu from "@components/Menu.astro";
-
 ---
 
 <!doctype html>
@@ -70,37 +67,37 @@ import Menu from "@components/Menu.astro";
 		<Menu />
 		<slot />
 		<footer class="mt-12 pt-32">
-				<Fragment set:html={niccoloSvg} />
-				<ul class="flex flex-row gap-6 mx-auto w-fit p-2 mt-8">
-					{
-						SOCIALS.map(({name, link, img}) => (
-							<li class="mix-blend-multiply">
-								<a href={link} rel="me noopener" target="_blank" class="hover:animate-pulse focus:animate-pulse">
-									<Image loading="lazy" src={img} alt={name} height="48" width="48" />
-								</a>
-							</li>
-						)
-					)}
-				</ul>
+			<Fragment set:html={niccoloSvg} />
+			<ul class="flex flex-row gap-6 mx-auto w-fit p-2 mt-8">
+				{
+					SOCIALS.map(({name, link, img}) => (
+						<li class="mix-blend-multiply">
+							<a href={link} rel="me noopener" target="_blank" class="hover:animate-pulse focus:animate-pulse">
+								<Image loading="lazy" src={img} alt={name} height="48" width="48" />
+							</a>
+						</li>
+					)
+				)}
+			</ul>
 				
-				<NicPlayer />
+			<NicPlayer />
 
-				<div class="w-full checkerboard-wrapper">
-					<div class="w-full checkerboard"></div>
-					<div class="w-full checkerboard rotate-180"></div>
-				</div>
-				<div class="bg-accent text-accent-dark uppercase px-2 pt-4 pb-0.5 w-full flex flex-col md:flex-row gap-2 md:items-end">
-					<p class="font-extrabold text-5xl">Niccolò Agnoletti</p>
-					<p class="p-1 text-xs">Copyright © 2024 &mdash; <a href="/provacy-policy">Privacy policy</a><br/>
-					   <strong>IT02487460517</strong> - <a href="https://blazardsky.space" rel="me">blazardsky.space</a> // <span class="text-nowrap">nicc-olo.com</span>
-					</p>
-					<p class="flex-grow md:text-right">
-						<a href="/credits">
-							Credits
-						</a><br class="hidden md:block"/>
-						San Giovanni V.no - <span class="font-extrabold">❤️‍🔥  Italia</span>
-					</p>
-				</div> 
+			<div class="w-full checkerboard-wrapper">
+				<div class="w-full checkerboard"></div>
+				<div class="w-full checkerboard rotate-180"></div>
+			</div>
+			<div class="bg-accent text-accent-dark uppercase px-2 pt-4 pb-0.5 w-full flex flex-col md:flex-row gap-2 md:items-end">
+				<p class="font-extrabold text-5xl">Niccolò Agnoletti</p>
+				<p class="p-1 text-xs">Copyright © 2024 &mdash; <a href="/provacy-policy">Privacy policy</a><br/>
+					<strong>IT02487460517</strong> - <a href="https://blazardsky.space" rel="me">blazardsky.space</a> // <span class="text-nowrap">nicc-olo.com</span>
+				</p>
+				<p class="flex-grow md:text-right">
+					<a href="/credits">
+						Credits
+					</a><br class="hidden md:block"/>
+					San Giovanni V.no - <span class="font-extrabold">❤️‍🔥  Italia</span>
+				</p>
+			</div> 
 		</footer>
 
 		<!-- clip path svg per portfolio e blocchi vari -->
@@ -163,6 +160,9 @@ import Menu from "@components/Menu.astro";
 		clip-path: url(#containerClip02);
 	}
 
+	.clip03 {
+		clip-path: polygon(5% 0%, 21% 1%, 43% 0%, 70% 1%, 84% 0%, 99% 2%, 100% 15%, 100% 24%, 99% 94%, 100% 100%, 89% 99%, 60% 100%, 27% 98%, 1% 99%, 0 91%, 1% 83%, 1% 57%, 0 29%, 1% 4%);
+	}
 
 	b {
     font-weight: 600;

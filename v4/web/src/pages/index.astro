@@ -8,6 +8,10 @@ import PAGEDATA from '@data/index.json';
 import SOCIALS from '@data/socials.json';
 import { Image } from 'astro:assets';
 import ImmersiveWorks from '@components/ImmersiveWorks.astro';
+import FollowTheLine from '@components/FollowTheLine.astro';
+
+import clipHome from '@svg/PortfolioClip_home.svg?raw';
+import friendsGarden from '@svg/friends_garden.svg?raw';
 
 ---
 
@@ -37,7 +41,7 @@ import ImmersiveWorks from '@components/ImmersiveWorks.astro';
 	<section class="bg-accent px-4 py-24 mt-2 clip01">
 		<h2 class="text-center font-extrabold uppercase text-3xl md:text-6xl text-pretty">O forse ti stai chiedendo<br>“scusa ma, chi c** sei?”</h2>
 		<div class="flex flex-col sm:flex-row mt-8 md:gap-12 mx-auto max-w-5xl items-center">
-			<img src="/assets/images/weirdnic.png" height="200px" width="200px" alt="Una brutta illustrazione di me" class="w-auto max-w-md h-auto max-h-[60vh] md:max-h-[auto]" />
+			<img src="/assets/images/weirdnic.png" height="200px" width="200px" alt="Una brutta illustrazione di me" class="w-auto max-w-md h-auto max-h-[60vh] md:max-h-[auto]"/>
 			<div class="drop-shadow-md">
 				<div class="bg-white/50 p-8 sm:p-12 w-fit h-fit text-xl font-cursive rotate-1" style="clip-path: polygon(18% 1%, 36% 0, 49% 2%, 55% 1%, 88% 2%, 99% 1%, 100% 42%, 99% 55%, 100% 76%, 99% 88%, 99% 98%, 82% 100%, 36% 99%, 17% 100%, 4% 98%, 1% 91%, 1% 55%, 0% 44%, 1% 29%, 1% 2%);">
 					<p> Mi presento: </p>
@@ -52,13 +56,22 @@ import ImmersiveWorks from '@components/ImmersiveWorks.astro';
 		</div>			
 	</section>
 	<PortfolioButtons />
-	<section class="bg-foreground text-background px-4 py-24 clip01">
+	<section class="bg-foreground text-background px-4 py-24 clipHome">
 		<h2 class="text-center font-light uppercase text-3xl md:text-6xl mt-24">
 			No? va beh, allora<br/> continua a scrollare 
 		</h2>
-		<h3 class="text-center font-extrabold uppercase text-2xl md:text-5xl mt-44">
+		<FollowTheLine color="#F7F6DF77" />
+		<h3 class="text-center font-extrabold uppercase text-2xl md:text-5xl mt-12">
 			1. Perché lavorare con me :)
 		</h3>
+		<ul class="my-12 flex flex-col md:flex-row max-w-6xl mx-auto gap-4">
+			<CardIcon title="Problem solving" body="Sono abituato a lavorare in autonomia e con più gradi di responsabilità; trovando soluzioni ai problemi individuati." icon="problemsolving" class="bg-technical text-foreground clip03 p-2" />			
+			<CardIcon title="Multidisciplinarietà" body="Ho conoscenze trasversali per cui posso fare “da ponte” tra il team di sviluppo e il team di design ed essere versatile in progetti più piccoli."  icon="multidisciplinare" class="bg-accent text-foreground clip03 p-2" />
+			<CardIcon title="Esperienza mista" body="Ho lavorato sia in agenzia che direttamente con clienti e su varie tipologie di progetto." icon="esperienzamista" class="bg-creative text-foreground clip03 p-2" />
+		</ul>
+		<h4 class="text-center font-extrabold uppercase text-xl md:text-4xl mt-52">
+			Dicono di me
+		</h4>
 		<ul class="group list-none p-2">
 			{
 				PAGEDATA.testimonials.map(testimonial => (
@@ -73,20 +86,11 @@ import ImmersiveWorks from '@components/ImmersiveWorks.astro';
 				))
 			}
 		</ul>
-		<h4 class="text-center font-extrabold uppercase text-xl md:text-4xl mt-36">
-			I miei punti di forza
-		</h4>
-		<ul class="my-12 flex flex-col md:flex-row max-w-5xl mx-auto gap-8">
-			<CardIcon title="Problem solving" body="Sono abituato a lavorare in autonomia e con più gradi di responsabilità, trovando soluzioni creative ai problemi posti" icon="problemsolving" />			
-			<CardIcon title="Multidisciplinarietà" body="Ho conoscenze trasversali per cui posso fare “da ponte” tra il team di sviluppo e il team di design ed essere versatile in progetti più piccoli"  icon="multidisciplinare" />
-			<CardIcon title="Esperienza mista" body="Ho lavorato sia con agenzie e aziende che direttamente con clienti e per varie tipologie di progetto." icon="esperienzamista" />
-		</ul>
 	</section>
-	<section class="px-4 py-24">
+	<section class="px-4 my-24">
 		<h3 class="text-center font-extrabold uppercase text-2xl md:text-5xl mt-36">
 			2. Le mie competenze
 		</h3>
-
 		<div class="mx-auto max-w-4xl my-12">
 			<span class="bg-technical rounded-md p-1 uppercase font-bold">TECH</span>
 			<h4 class="mt-1 uppercase text-3xl">
@@ -94,7 +98,9 @@ import ImmersiveWorks from '@components/ImmersiveWorks.astro';
 			</h4>
 			<p class="font-cursive text-lg text-balance">Conosco bene CSS, SASS, JS, REACT, HTML, oltre a Python e PHP. I miei framework preferiti in ambito js sono NextJS e Astro. Ho una certa esperienza con WordPress e Shopify (sia in ambito “code” che “no-code”) ma solitamente uso Sanity come CMS headless per creare soluzioni totalmente custom. <wbr />Cerco di creare sempre esperienze web, adattabili, responsive accessibili (a11y/wcag) e ben strutturate (semantic html).</p>
 		</div>
-
+		<div class="hidden md:block w-full max-w-5xl mx-auto" aria-label="Illustrazione dei vari strumenti che uso per lavorare con le gambe e una faccia per renderli buffi">
+			<Fragment set:html={friendsGarden} />
+		</div>
 		<div class="mx-auto max-w-4xl my-12">
 			<span class="bg-creative rounded-md p-1 uppercase font-bold">Creative</span>
 			<h4 class="mt-1 uppercase text-3xl">
@@ -109,8 +115,8 @@ import ImmersiveWorks from '@components/ImmersiveWorks.astro';
 			</p>
 			<Image src="/assets/images/fiorellini.png" alt="due fiorellini con una faccia sorridente" height="190" width="190" />
 		</div>
-		<Image class="hidden md:block w-full max-w-5xl mx-auto" src="/assets/images/friends_garden.png" alt="Illustrazione dei vari strumenti che uso per lavorare con le gambe e una faccia per renderli buffi" height="777" width="1234" />
 	</section>
+
 	<!--section class="px-4 py-36">
 		<h3 class="text-center font-extrabold uppercase text-5xl">
 			3. PS: Ho anche delle certificazioni
@@ -137,16 +143,7 @@ import ImmersiveWorks from '@components/ImmersiveWorks.astro';
 	
 	<section>
 
-		<svg width="63" height="607" viewBox="0 0 63 607" fill="none" xmlns="http://www.w3.org/2000/svg" class="mx-auto">
-			<g clip-path="url(#clip0_168_60)">
-			<path class="n__path" d="M55.2601 10.8709C48.1327 10.5543 27.6833 4.83461 22.6046 12.8661C15.974 23.352 46.2078 29.3093 48.9102 30.1423C58.4587 33.0856 67.4054 36.8907 54.7898 45.3054C51.8011 47.299 15.2807 71.7295 26.012 76.2431C30.9691 78.3281 38.5593 76.9237 42.9034 80.4389C50.606 86.6719 35.4798 119.716 33.5747 126.539C30.4856 137.604 28.1467 143.234 35.6361 148.682C39.9273 151.804 31.4203 160.638 30.0056 163.679C24.5828 175.334 55.8257 176.181 45.9527 187.645C39.9597 194.603 32.855 199.288 30.6523 210.222C27.7854 224.455 40.1686 234.928 44.8365 245.566C51.741 261.302 38.1758 259.747 31.1193 265.286C20.1712 273.878 39.9539 309.901 42.7572 319.209C47.154 333.806 45.8972 333.663 39.7063 343.192C36.7612 347.725 39.7402 353.677 40.9577 358.236C42.2652 363.13 42.4845 366.25 39.7511 370.5C39.1367 371.455 35.2944 375.036 35.6992 376.78C36.5296 380.357 41.452 384.602 43.1761 387.277C48.1482 394.99 48.8484 399.768 43.9774 407.985C40.8707 413.227 36.5718 418.319 35.022 424.815C33.9081 429.485 36.0345 433.282 36.703 437.639C37.5581 443.211 35.465 447.837 33.5207 452.658C30.6692 459.728 31.5705 459.806 35.5435 465.238C47.9151 482.153 45.7311 498.696 43.5098 519.859C40.7422 546.226 40.6646 572.994 37.4676 599.269" stroke="#222222" stroke-width="3" stroke-linecap="round"/>
-			</g>
-			<defs>
-			<clipPath id="clip0_168_60">
-			<rect width="63" height="607" fill="white"/>
-			</clipPath>
-			</defs>
-		</svg>
+		<FollowTheLine />
 			
 		<h5 class="uppercase font-extrabold text-center">Oppure vuoi contattarmi?</h5>
 		<img src="/assets/images/scimmietta.png" alt="una specie di scimmietta attaccata a una freccia che indica verso il basso" class="mx-auto max-w-64" height="254" width="375" />
@@ -160,27 +157,22 @@ import ImmersiveWorks from '@components/ImmersiveWorks.astro';
 		</div>
 		<p class="font-cursive max-w-sm mx-auto px-8 text-pretty text-center">In particolare per progetti editoriali o se rappresenti uno studio creativo in cerca di collaboratori. <wbr/>Se invece hai bisogno di esperti di marketing e comunicazione, <a href="mailto:info@kipoproduzioni.it" class="underline">scrivi a Kìpo</a></p>
 	</section>
+	
+	<Fragment set:html={clipHome} />
 </Layout>
 
+
 <style>
-  .n__path {
-	stroke-dasharray: 810;
-	stroke-dashoffset: 815;
-	animation: dash 6s linear;
-  }
+	.clipHome {
+		clip-path: url(#containerClipHome);
+	}
 </style>
+
 
 <script>
 	import { gsap } from "gsap";
 	import { ScrollTrigger } from "gsap/ScrollTrigger";
 	gsap.registerPlugin(ScrollTrigger) ;
-	
-	gsap.to('.n__path', {
-		strokeDashoffset: 0,
-		duration: 3,
-		ease: 'ease',
-		scrollTrigger: '.n__path',
-	});
 
 	gsap.fromTo('#cta_lavoro', {
 		scale: 0.8,
