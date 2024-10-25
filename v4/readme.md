@@ -1,7 +1,7 @@
 # 2024 Update
 
 ### TODO:
-[ ] Galleria scorrimento gestures (swipe)
+[x] Galleria scorrimento gestures (swipe)
 [ ] Migliorare accessibilità
 [ ] Animazione illustrazione giardino
 [ ] Animazione testimonials
