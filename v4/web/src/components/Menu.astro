@@ -1,6 +1,6 @@
 ---
+import PortfolioButtons from './PortfolioButtons.astro';
 import niccoloSvg from '@svg/niccolo.svg?raw';
-
 import { isMenuOpen } from '@lib/store';
 
 const initialState = isMenuOpen.get()
@@ -24,15 +24,18 @@ const initialState = isMenuOpen.get()
                 </defs>
             </svg>
         </div>
-    <a href="mailto:ciao@nicc-olo.com" class="uppercase p-4 border-2 border-foreground my-8 text-xl md:text-5xl font-bold hover:bg-foreground focus:border-accent hover:text-background transition-colors ease-out">ciao@nicc-olo.com</a>
+    <a href="mailto:ciao@nicc-olo.com" class="uppercase p-4 border-2 border-foreground my-8 text-xl md:text-5xl font-bold hover:bg-foreground focus:border-accent hover:text-background transition-colors ease-out text-center">ciao@<span class="text-nowrap">nicc-olo</span>.com</a>
     </div>
     <nav>
         <ul class="flex flex-row gap-4">
-            <li class="m-0"><a href={`/projects`}>Projects</a></li>
+            <li class="m-0"><a href={`/projects`}>(other) Projects</a></li>
             <li class="m-0"><a href={`/skills`}>Skills</a></li>
             <li class="m-0"><a href="https://blazardsky.space" target="_blank" rel="noopener me" hreflang="en">Gallery</a> &UpperRightArrow;</li>
         </ul>
     </nav>
+    <div class="mb-0 md:-mr-16 w-fit">
+      <PortfolioButtons remove_title={true}/>
+    </div>
 </section>
 
 <script>

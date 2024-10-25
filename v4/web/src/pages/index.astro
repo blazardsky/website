@@ -72,9 +72,9 @@ import friendsGarden from '@svg/friends_garden.svg?raw';
 		<h4 class="text-center font-extrabold uppercase text-xl md:text-4xl mt-52">
 			Dicono di me
 		</h4>
-		<ul class="group list-none p-2">
+		<ul class="group list-none p-2 w-fit mx-auto">
 			{
-				PAGEDATA.testimonials.map(testimonial => (
+				PAGEDATA.testimonials.map((testimonial, index) => (
 				  <Testimonal 
 				  	id={testimonial.id}
 					name={testimonial.by} 
@@ -82,6 +82,7 @@ import friendsGarden from '@svg/friends_garden.svg?raw';
 					body={testimonial.body}
 					src={testimonial.img}
 					link={testimonial.link}
+					index={index}
 				  />
 				))
 			}

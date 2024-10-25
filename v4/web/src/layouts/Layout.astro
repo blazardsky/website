@@ -84,7 +84,7 @@ import Menu from "@components/Menu.astro";
 
 			<div class="w-full checkerboard-wrapper">
 				<div class="w-full checkerboard"></div>
-				<div class="w-full checkerboard rotate-180"></div>
+				<div class="w-[calc(100%+var(--size))] -ml-[var(--size)] checkerboard"></div>
 			</div>
 			<div class="bg-accent text-accent-dark uppercase px-2 pt-4 pb-0.5 w-full flex flex-col md:flex-row gap-2 md:items-end">
 				<p class="font-extrabold text-5xl">Niccolò Agnoletti</p>
@@ -110,10 +110,11 @@ import Menu from "@components/Menu.astro";
 
 <style>
 	.checkerboard-wrapper {
-		--size: .75em;
+		--size: .75rem;
 		--color-1: black;
 		--color-2: white;
 		height: calc(var(--size) * 2);
+		overflow: clip;
 	}
 	.checkerboard {
 		height: var(--size);

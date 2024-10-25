@@ -14,7 +14,7 @@ const { images } = Astro.props;
 <ul role="group" id="gallery" aria-label="galleria di immagini legate al progetto" class="w-full p-2 md:p-4 mx-auto snap-proximity snap-always snap-x flex flex-row flex-nowrap overflow-x-scroll md:block md:columns-2 md:mt-24">
   {images.map((image, index) => 
     <li class="snap-center m-1 md:my-4 md:first:mt-12 md:mx-0 block min-w-fit">
-      <button onclick={`lightbox_open(); lightbox_setImage(${index})`} >
+      <button class="open-lightbox" data-imageid={index} >
         <Image class="object-contain w-full" loading="lazy" src={image.url} height={image.height} width={image.width} alt="" style={`aspect-ratio: ${image.width}/${image.height}`} data-index={index} />
     </button> 
   </li>
@@ -22,25 +22,30 @@ const { images } = Astro.props;
 </ul>
 
 <div role="dialog" aria-modal="false" class="hidden fixed z-50 top-0 left-0 w-screen h-screen items-center justify-center p-4 bg-foreground/90" id="lightbox" data-gallery={JSON.stringify(images)} data-currentid="0">
-    <button autofocus class="bg-background focus:bg-accent p-2 fixed top-5 right-5 font-sans text-lg font-light text-foreground leading-none" onclick="lightbox_close()" aria-label="chiudi popup galleria">X</button>
+    <button autofocus class="bg-background focus:bg-accent p-2 fixed top-5 right-5 font-sans text-lg font-bold text-foreground leading-none z-40 min-w-12 min-h-12" id="close-lightbox" aria-label="chiudi galleria">&times;</button>
     <Image id="lightbox-image" src={images[0].url} alt="" class="mx-auto max-h-[80vh] w-full object-contain" height={images[0].height} width={images[0].width} />
-    <div role="navigation" class="fixed bottom-5 md:bottom-auto flex justify-between items-center w-full mb-5 gap-5 p-5">
-        <button class="font-sans text-lg font-bold bg-foreground p-2 text-white" onclick="lightbox_prevSlide()" aria-label="immagine precedente">
-            &larr;
+    <div role="navigation" class="fixed flex justify-between items-center w-full mb-5 gap-5 p-5 h-full">
+        <button class="font-sans text-lg font-bold h-full min-w-12" id="prev-lightbox" aria-label="immagine precedente">
+            <span class="bg-foreground/50 p-2 text-white">&larr;</span>
         </button>
-        <button class="font-sans text-lg font-bold bg-foreground p-2 text-white" onclick="lightbox_nextSlide()" aria-label="prossima immagine">
-            &rarr;
+        <button class="font-sans text-lg font-bold h-full min-w-12" id="next-lightbox" aria-label="prossima immagine">
+          <span class="bg-foreground/50 p-2 text-white">&rarr;</span>
         </button>
     </div>
 </div>
 
 
-<script is:inline>
-  const lightbox = document.querySelector('#lightbox');
-  const lightbox_image = document.querySelector('#lightbox-image');
-  const IMAGES = JSON.parse(lightbox.dataset.gallery);
+<script>
+  import gsap from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger"; //mi serve Observer ma è incluso in ScrollTrigger;
+  gsap.registerPlugin(ScrollTrigger); 
 
-  document.addEventListener('keydown', (e) => {
+  const lightbox: HTMLElement = document.querySelector('#lightbox')!;
+  const lightbox_image: HTMLImageElement = document.querySelector('#lightbox-image')!;
+  const IMAGES = JSON.parse(lightbox.dataset.gallery!);
+
+
+  function lightbox_listener(e: KeyboardEvent) {
     if (e.code === 'Escape') {
       lightbox_close()
     }
@@ -50,21 +55,23 @@ const { images } = Astro.props;
     if (e.code === 'ArrowRight'){
       lightbox_nextSlide()
     }
-  });
+  }
 
   function lightbox_close() {
     lightbox.classList.remove('flex');
     lightbox.classList.add('hidden');
     lightbox.ariaModal="false";
+    document.removeEventListener('keydown', lightbox_listener);
   }
 
   function lightbox_open() {
     lightbox.classList.add('flex');
     lightbox.classList.remove('hidden');
     lightbox.ariaModal="true";
+    document.addEventListener('keydown', lightbox_listener);
   }
 
-  function lightbox_setImage(index) {
+  function lightbox_setImage(index: number) {
     lightbox.dataset.currentid=index.toString();
     lightbox_image.src = IMAGES[index].url;
     lightbox_image.height = IMAGES[index].height;
@@ -72,23 +79,51 @@ const { images } = Astro.props;
   }
 
   function lightbox_nextSlide(){
-    let index = parseInt(lightbox.dataset.currentid) + 1;
+    let index = parseInt(lightbox.dataset.currentid!) + 1;
     if (index >= IMAGES.length){
       index = 0
     }
-    console.log(index)
     lightbox_setImage(index)
   }
 
   function lightbox_prevSlide(){
-    let index = parseInt(lightbox.dataset.currentid) -1;
-    if (index <= 0){
+    let index = parseInt(lightbox.dataset.currentid!) -1;
+    if (index < 0){
       index = IMAGES.length-1;
     }
-    console.log(index)
     lightbox_setImage(index)
   }
+
+  let isDragging = false; // per evitare di scorrere più immagine con uno swipe
+
+  ScrollTrigger.observe({
+    target: '#lightbox',
+    type: "touch",
+    dragMinimum: 20,
+    preventDefault: true,
+    onDragStart: () => isDragging = true,
+    onLeft: () => { isDragging && lightbox_prevSlide(); isDragging = false; },
+    onRight: () => { isDragging && lightbox_nextSlide(); isDragging = false; },
+
+  });
+  
+  // aggiungo onClick a tutte le immagini
+  document.querySelectorAll('button.open-lightbox').forEach(
+    btn => (btn instanceof HTMLElement) && btn.addEventListener('click', ()=> {
+      console.log(btn)
+      const index = parseInt(btn.dataset.imageid!);
+      lightbox_open(); 
+      lightbox_setImage(index);
+    })
+  );
+
+  // aggiungo onClick a tutti i tasti del lightbox
+  lightbox.querySelector('#close-lightbox')?.addEventListener('click', lightbox_close);
+  lightbox.querySelector('#next-lightbox')?.addEventListener('click', lightbox_nextSlide);
+  lightbox.querySelector('#prev-lightbox')?.addEventListener('click', lightbox_prevSlide);
+
 </script>
+
 
 <!-- <script>
   import * as focusTrap from 'focus-trap'; 

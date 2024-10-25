@@ -18,7 +18,7 @@ const { href, title, type, src, alt = '' } = Astro.props;
     <div class={cn(
     type === 'creative' && 'bg-creative group-focus:bg-creative-dark items-start',
     type === 'technical' && 'bg-technical group-focus:bg-technical-dark items-end',
-    "w-full h-full min-h-[20rem] xs:min-h-[24rem] xl:min-h-[26rem] flex flex-col justify-end clip02")}>
+    "w-full h-full min-h-[20rem] xs:min-h-[24rem] lg:min-h-[26rem] xl:min-h-[50vh] flex flex-col justify-end clip02")}>
       <div class="p-8 sm:p-4 md:p-8 text-center w-full md:w-fit">
         <h2 class="font-cursive font-bold ">{title}</h2>
         <p class="text-xl md:text-2xl !leading-none">
