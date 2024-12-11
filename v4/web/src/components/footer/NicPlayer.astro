@@ -1,4 +1,5 @@
 ---
+import { cn } from "@lib/utils";
 import { Image } from "astro:assets";
 
 function getRandomElement(array: any[]) {
@@ -48,14 +49,16 @@ try {
 	console.error(error);
 }
 
+const { bodyClass } = Astro.props;
+
 ---
 <div class="overflow-y-clip">
 	<span id="player-trigger" aria-hidden="true"></span>
-	<div id="nicplayer" class="relative group my-12 mx-auto w-fit rounded-full transition-all after:block after:w-5 after:h-5 after:top-16 after:left-16 after:rounded-full after:absolute after:bg-transparent hover:after:bg-background after:transition-transform after:will-change-transform after:duration-100 after:origin-center" title="In onda: Bach - Prelude and Fugue in A minor, BWV 894">
-		<Image loading="lazy"  src="/assets/images/foto-nic-tonda.png" alt="Una mia foto vera :)" height="148" width="148" class="bg-black rounded-full border-black group-hover:border-4 hover:animate-spin" />
+	<div id="nicplayer" class={cn("bg-background", bodyClass, "relative group my-12 mx-auto w-fit rounded-full transition-all after:block after:w-8 after:h-8 after:top-[3.6rem] after:left-[3.6rem] after:rounded-full after:absolute after:bg-transparent hover:after:bg-inherit hover:after:border-black hover:after:border-8 after:transition-transform after:will-change-transform after:duration-100 after:origin-center")} title="In onda: Bach - Prelude and Fugue in A minor, BWV 894">
+		<Image loading="lazy" src="/assets/images/foto-nic-tonda.png" alt="Una mia foto vera :)" height="148" width="148" class="bg-black rounded-full border-black group-hover:border-4 hover:animate-spin" />
 		<audio preload="none">
 			<source src="/assets/audio/Bach_BWV894-EoGz2GOtpCk.mp3" type="audio/mpeg">
-		</audio> 
+		</audio>
 	</div>
 </div>
 
@@ -94,7 +97,7 @@ try {
 	
 </script>
 
-<script define:vars={{music_data}}>
+<script is:inline define:vars={{music_data}}>
 
 	/** {wrapper: HTMLElement, image: HTMLImageElement, audio: HTMLAudioElement} */
 	const nicplayer = {
@@ -111,7 +114,7 @@ try {
 	}
 
 	// se l'utente va sopra con il mouse cambio immagine con quella dell'album (se l'ho presa da spotify) e avvio l'audio
-	nicplayer.wrapper.addEventListener('mouseover', (event)=>{
+	nicplayer.wrapper.addEventListener('mouseover', ()=>{
 		nicplayer.image.src = music_data ? music_data.album.images[1].url : '/assets/images/bach.jpg'; // cambio l'immagine con quella dell'album spotify o con un quadro di bach per il fallback
 		nicplayer.audio.volume = 0.5; // dimezzo per non dare troppo fastidio
 		nicplayer.audio.currentTime = 0; // riavvio ogni volta l'audio (durano tutti poco...)
@@ -119,7 +122,7 @@ try {
 	})
 	
 	// quando il mouse va via stoppo la musica e rimetto l'immagine originale
-	nicplayer.wrapper.addEventListener('mouseleave', (event)=>{
+	nicplayer.wrapper.addEventListener('mouseleave', ()=>{
 		nicplayer.image.src = original_image;
 		nicplayer.audio.pause();
 	})
