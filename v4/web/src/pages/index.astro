@@ -69,9 +69,9 @@ import friendsGarden from '@svg/friends_garden.svg?raw';
 			<CardIcon title="Multidisciplinarietà" body="Ho conoscenze trasversali per cui posso fare “da ponte” tra il team di sviluppo e il team di design ed essere versatile in progetti più piccoli."  icon="multidisciplinare" class="bg-accent text-foreground clip03 p-2" />
 			<CardIcon title="Esperienza mista" body="Ho lavorato sia in agenzia che direttamente con clienti e su varie tipologie di progetto." icon="esperienzamista" class="bg-creative text-foreground clip03 p-2" />
 		</ul>
-		<h4 class="text-center font-extrabold uppercase text-xl md:text-4xl mt-52">
+		<h3 class="text-center font-extrabold uppercase text-xl md:text-4xl mt-52">
 			Dicono di me
-		</h4>
+		</h3>
 		<ul class="group list-none p-2 w-fit mx-auto">
 			{
 				PAGEDATA.testimonials.map((testimonial, index) => (
@@ -100,8 +100,8 @@ import friendsGarden from '@svg/friends_garden.svg?raw';
 			</h4>
 			<p class="font-cursive text-lg text-balance">Conosco bene CSS, SASS, JS, REACT, HTML, oltre a Python e PHP. I miei framework preferiti in ambito js sono NextJS e Astro. Ho una certa esperienza con WordPress e Shopify (sia in ambito “code” che “no-code”) ma solitamente uso Sanity come CMS headless per creare soluzioni totalmente custom. <wbr />Cerco di creare sempre esperienze web, adattabili, responsive accessibili (a11y/wcag) e ben strutturate (semantic html).</p>
 		</div>
-		<div class="hidden md:block w-full max-w-5xl mx-auto" aria-label="Illustrazione dei vari strumenti che uso per lavorare con le gambe e una faccia per renderli buffi">
-			<Fragment set:html={friendsGarden} />
+		<div class="hidden md:block w-full max-w-5xl mx-auto">
+			<Fragment aria-label="Illustrazione dei vari strumenti che uso per lavorare, con le gambe e una faccia per renderli buffi" set:html={friendsGarden} />
 		</div>
 		<div class="mx-auto max-w-4xl my-12">
 			<span class="bg-creative rounded-md p-1 uppercase font-bold">Creative</span>
@@ -151,7 +151,7 @@ import friendsGarden from '@svg/friends_garden.svg?raw';
 
 		<FollowTheLine />
 			
-		<h5 class="uppercase font-extrabold text-center">Oppure vuoi contattarmi?</h5>
+		<h3 class="uppercase font-extrabold text-center">Oppure vuoi contattarmi?</h3>
 		<img src="/assets/images/scimmietta.png" alt="una specie di scimmietta attaccata a una freccia che indica verso il basso" class="mx-auto max-w-64" height="254" width="375" />
 		<div class="mt-24 md:mt-64 mx-auto max-w-[94vw] md:max-w-3xl text-2xl md:text-5xl relative" id="cta_lavoro">
 			<p class="uppercase font-extrabold text-left p-8 md:px-12 md:pt-12 pb-20 mb-28 bg-midground -rotate-2 has-[a:hover]:rotate-2 will-change-transform transition-transform ease-out" style="clip-path: polygon(2% 1%, 0% 5%, 12% 2%, 18% 0%, 25% 1%, 32% 0%, 38% 2%, 51% 2%, 48% 0%, 59% 0%, 56% 1%, 69% 1%, 67% 0%, 80% 0%, 83% 1%, 87% 0%, 91% 2%, 94% 1%, 99% 0%, 100% 8%, 100% 14%, 99% 19%, 100% 24%, 99% 30%, 100% 36%, 100% 49%, 98% 47%, 100% 57%, 100% 64%, 99% 66%, 100% 71%, 98% 84%, 100% 87%, 100% 95%, 98% 100%, 80% 100%, 86% 99%, 69% 99%, 64% 100%, 55% 99%, 50% 100%, 39% 94%, 43% 100%, 36% 99%, 29% 100%, 24% 98%, 15% 100%, 9% 100%, 4% 100%, 1% 98%, 5% 90%, 1% 83%, 2% 69%, 0% 62%, 1% 44%, 0% 32%, 2% 23%, 0% 12%, 4% 12%, 0% 4%);">sono disponibile a lavorare da remoto in Europa e nel mondo: <a href="mailto:ciao@nicc-olo.com" class="underline">contattami</a></p>

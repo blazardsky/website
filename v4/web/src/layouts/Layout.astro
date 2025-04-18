@@ -21,6 +21,9 @@ const englishLink = `https://nicc--olo-com.translate.goog${Astro.url.pathname}?_
 
 import SOCIALS from '@data/socials.json'
 import Menu from "@components/Menu.astro";
+
+import { isMenuOpen } from '@lib/store';
+const menuIsOpen = isMenuOpen.get()
 ---
 
 <!doctype html>
@@ -39,17 +42,17 @@ import Menu from "@components/Menu.astro";
 			{Astro.url.pathname !== '/' && (<a class="px-4" href="/">
 				<span class="border-foreground border-b-2 border-x-2 text-foreground py-1 px-4 md:px-8 font-extrabold text-base uppercase block transition-all ease-out hover:scale-y-110 origin-top">HOME</span></a>
 			)}
-			<div role="menu" class="w-full flex justify-end px-4">
-				<ul class="flex flex-row gap-1">
+			<div class="w-full flex justify-end px-4">
+				<ul role="menu" class="flex flex-row gap-1">
 					<li class="border-foreground border-b-2 border-x-2 bg-foreground fill-background p-1 transition-all ease-out hover:scale-y-110 origin-top flex m-0 has-[:active]:active:bg-accent has-[:active]:active:border-accent">
-						<button onclick="toggleReadabilityImprovement()" title="Rendi il testo più leggibile">
+						<button role="menuitem" onclick="toggleReadabilityImprovement()" title="Rendi il testo più leggibile">
 							<span class="sr-only">Tasto accessibilità</span>
 							<Fragment set:html={AccessibilityIcon} />
 						</button>
 					</li>
 					<li class="border-foreground border-b-2 border-x-2 bg-foreground text-background p-1 font-extrabold text-base uppercase block transition-all ease-out hover:scale-y-110 origin-top m-0">
-						<a aria-label="Switch language" title="Read in english with Google" href={englishLink} target="_blank" class="no-underline" rel="noopener nofollow noreferrer">
-							EN
+						<a role="menuitem" aria-label="Switch language" title="Read in english with Google" href={englishLink} target="_blank" class="no-underline" rel="noopener nofollow noreferrer">
+							<abbr class="no-underline" title="ENGLISH">EN</abbr>
 						</a>
 					</li>
 					<!-- <li class="border-foreground border-b-2 border-x-2 bg-foreground fill-background p-1 flex m-0">
@@ -58,7 +61,7 @@ import Menu from "@components/Menu.astro";
 							</svg>							
 					</li> -->
 					<li class="border-foreground border-b-2 border-x-2 bg-foreground text-background p-1 font-extrabold text-base uppercase block transition-all ease-out hover:scale-y-110 origin-top m-0">
-						<button id="toggleMenu" aria-label="apre o chiude il menu" class="px-4 md:px-8 uppercase">
+						<button role="menuitem" id="toggleMenu" aria-label={menuIsOpen ? "apri il menu" : "chiudi il menu"} class="px-4 md:px-8 uppercase">
 							menu
 						</button>
 					</li>
@@ -89,14 +92,14 @@ import Menu from "@components/Menu.astro";
 			</div>
 			<div class="bg-accent text-accent-dark uppercase px-2 pt-4 pb-0.5 w-full flex flex-col md:flex-row gap-2 md:items-end">
 				<p class="font-extrabold text-5xl">Niccolò Agnoletti</p>
-				<p class="p-1 text-xs">Copyright © 2024 &mdash; <a href="/provacy-policy">Privacy policy</a><br/>
+				<p class="p-1 text-xs">Copyright © 2024-2025 &mdash; <a href="/provacy-policy">Privacy policy</a><br/>
 					<strong>IT02487460517</strong> - <a href="https://blazardsky.space" rel="me">blazardsky.space</a> // <span class="text-nowrap">nicc-olo.com</span>
 				</p>
 				<p class="flex-grow md:text-right">
 					<a href="/credits">
 						Credits
 					</a><br class="hidden md:block"/>
-					San Giovanni V.no - <span class="font-extrabold">❤️‍🔥  Italia</span>
+					📍 Padova 
 				</p>
 			</div> 
 		</footer>
@@ -188,7 +191,6 @@ import Menu from "@components/Menu.astro";
 	const menuBtn = document.getElementById('toggleMenu')!;
 
 	function toggleMenu() {
-		console.log(isMenuOpen.get());
 		const nextMenuState = !isMenuOpen.get();
 		menuBtn.innerHTML = nextMenuState ? 'Chiudi' : 'Menu';
 		isMenuOpen.set(nextMenuState);

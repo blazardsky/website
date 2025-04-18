@@ -15,9 +15,9 @@ const { title, body, icon, ...props } = Astro.props;
 
 <li class={cn("card list-none inline-block flex-1 text-balance")}>
     <Icon name={icon} class="p-1 mx-auto max-w-full min-w-24" />
-    <h3 class={cn(props.class, "uppercase font-bold text-center text-2xl my-2")}>
+    <h4 class={cn(props.class, "uppercase font-bold text-center text-2xl my-2")}>
         {title}
-    </h3>
+    </h4>
     <!-- <div class="mt-4 flex flex-row gap-2 p-2"> -->
       <p class="font-cursive text-center">
         {body}
