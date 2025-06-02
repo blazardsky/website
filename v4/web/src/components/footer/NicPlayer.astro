@@ -55,10 +55,11 @@ const { bodyClass } = Astro.props;
 <div class="overflow-y-clip">
 	<span id="player-trigger" aria-hidden="true"></span>
 	<div id="nicplayer" class={cn("bg-background", bodyClass, "relative group my-12 mx-auto w-fit rounded-full transition-all after:block after:w-8 after:h-8 after:top-[3.6rem] after:left-[3.6rem] after:rounded-full after:absolute after:bg-transparent hover:after:bg-inherit hover:after:border-black hover:after:border-8 after:transition-transform after:will-change-transform after:duration-100 after:origin-center")} title="In onda: Bach - Prelude and Fugue in A minor, BWV 894">
-		<Image loading="lazy" src="/assets/images/foto-nic-tonda.png" alt="Una mia foto vera :)" height="148" width="148" class="bg-black rounded-full border-black group-hover:border-4 hover:animate-spin" />
+		<Image loading="lazy" src="/assets/images/foto-nic-tonda.png" alt="Una mia foto vera :)" height="148" width="148" class="bg-black rounded-full border-black group-hover:border-4 group-hover:animate-spin relative" />
 		<audio preload="none">
 			<source src="/assets/audio/Bach_BWV894-EoGz2GOtpCk.mp3" type="audio/mpeg">
 		</audio>
+		<div id="vynil" aria-hidden="true"></div>
 	</div>
 </div>
 
@@ -69,6 +70,33 @@ const { bodyClass } = Astro.props;
 		transition-behaviour: allow-discrete;
 	}
 
+	#vynil {
+		display: none;
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border-radius: 9999px;
+		pointer-events: none;
+		z-index: 2;
+		--lines-color: rgba(0, 0, 0, 0.7);
+		background: 
+			radial-gradient(circle, transparent 0%, transparent 30%),
+			radial-gradient(circle, transparent 30%, rgba(0, 0, 0, 0.76) 30%, rgba(0, 0, 0, 0.86) 100%),
+			radial-gradient(circle, transparent 30%, var(--lines-color) 32%, transparent 32%),
+			radial-gradient(circle, transparent 40%, var(--lines-color) 42%, transparent 42%),
+			radial-gradient(circle, transparent 50%, var(--lines-color) 52%, transparent 52%),
+			radial-gradient(circle, transparent 60%, var(--lines-color) 62%, transparent 62%),
+			radial-gradient(circle, transparent 70%, var(--lines-color) 72%, transparent 72%);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+	}
+	#nicplayer:hover #vynil {
+		display: block;
+	}
 	#nicplayer audio {
 		display: none;
 	}
