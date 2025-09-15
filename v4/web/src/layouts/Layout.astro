@@ -23,11 +23,12 @@ import SOCIALS from '@data/socials.json'
 import Menu from "@components/Menu.astro";
 
 import { isMenuOpen } from '@lib/store';
+import CookieNotice from "@components/CookieNotice.astro";
 const menuIsOpen = isMenuOpen.get()
 ---
 
 <!doctype html>
-<html lang="it">
+<html lang="it" prefix="og: https://ogp.me/ns#">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="description" content={description? description : 'Portfolio - Niccolò Agnoletti: web developer + designer + digital illustrator.'} />
@@ -36,6 +37,16 @@ const menuIsOpen = isMenuOpen.get()
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<link href="https://api.fontshare.com/v2/css?f[]=clash-display@1&f[]=kalam@400&display=swap" rel="stylesheet">  
+		<meta name="author" content="Niccolò Agnoletti" />
+		<meta property="og:locale" content="it_IT" />
+		<meta property="og:title" content="Web Develiper, Designer and Digital Illustrator - Niccolò Agnoletti" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://www.nicc-olo.com" />
+		<meta property="og:image" content="https://www.nicc-olo.com/nicc-olo.com_social-share-thumbnail.jpg/" />
+		<meta property="og:image:type" content="image/jpeg" />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:image:alt" content="Un illustrazione di un omino giallo con una cresta lilla davanti al pc che indica le scritte Web Development, (handmande) digital illustrations, editorial design" />
 	</head>
 	<body class={cn("overscroll-y-contain bg-background text-foreground", bodyClass)}>
 		<header class="flex flex-row z-50 relative">
@@ -92,17 +103,19 @@ const menuIsOpen = isMenuOpen.get()
 			</div>
 			<div class="bg-accent text-accent-dark uppercase px-2 pt-4 pb-0.5 w-full flex flex-col md:flex-row gap-2 md:items-end">
 				<p class="font-extrabold text-5xl">Niccolò Agnoletti</p>
-				<p class="p-1 text-xs">Copyright © 2024-2025 &mdash; <a href="/privacy-policy">Privacy policy</a><br/>
+				<p class="p-1 text-xs">Copyright © 2024-2025 &mdash; <a href="/privacy-policy">Privacy policy</a> &mdash; <a href="/credits">
+						Credits
+					</a><br/>
 					<strong>IT02487460517</strong> - <a href="https://blazardsky.space" rel="me">blazardsky.space</a> // <span class="text-nowrap">nicc-olo.com</span>
 				</p>
 				<p class="flex-grow md:text-right">
-					<a href="/credits">
-						Credits
-					</a><br class="hidden md:block"/>
-					📍 Padova 
+					📍 Padova, Veneto <br>
+					📍 S. Giovanni Valdarno, Toscana 
 				</p>
 			</div> 
 		</footer>
+
+		<CookieNotice />
 
 		<!-- clip path svg per portfolio e blocchi vari -->
 		<Fragment set:html={clip01} />
@@ -137,9 +150,8 @@ const menuIsOpen = isMenuOpen.get()
       font-display: swap;
 	}
 
-
 	html {
-		font-family: 'Clash Display', system-ui, sans-serif;
+		font-family: 'Clash Display', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', 'Arial Black', Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue','Lucida Sans Unicode', system-ui, sans-serif;
 		line-height: 135%;
 	}
 	.font-cursive {
