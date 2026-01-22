@@ -1,4 +1,4 @@
-import { CategoryBoucingPoint } from "./";
+import { CategoryBoucingPoint } from ".";
 
 const SkillsBlock = ({skillsData}) => {
   const [title, b64, isPrimary, categories] = skillsData;
