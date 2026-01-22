@@ -3,19 +3,20 @@
         "type": "technical",
         "skills": [
             "HTML",
-            "CSS",
             "React",
             "NextJS",
             "Astro",
             "Typescript",
             "Javascript",
             "Python",
-            "Tailwind",
-            "Liquid",
             "PHP",
+            "Liquid",
+            "CSS",
+            "Tailwind",
             "SASS",
             "GROQ query",
-            "GraphQL"
+            "GraphQL",
+            "SQL"
         ],
         "meta": {
             "bg": "251 160 250",
@@ -72,7 +73,7 @@
             "photoshop",
             "illustrator",
             "indesign",
-            "affinity publisher",
+            "affinity",
             "da vinci resolve",
             "premiere pro"
         ],
@@ -86,7 +87,8 @@
         "skills": [
             "Stable Diffusion (comfyui / a111)",
             "Claude (API)",
-            "make.com"
+            "make.com",
+            "n8n"
         ],
         "meta": {
             "bg": "91 200 190",
@@ -98,8 +100,7 @@
         "skills": [
             "Inglese (C1 Cambridge)",
             "Italiano (Madrelingua)",
-            "Tedesco (B1)",
-            "Russo (A1/2)"
+            "Tedesco (B1)"
         ],
         "meta": {
             "bg": "101 220 170",
