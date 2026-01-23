@@ -9,6 +9,8 @@
       "@svg/*": ["src/svg/*"],
       "@data/*": ["src/data/*"],
       "@lib/*": ["src/lib/*"]
-    }
+    },
+    "allowImportingTsExtensions": true,
+    "allowSyntheticDefaultImports": true
   }
 }
