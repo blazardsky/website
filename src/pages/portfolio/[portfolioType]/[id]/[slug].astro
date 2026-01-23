@@ -7,7 +7,7 @@ import Gallery from '@components/Gallery.astro';
 import { Image } from 'astro:assets';
 
 export async function getStaticPaths() {
-  const response = await getDocuments('works', { fields: ["slug", "portfolio", "id"]  });
+  const response = await getDocuments('works', { fields: ["slug", "portfolio", "id"], limit: 100  }); // limita il numero di post massimo a 100 (attualmente ne ho 14. Se il limit è meno di quanti sono realmente i progetti mi crea dei progetti senza pagina dei dettagli, che va in 404)
   return response.contents.map((content: any) => ({
     params: {
       portfolioType: content.portfolio[0],
@@ -39,9 +39,12 @@ const DATA = PAGEDATA[portfolioType as Portfolio];
     <article class="-mt-10 mx-auto max-w-5xl flex flex-col md:flex-row gap-8">
         <main class="w-full">
             <Image src={document.image.url} loading="eager" alt={`Immagine principale per ${document.title}`} height={document.image?.height} width={document.image?.width} class="w-full" />
+            <h2 class="sr-only">Descrizione del progetto</h2>
             <p class="px-4 my-8 font-cursive text-pretty">{document.description}</p>
         </main>
         <aside class="w-fit min-w-72 max-w-full px-4">
+            <h2 class="sr-only">Dettagli del progetto</h2>
+            <h3 class="sr-only">Informazioni del progetto</h3>
             <ul role="complementary">
                 <li><b>Realizzato per:</b> {document.client}</li>
                 <li><b>Anno:</b> <time datetime={document.start_date}> {new Date(document.start_date).getFullYear()}</time></li>
@@ -58,6 +61,7 @@ const DATA = PAGEDATA[portfolioType as Portfolio];
             {
                 document.notes && (
                     <hr class="border-foreground my-4" />
+                    <h3 class="sr-only">Note sul progetto</h3>
                     <div id="notes" set:html={document.notes} />
                 )
             }
