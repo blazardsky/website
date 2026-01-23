@@ -43,12 +43,12 @@ export type Project = MicroCMSDocument & {
     image?: MicroImage
 };
 
-type Response<T> = {
-    totalCount: number;
-    offset: number;
-    limit: number;
-    contents: T[];
-};
+// type Response<T> = {
+//     totalCount: number;
+//     offset: number;
+//     limit: number;
+//     contents: T[];
+// };
 
 export const getDocuments = async <T>(
     endpoint: string,
