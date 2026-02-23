@@ -1,61 +1,70 @@
----
-
-// <button id="close-cookie-toast" class="absolute top-2 right-2 p-1 bg-background text-foreground border-foreground border-2 hover:bg-accent hover:border-accent transition-all ease-out" onclick="this.parentElement.style.display='none'" aria-label="Chiudi avviso cookie">&#x2715;</button>
-
----
-<aside class="cookie-toast bg-foreground text-background">
-	<p class="m-0 p-4 text-sm">🍪 Ciao! Questo sito utilizza solo cookie tecnici necessari al suo funzionamento. Continuando la navigazione accetti l'uso di questi cookie. <a href="/privacy-policy" class="underline">Maggiori informazioni</a>.</p>
-	<button class="mb-4 mx-4 float-right px-4 py-1 bg-background text-foreground border-foreground border-2 hover:bg-accent hover:border-accent transition-all ease-out" onclick="this.parentElement.style.display='none'">Ok, ho capito</button>
+<aside
+    id="cookie-banner"
+    data-hidden
+    class="cookie-toast bg-foreground text-background"
+>
+    <p class="m-0 p-4 text-sm">
+        🍪 Ciao! Questo sito utilizza solo cookie tecnici necessari al suo
+        funzionamento. Continuando la navigazione accetti l'uso di questi
+        cookie. <a href="/privacy-policy" class="underline"
+            >Maggiori informazioni</a
+        >.
+    </p>
+    <button
+        id="accept-cookie-btn"
+        class="mb-4 mx-4 float-right px-4 py-1 bg-background text-foreground border-foreground border-2 hover:bg-accent hover:border-accent transition-all ease-out"
+    >
+        Ok, ho capito
+    </button>
 </aside>
 
 <style>
-	.cookie-toast {
-		position: fixed;
-		bottom: 1rem;
-		left: 50%;
-		transform: translateX(-50%);
-		z-index: 1000;
-		border: 2px solid;
-		border-radius: 0.5rem;
-		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-		max-width: 90%;
-		width: auto;
-	}
-	@media (min-width: 640px) {
-		.cookie-toast {
-			max-width: 580px;
-		}
-	}
-	.cookie-toast.accepted {
-		display: none !important;
-	}
+    .cookie-toast {
+        position: fixed;
+        bottom: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1000;
+        border: 2px solid;
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 96%;
+        max-width: 580px;
+        display: block;
+    }
+
+    .cookie-toast[data-hidden] {
+        display: none !important;
+    }
 </style>
 
 <script>
+    import { isCookieAccepted } from "../lib/store.ts";
 
-	function hideToast() {
-		localStorage.setItem('cookieAccepted', 'true');
-		document.querySelector('.cookie-toast')?.classList.add('accepted');
-	}
+    const banner = document.getElementById("cookie-banner");
+    const btn = document.getElementById("accept-cookie-btn");
 
-	// Controlla se l'utente ha già accettato i cookie
-	document.addEventListener('DOMContentLoaded', () => {
-		if (localStorage.getItem('cookieAccepted')) {
-			hideToast();
-		}
-	});
+    const hasAccepted = localStorage.getItem("cookieAccepted") === "true";
 
-	// Gestisci il click sul pulsante di chiusura
-	document.getElementById('close-cookie-toast')?.addEventListener('click', () => {
-		localStorage.setItem('cookieAccepted', 'true');
-		hideToast();
-	});
+    // show the cookie first time
+    if (!hasAccepted) {
+        banner?.removeAttribute("data-hidden");
+    } else {
+        isCookieAccepted.set(true);
+    }
 
-	// dopo 10 secondi nascondi il toast se non è stato chiuso
-	setTimeout(() => {
-		if (!localStorage.getItem('cookieAccepted')) {
-			hideToast();
-		}
-	}, 10000);
+    function acceptCookies() {
+        localStorage.setItem("cookieAccepted", "true");
+        isCookieAccepted.set(true);
+        banner?.setAttribute("data-hidden", "true");
+    }
 
+    btn?.addEventListener("click", acceptCookies);
+
+    // hide the banner after a 10 seconds if the user doesn't interact with the banner
+    setTimeout(() => {
+        if (!isCookieAccepted.get()) {
+            acceptCookies();
+        }
+    }, 10000);
 </script>
