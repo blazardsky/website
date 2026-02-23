@@ -8,7 +8,7 @@ interface Props {
     alt?: string;
     src: string;
 }
-
+import { Image } from "astro:assets";
 const { href, title, type, src, alt = "" } = Astro.props;
 ---
 
@@ -31,11 +31,12 @@ const { href, title, type, src, alt = "" } = Astro.props;
             </div>
         </div>
     </a>
-    <img
+    <Image
         src={src}
         alt={alt}
         height="384"
         width="384"
+        loading="eager"
         class={cn(
             type === "creative" &&
                 "w-[30vw] sm:max-w-[25vw] md:max-w-[20vw] left-[25vw] sm:left-auto sm:right-10",

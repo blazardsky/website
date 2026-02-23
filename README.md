@@ -10,6 +10,5 @@ V4.1 personal portfolio built with astro
 
 ### TODO:
 - [ ] Migliorare accessibilità
-- [ ] Animazione illustrazione giardino
 - [ ] Animazione testimonials
-- [ ] Fix scrolltrigger FollowTheLine
+- [ ] Riorganizzare il codice per renderlo più coerente

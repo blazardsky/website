@@ -23,7 +23,7 @@ const works = await getDocuments<Work>("works", {
         id="worksContainer"
     >
         {
-            works.contents.map((work: Work) => (
+            works.contents.map((work: Work, index) => (
                 //@ts-ignore
                 <Image
                     alt={work.title}
@@ -32,9 +32,9 @@ const works = await getDocuments<Work>("works", {
                     width={work.image.width}
                     loading="lazy"
                     class={cn(
-                        // index === 3 && "col-span-2",
+                        index % 2 === 0 && "z-2",
                         "immersive-works-image",
-                        "even:-rotate-1 odd:scale-95 hover:rotate-1 hover:scale-105 transition-transform will-change-transform",
+                        "even:-rotate-1 scale-75 odd:scale-90 hover:z-4 hover:rotate-1 transition-transform will-change-transform",
                     )}
                 />
             ))
@@ -100,10 +100,10 @@ const works = await getDocuments<Work>("works", {
     const images = gsap.utils.toArray<HTMLElement>(".immersive-works-image");
     images.forEach((image) => {
         gsap.to(image, {
-            scale: gsap.utils.random(1.25, 3),
-            duration: 5,
-            ease: "ease",
-            stagger: 0.25,
+            scale: gsap.utils.random(1.15, 1.65),
+            duration: 9,
+            ease: "power2.out",
+            stagger: 0.5,
             scrollTrigger: {
                 trigger: "#worksContainer",
                 start: "top center",

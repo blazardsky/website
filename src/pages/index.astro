@@ -2,6 +2,7 @@
 import Layout from "@layouts/Layout.astro";
 import PortfolioButtons from "@components/PortfolioButtons.astro";
 import Testimonal from "@components/Testimonal.astro";
+import Certificate from "@components/content/Certificate.astro";
 import CardIcon from "@components/CardIcon.astro";
 import BigPortfolioButton from "@components/BigPortfolioButton.astro";
 import PAGEDATA from "@data/index.json";
@@ -9,6 +10,7 @@ import SOCIALS from "@data/socials.json";
 import { Image } from "astro:assets";
 import ImmersiveWorks from "@components/ImmersiveWorks.astro";
 import FollowTheLine from "@components/FollowTheLine.astro";
+import AnimatedIllustration from "@components/AnimatedIllustration.astro";
 
 import clipHome from "@svg/PortfolioClip_home.svg?raw";
 import friendsGarden from "@svg/friends_garden.svg?raw";
@@ -17,7 +19,7 @@ import friendsGarden from "@svg/friends_garden.svg?raw";
 <Layout title="Niccolò Agnoletti - Developer, Designer, Illustrator">
     <main>
         <h1
-            class="uppercase font-extrabold leading-none text-3xl sm:text-[3.5rem] lg:text-8xl p-4 m-auto gsap-split-word"
+            class="uppercase font-extrabold leading-none text-[3.5rem] sm:text-6xl xl:text-8xl p-2 md:p-4 m-auto gsap-split-word"
         >
             Ciao! Se sei qui immagino tu stia cercando<wbr /> il mio portfolio. Ecco
             qui:
@@ -49,14 +51,14 @@ import friendsGarden from "@svg/friends_garden.svg?raw";
     </main>
     <section class="bg-accent px-4 py-24 mt-2 clip01">
         <h2
-            class="text-center font-extrabold uppercase text-3xl md:text-6xl text-pretty gsap-split-word"
+            class="text-center font-extrabold uppercase text-4xl md:text-6xl text-pretty gsap-split-word"
         >
             O forse ti stai chiedendo<br />“scusa ma, chi c** sei?”
         </h2>
         <div
             class="flex flex-col sm:flex-row mt-8 md:gap-12 mx-auto max-w-5xl items-center"
         >
-            <img
+            <Image
                 src="/assets/images/weirdnic.png"
                 height="200"
                 width="200"
@@ -92,13 +94,13 @@ import friendsGarden from "@svg/friends_garden.svg?raw";
     <PortfolioButtons />
     <section class="bg-foreground text-background px-4 py-24 clipHome">
         <h2
-            class="text-center font-light uppercase text-3xl md:text-6xl mt-24 gsap-split-word"
+            class="text-center font-light uppercase text-4xl md:text-6xl mt-24 gsap-split-word"
         >
             No? va beh, allora<br /> continua a scrollare
         </h2>
         <FollowTheLine color="#F7F6DF77" />
         <h3
-            class="text-center font-extrabold uppercase text-2xl md:text-5xl mt-12 gsap-split-word"
+            class="text-center font-extrabold uppercase text-4xl md:text-5xl mt-12 gsap-split-word"
         >
             1. Perché lavorare con me :)
         </h3>
@@ -137,7 +139,7 @@ import friendsGarden from "@svg/friends_garden.svg?raw";
                         body={testimonial.body}
                         src={testimonial.img}
                         link={testimonial.link}
-                        index={index}
+                        isLast={index + 1 === PAGEDATA.testimonials.length}
                     />
                 ))
             }
@@ -145,7 +147,7 @@ import friendsGarden from "@svg/friends_garden.svg?raw";
     </section>
     <div class="px-4 my-24">
         <h3
-            class="text-center font-extrabold uppercase text-2xl md:text-5xl mt-36 gsap-split-word"
+            class="text-center font-extrabold uppercase text-3xl md:text-5xl mt-36 gsap-split-word"
         >
             2. Le mie competenze
         </h3>
@@ -158,7 +160,7 @@ import friendsGarden from "@svg/friends_garden.svg?raw";
             <span class="bg-technical rounded-md p-1 uppercase font-bold"
                 >TECH</span
             >
-            <h4 class="mt-1 uppercase text-3xl mb-2">
+            <h4 class="mt-1 uppercase text-4xl mb-2">
                 Progettazione e sviluppo di <strong>siti web</strong> completa sia
                 come <strong>codice</strong> che come <strong>ui/ux</strong>.
             </h4>
@@ -172,17 +174,14 @@ import friendsGarden from "@svg/friends_garden.svg?raw";
                 (a11y/wcag) e ben strutturate (semantic html).
             </p>
         </div>
-        <div class="hidden md:block w-full max-w-5xl mx-auto">
-            <Fragment
-                aria-label="Illustrazione dei vari strumenti che uso per lavorare, con le gambe e una faccia per renderli buffi"
-                set:html={friendsGarden}
-            />
+        <div class="block w-full max-w-5xl mx-auto p-2">
+            <AnimatedIllustration />
         </div>
         <div class="mx-auto max-w-4xl my-12 p-4">
             <span class="bg-creative rounded-md p-1 uppercase font-bold"
                 >Creative</span
             >
-            <h4 class="mt-1 mb-2 uppercase text-3xl">
+            <h4 class="mt-1 mb-2 uppercase text-4xl">
                 Ideazione e realizzazione di <strong>grafiche</strong> e <strong
                     >illustrazioni</strong
                 > per la stampa e per il digitale.
@@ -216,45 +215,26 @@ import friendsGarden from "@svg/friends_garden.svg?raw";
     </div>
 
     <section class="px-4 py-36">
-        <h3
-            class="text-center font-extrabold uppercase text-5xl gsap-split-word"
-        >
-            3. PS: Ho anche delle certificazioni
-        </h3>
-        <ul
-            class="mx-auto max-w-4xl grid grid-flow-row sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-9 my-12 text-center"
-        >
-            <li class="p-2 border-foreground border rounded-md">
-                <h4
-                    class="block uppercase font-extrabold text-3xl leading-none"
-                >
-                    E-Design<br />Illustrazione
-                </h4>
-                <p class="mt-2 font-cursive text-xs">Accademia Nemo</p>
-            </li>
-            <li class="p-2 border-foreground border rounded-md">
-                <h4
-                    class="block uppercase font-extrabold text-3xl leading-none"
-                >
-                    Joy of<br />React
-                </h4>
-                <p class="mt-2 font-cursive text-xs">Josh W. Comeau</p>
-            </li>
-            <!--li class="p-2 border-foreground border rounded-md sm:col-span-2 lg:col-span-1">
-				<h4 class="block uppercase font-extrabold text-3xl leading-none">Landing Page<br/>Academy</h4>
+        <div>
+            <h3
+                class="text-center font-extrabold uppercase text-5xl gsap-split-word"
+            >
+                3. Ho anche delle certificazioni
+            </h3>
+            <ul
+                class="mx-auto p-6 grid grid-flow-row sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-9 my-12 text-center"
+            >
+                {
+                    PAGEDATA.certificates.map((certificate, index) => (
+                        <Certificate data={certificate} index={index} />
+                    ))
+                }
+                <!--li class="p-2 border-foreground border rounded-md flex flex-col items-center justify-center">
+				<h4 class="block uppercase font-extrabold text-4xl leading-none">Landing Page<br/>Academy</h4>
 				<p class="mt-2 font-cursive text-xs">Erik D. Kennedy</p>
 			</li-->
-            <li
-                class="p-2 border-foreground border rounded-md sm:col-span-2 lg:col-span-1"
-            >
-                <h4
-                    class="block uppercase font-extrabold text-3xl leading-none"
-                >
-                    Total Typescript<br />Generics
-                </h4>
-                <p class="mt-2 font-cursive text-xs">Matt Pocock</p>
-            </li>
-        </ul>
+            </ul>
+        </div>
     </section>
 
     <ImmersiveWorks />
@@ -267,7 +247,7 @@ import friendsGarden from "@svg/friends_garden.svg?raw";
         <h3 class="uppercase font-extrabold text-center gsap-split-word">
             Oppure vuoi contattarmi?
         </h3>
-        <img
+        <Image
             src="/assets/images/scimmietta.png"
             alt="una freccia che indica verso il basso, con una scimmietta"
             class="mx-auto max-w-64"
@@ -275,7 +255,7 @@ import friendsGarden from "@svg/friends_garden.svg?raw";
             width="375"
         />
         <div
-            class="mt-24 md:mt-64 mx-auto max-w-[94vw] md:max-w-3xl text-2xl md:text-5xl relative"
+            class="mt-24 md:mt-64 mx-auto max-w-[94vw] md:max-w-3xl text-3xl md:text-5xl relative"
             id="cta_lavoro"
         >
             <p

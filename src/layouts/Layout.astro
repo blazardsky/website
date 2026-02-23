@@ -176,7 +176,9 @@ const menuIsOpen = isMenuOpen.get();
             <div
                 class="bg-accent text-accent-dark uppercase px-2 pt-4 pb-0.5 w-full flex flex-col md:flex-row gap-2 md:items-end"
             >
-                <p class="font-extrabold text-5xl">Niccolò Agnoletti</p>
+                <p class="font-extrabold text-5xl gsap-split-char">
+                    Niccolò Agnoletti
+                </p>
                 <p class="p-1 text-xs">
                     Copyright © 2024-2025 &mdash; <a href="/privacy-policy"
                         >Privacy policy</a
@@ -188,7 +190,7 @@ const menuIsOpen = isMenuOpen.get();
                 </p>
                 <p class="grow md:text-right">
                     📍 Padova, Veneto <br />
-                    📍 S. Giovanni Valdarno, Toscana
+                    📍 S. Giovanni V.no, Toscana
                 </p>
             </div>
         </footer>
@@ -265,6 +267,12 @@ const menuIsOpen = isMenuOpen.get();
     }
 </script>
 
+<style is:global>
+    /* nascondo i testi gsap finché non sono animati */
+    [class*="gsap-split-"] {
+        visibility: hidden;
+    }
+</style>
 <script>
     import { gsap } from "gsap";
     import { SplitText } from "gsap/SplitText";
@@ -272,43 +280,37 @@ const menuIsOpen = isMenuOpen.get();
 
     gsap.registerPlugin(SplitText, ScrollTrigger);
 
+    const splitChars = gsap.utils.toArray<HTMLElement>(".gsap-split-char");
     const splitWords = gsap.utils.toArray<HTMLElement>(".gsap-split-word");
-    splitWords.forEach((split) => {
-        SplitText.create(split, {
-            type: "lines, words",
-            mask: "lines",
-            autoSplit: true,
-            onSplit(self) {
-                return gsap.from(self.words, {
-                    duration: 0.6,
-                    y: 100,
-                    autoAlpha: 0.7,
-                    scrollTrigger: split,
-                    stagger: {
-                        amount: 0.4,
-                    },
-                });
-            },
-        });
-    });
-
     const splitLines = gsap.utils.toArray<HTMLElement>(".gsap-split-line");
-    splitLines.forEach((split) => {
-        SplitText.create(split, {
-            type: "lines",
-            mask: "lines",
-            autoSplit: true,
-            onSplit(self) {
-                return gsap.from(self.lines, {
-                    duration: 0.6,
-                    y: 100,
-                    autoAlpha: 0.7,
-                    scrollTrigger: split,
-                    stagger: {
-                        amount: 0.4,
-                    },
-                });
-            },
+
+    function splitForEach(
+        split_elements: HTMLElement[],
+        split_what: string,
+        mask_what: "lines" | "words" | "chars",
+    ) {
+        split_elements.forEach((split_elem) => {
+            gsap.set(split_elem, { autoAlpha: 1 });
+            SplitText.create(split_elem, {
+                type: split_what,
+                mask: mask_what,
+                autoSplit: true,
+                onSplit(self) {
+                    return gsap.from(self[mask_what], {
+                        duration: 0.6,
+                        y: 100,
+                        autoAlpha: 0.7,
+                        scrollTrigger: split_elem,
+                        stagger: {
+                            amount: 0.4,
+                        },
+                    });
+                },
+            });
         });
-    });
+    }
+
+    splitForEach(splitChars, "lines, words, chars", "chars");
+    splitForEach(splitWords, "lines, words", "words");
+    splitForEach(splitLines, "lines", "lines");
 </script>

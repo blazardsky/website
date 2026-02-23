@@ -27,8 +27,8 @@ const DATA = PAGEDATA[portfolioType as Portfolio];
     <section class="w-full bg-no-repeat bg-contain min-h-96 flex items-center z-10 relative" style={DATA.style}>
         <div class="text-center w-full mx-auto p-4">
             <p class="font-cursive">{document.category[0]} Stuff</p>
-            <h1 slot="p" class="leading-none text-4xl gsap-split-word">
-                {document.title.split(' ').map((word) => <span class="odd:font-bold last:font-bold"> {word} </span>)}
+            <h1 slot="p" class="leading-none text-4xl gsap-split-line">
+                {document.title.split(' ').map((word) => <span class="even:font-bold last:font-bold"> {word} </span>)}
             </h1>
             <a class="mt-4 px-4 block w-fit mx-auto" href={`${Astro.url.origin}/portfolio/${portfolioType}/`}>
                 <span class="text-foreground py-1 px-8 font-extrabold text-base uppercase block transition-all ease-out hover:scale-y-110 origin-top">&larr; torna al portfolio</span>
