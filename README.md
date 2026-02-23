@@ -1,12 +1,15 @@
-# website
-V4 personal portfolio built with astro
 
-# 2024 Update
+# website
+V4.1 personal portfolio built with astro
+
+## 2026 Update
+Astro v5
+Tailwind v4
+GSAP (split text)
+SWUP
 
 ### TODO:
-[x] Galleria scorrimento gestures (swipe)
 [ ] Migliorare accessibilità
 [ ] Animazione illustrazione giardino
 [ ] Animazione testimonials
-[ ] Fix scrolltrigger FolllowTheLine
-[ ] Aggiungere progetti
+[ ] Fix scrolltrigger FollowTheLine
