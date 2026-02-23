@@ -3,13 +3,13 @@
 V4.1 personal portfolio built with astro
 
 ## 2026 Update
-Astro v5
-Tailwind v4
-GSAP (split text)
-SWUP
+- Astro v5
+- Tailwind v4
+- GSAP (split text)
+- SWUP
 
 ### TODO:
-[ ] Migliorare accessibilità
-[ ] Animazione illustrazione giardino
-[ ] Animazione testimonials
-[ ] Fix scrolltrigger FollowTheLine
+- [ ] Migliorare accessibilità
+- [ ] Animazione illustrazione giardino
+- [ ] Animazione testimonials
+- [ ] Fix scrolltrigger FollowTheLine
