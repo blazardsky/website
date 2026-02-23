@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: "NISCRIPT";
+    src:
+        url("/assets/fonts/NISCRIPT-Regular.woff2") format("woff2"),
+        url("/assets/fonts/NISCRIPT-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@theme {
+    --color-creative:
+        #fb8c00, --color-creative-light: #fbb45c,
+        --color-creative-dark: #e27e00, --color-technical: #fba0fa,
+        --color-technical-light: #ffbcfe, --color-technical-dark: #fa88f9,
+        --color-accent: #e9e017, --color-accent-dark: #7e7909,
+        --color-midground: #f7f6df, --color-foreground: #18181b,
+        --color-background: #eee2cb, --breakpoint-xs: 490px;
+}
+
+html {
+    font-family:
+        "Clash Display",
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        "Inter",
+        "Arial Black",
+        Ubuntu,
+        Cantarell,
+        "Open Sans",
+        "Helvetica Neue",
+        "Lucida Sans Unicode",
+        system-ui,
+        sans-serif;
+    line-height: 135%;
+}
+.font-cursive {
+    font-size: 165%;
+    font-family: "NISCRIPT", serif;
+}
+code {
+    font-family:
+        Menlo,
+        Monaco,
+        Lucida Console,
+        Liberation Mono,
+        DejaVu Sans Mono,
+        Bitstream Vera Sans Mono,
+        Courier New,
+        monospace;
+}
+
+.clip01 {
+    clip-path: url(#containerClip01);
+}
+.clip02 {
+    clip-path: url(#containerClip02);
+}
+
+.clip03 {
+    clip-path: polygon(
+        5% 0%,
+        21% 1%,
+        43% 0%,
+        70% 1%,
+        84% 0%,
+        99% 2%,
+        100% 15%,
+        100% 24%,
+        99% 94%,
+        100% 100%,
+        89% 99%,
+        60% 100%,
+        27% 98%,
+        1% 99%,
+        0 91%,
+        1% 83%,
+        1% 57%,
+        0 29%,
+        1% 4%
+    );
+}
+
+b {
+    font-weight: 600;
+}
+li > a,
+p > a {
+    text-decoration: underline;
+}
+li > a:hover,
+p > a:hover {
+    text-decoration: none;
+}
+li {
+    margin: 0.25rem 0;
+}
