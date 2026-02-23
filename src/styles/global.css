@@ -11,13 +11,18 @@
 }
 
 @theme {
-    --color-creative:
-        #fb8c00, --color-creative-light: #fbb45c,
-        --color-creative-dark: #e27e00, --color-technical: #fba0fa,
-        --color-technical-light: #ffbcfe, --color-technical-dark: #fa88f9,
-        --color-accent: #e9e017, --color-accent-dark: #7e7909,
-        --color-midground: #f7f6df, --color-foreground: #18181b,
-        --color-background: #eee2cb, --breakpoint-xs: 490px;
+    --color-creative: #fb8c00;
+    --color-creative-light: #fbb45c;
+    --color-creative-dark: #e27e00;
+    --color-technical: #fba0fa;
+    --color-technical-light: #ffbcfe;
+    --color-technical-dark: #fa88f9;
+    --color-accent: #e9e017;
+    --color-accent-dark: #7e7909;
+    --color-midground: #f7f6df;
+    --color-foreground: #18181b;
+    --color-background: #eee2cb;
+    --breakpoint-xs: 490px;
 }
 
 html {
@@ -95,7 +100,4 @@ p > a {
 li > a:hover,
 p > a:hover {
     text-decoration: none;
-}
-li {
-    margin: 0.25rem 0;
 }

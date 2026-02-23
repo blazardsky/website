@@ -148,7 +148,7 @@ const menuIsOpen = isMenuOpen.get();
                                 href={link}
                                 rel="me noopener"
                                 target="_blank"
-                                class="hover:animate-pulse focus:animate-pulse"
+                                class="group focus:animate-pulse"
                             >
                                 <Image
                                     loading="lazy"
@@ -156,6 +156,7 @@ const menuIsOpen = isMenuOpen.get();
                                     alt={name}
                                     height="48"
                                     width="48"
+                                    class="ease-in group-hover:-translate-y-1 group-hover:-rotate-3 duration-150"
                                 />
                             </a>
                         </li>
@@ -262,4 +263,52 @@ const menuIsOpen = isMenuOpen.get();
             document.adoptedStyleSheets = [];
         }
     }
+</script>
+
+<script>
+    import { gsap } from "gsap";
+    import { SplitText } from "gsap/SplitText";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+    gsap.registerPlugin(SplitText, ScrollTrigger);
+
+    const splitWords = gsap.utils.toArray<HTMLElement>(".gsap-split-word");
+    splitWords.forEach((split) => {
+        SplitText.create(split, {
+            type: "lines, words",
+            mask: "lines",
+            autoSplit: true,
+            onSplit(self) {
+                return gsap.from(self.words, {
+                    duration: 0.6,
+                    y: 100,
+                    autoAlpha: 0.7,
+                    scrollTrigger: split,
+                    stagger: {
+                        amount: 0.4,
+                    },
+                });
+            },
+        });
+    });
+
+    const splitLines = gsap.utils.toArray<HTMLElement>(".gsap-split-line");
+    splitLines.forEach((split) => {
+        SplitText.create(split, {
+            type: "lines",
+            mask: "lines",
+            autoSplit: true,
+            onSplit(self) {
+                return gsap.from(self.lines, {
+                    duration: 0.6,
+                    y: 100,
+                    autoAlpha: 0.7,
+                    scrollTrigger: split,
+                    stagger: {
+                        amount: 0.4,
+                    },
+                });
+            },
+        });
+    });
 </script>

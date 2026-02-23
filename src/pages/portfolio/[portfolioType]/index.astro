@@ -1,13 +1,13 @@
 ---
-import Layout from '@layouts/Layout.astro'
-import Work from '@components/content/WorksList.astro'
-import PAGEDATA from '@data/portfolio.json';
-import {type Portfolio} from '@lib/types.ts'
+import Layout from "@layouts/Layout.astro";
+import Work from "@components/content/WorksList.astro";
+import PAGEDATA from "@data/portfolio.json";
+import { type Portfolio } from "@lib/types.ts";
 
 export function getStaticPaths() {
     return [
-        {params: {portfolioType: 'technical'}},
-        {params: {portfolioType: 'creative'}},
+        { params: { portfolioType: "technical" } },
+        { params: { portfolioType: "creative" } },
     ];
 }
 
@@ -16,11 +16,20 @@ const portfolioType = Astro.params.portfolioType as Portfolio;
 const DATA = PAGEDATA[portfolioType];
 ---
 
-<Layout title={`Niccolò Agnoletti - ${portfolioType} portfolio`} bodyClass={DATA.bodyClass} >
-    <section class="w-full bg-no-repeat bg-contain min-h-96 flex items-center z-10 relative" style={DATA.style}>
+<Layout
+    title={`Niccolò Agnoletti - ${portfolioType} portfolio`}
+    bodyClass={DATA.bodyClass}
+>
+    <section
+        class="w-full bg-no-repeat bg-contain min-h-96 flex items-center z-10 relative"
+        style={DATA.style}
+    >
         <div class="text-center w-full mx-auto p-4">
             <h1 class="font-cursive">{DATA.title}</h1>
-            <p class="leading-none text-2xl" set:html={DATA.subtitle} />
+            <p
+                class="leading-none text-2xl gsap-split-word"
+                set:html={DATA.subtitle}
+            />
         </div>
     </section>
     <main>
