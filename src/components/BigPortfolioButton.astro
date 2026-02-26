@@ -42,7 +42,8 @@ const { href, title, type, src, alt = "" } = Astro.props;
                 "w-[30vw] sm:max-w-[25vw] md:max-w-[20vw] left-[25vw] sm:left-auto sm:right-10",
             type === "technical" &&
                 "w-[50vw] sm:max-w-[40vw] md:max-w-[30vw] left-[20vw] sm:left-5",
-            "absolute top-5 h-auto group-hover:scale-125 group-focus:scale-125 transition-transform ease-out will-change-transform pointer-events-none z-10",
+            "max-h-full object-scale-down absolute top-5 h-auto pointer-events-none z-10",
+            "group-hover:scale-125 group-focus:scale-125 transition-transform ease-out will-change-transform",
         )}
     />
 </li>
