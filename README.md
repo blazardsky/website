@@ -12,3 +12,4 @@ V4.1 personal portfolio built with astro
 - [ ] Migliorare accessibilità
 - [ ] Animazione testimonials
 - [ ] Riorganizzare il codice per renderlo più coerente
+- [ ] impostare "transition-behavior: allow-discrete;" per le animazioni del menu quando il supporto è > 90%
