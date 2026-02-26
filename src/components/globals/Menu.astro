@@ -1,5 +1,5 @@
 ---
-import PortfolioButtons from "./PortfolioButtons.astro";
+import PortfolioButtons from "@components/PortfolioButtons.astro";
 import niccoloSvg from "@svg/niccolo.svg?raw";
 import { isMenuOpen } from "@lib/store";
 
@@ -72,10 +72,16 @@ const menuIsOpen = isMenuOpen.get();
 </div>
 
 <script>
-    import { isMenuOpen } from "../lib/store.ts";
+    import { isMenuOpen } from "@lib/store.ts";
+    import { createFocusTrap } from "focus-trap";
 
+    const menuFocusTrap = createFocusTrap(["#menu", "li:has(#toggleMenu)"], {
+        allowOutsideClick: true,
+        fallbackFocus: "#toggleMenu",
+    });
     const menu = document.getElementById("menu")!;
-    const closeMenu = (e: KeyboardEvent) => {
+
+    const closeMenuOnEsc = (e: KeyboardEvent) => {
         if (e.key === "Escape") {
             isMenuOpen.set(false);
         }
@@ -85,7 +91,10 @@ const menuIsOpen = isMenuOpen.get();
         if (open) {
             menu.classList.remove("hidden");
             menu.classList.add("flex");
-            document.addEventListener("keydown", closeMenu);
+
+            document.addEventListener("keydown", closeMenuOnEsc);
+
+            menuFocusTrap.activate();
 
             // Force a reflow so the transition triggers (otherwise the menu won't slide)
             menu.offsetHeight;
@@ -97,7 +106,10 @@ const menuIsOpen = isMenuOpen.get();
         } else {
             menu.classList.remove("translate-y-0");
             menu.classList.add("-translate-y-full");
-            document.removeEventListener("keydown", closeMenu);
+
+            document.removeEventListener("keydown", closeMenuOnEsc);
+
+            menuFocusTrap.deactivate();
 
             // Wait for transition to end before hiding
             menu.ontransitionend = () => {
