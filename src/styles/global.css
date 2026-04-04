@@ -10,6 +10,12 @@
     font-display: swap;
 }
 
+@media (prefers-reduced-motion: reduce) {
+    *, *::after, *::before {
+        animation-duration: 0ms !important;
+    }
+}
+
 @theme {
     --color-creative: #fb8c00;
     --color-creative-light: #fbb45c;
