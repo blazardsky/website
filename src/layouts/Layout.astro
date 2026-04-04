@@ -1,8 +1,8 @@
 ---
 interface Props {
-    title: string;
-    description?: string;
-    bodyClass?: string;
+  title: string;
+  description?: string;
+  bodyClass?: string;
 }
 const { title, description, bodyClass } = Astro.props;
 
@@ -21,113 +21,159 @@ import clip02 from "@svg/PortfolioClip_02.svg?raw";
 
 <!doctype html>
 <html lang="it" prefix="og: https://ogp.me/ns#">
-    <head>
-        <meta charset="utf-8" />
-        <meta
-            name="description"
-            content={description
-                ? description
-                : "Portfolio - Niccolò Agnoletti: web developer + designer + digital illustrator."}
-        />
-        <meta name="viewport" content="width=device-width" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="generator" content={Astro.generator} />
-        <title>{title}</title>
-        <link
-            href="https://api.fontshare.com/v2/css?f[]=clash-display@1&f[]=kalam@400&display=swap"
-            rel="stylesheet"
-        />
-        <meta name="author" content="Niccolò Agnoletti" />
-        <meta property="og:locale" content="it_IT" />
-        <meta
-            property="og:title"
-            content="Web Developer, Designer and Digital Illustrator - Niccolò Agnoletti"
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.nicc-olo.com" />
-        <meta
-            property="og:image"
-            content="https://www.nicc-olo.com/nicc-olo.com_social-share-thumbnail.jpg/"
-        />
-        <meta property="og:image:type" content="image/jpeg" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta
-            property="og:image:alt"
-            content="Un illustrazione di un omino giallo con una cresta lilla davanti al pc che indica le scritte Web Development, (handmande) digital illustrations, editorial design"
-        />
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content={description
+        ? description
+        : "Portfolio - Niccolò Agnoletti: web developer + designer + digital illustrator."}
+    />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=clash-display@1&f[]=kalam@400&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="author" content="Niccolò Agnoletti" />
+    <meta property="og:locale" content="it_IT" />
+    <meta
+      property="og:title"
+      content="Web Developer, Designer and Digital Illustrator - Niccolò Agnoletti"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.nicc-olo.com" />
+    <meta
+      property="og:image"
+      content="https://www.nicc-olo.com/nicc-olo.com_social-share-thumbnail.jpg/"
+    />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Un illustrazione di un omino giallo con una cresta lilla davanti al pc che indica le scritte Web Development, (handmande) digital illustrations, editorial design"
+    />
 
-        <script
-            is:inline
-            type="text/partytown"
-            defer
-            src="https://cloud.umami.is/script.js"
-            data-website-id="1ee9f997-2d04-4991-b78c-aa70ff93efe4"></script>
-    </head>
-    <body
-        class={cn(
-            "overscroll-y-contain bg-background text-foreground",
-            bodyClass,
-        )}
-    >
-        <Header />
-        <slot />
-        <Footer>
-            <NicPlayer bodyClass={bodyClass} />
-        </Footer>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Sviluppatore WEB Freelance, Niccolò Agnoletti",
+        "image": "https://www.nicc-olo.com/assets/images/foto-nic-tonda.png",
+        "@id": "https://www.nicc-olo.com",
+        "url": "https://www.nicc-olo.com",
+        "priceRange": "$$",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Via San Francesco",
+          "addressLocality": "Padova",
+          "addressRegion": "PD",
+          "postalCode": "52121",
+          "addressCountry": "IT"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 45.406707,
+          "longitude": 11.872996
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "10:00",
+          "closes": "17:00"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/in/nic-agnoletti",
+          "https://github.com/blazardsky",
+          "https://bsky.app/profile/blazardsky.bsky.social",
+          "https://www.behance.net/blazardsky",
+          "https://www.instagram.com/blazardsky",
+          "https://medium.com/@nic.agnoletti",
+          "https://www.dafont.com/blazardsky.d6835"
+        ],
+        "knowsAbout": [
+          "Web Development",
+          "React",
+          "Node.js",
+          "WordPress",
+          "A11y",
+          "Typescript",
+          "Search Engine Optimization",
+          "UI/UX Design"
+        ]
+      }
+    </script>
+    <script
+      is:inline
+      type="text/partytown"
+      defer
+      src="https://cloud.umami.is/script.js"
+      data-website-id="1ee9f997-2d04-4991-b78c-aa70ff93efe4"></script>
+  </head>
+  <body
+    class={cn("overscroll-y-contain bg-background text-foreground", bodyClass)}
+  >
+    <Header />
+    <slot />
+    <Footer>
+      <NicPlayer bodyClass={bodyClass} />
+    </Footer>
 
-        <CookieNotice />
+    <CookieNotice />
 
-        <!-- clip path svg per portfolio e blocchi vari -->
-        <Fragment set:html={clip01} />
-        <Fragment set:html={clip02} />
-    </body>
+    <!-- clip path svg per portfolio e blocchi vari -->
+    <Fragment set:html={clip01} />
+    <Fragment set:html={clip02} />
+  </body>
 </html>
 
 <style is:global>
-    /* nascondo i testi gsap finché non sono animati */
-    [class*="gsap-split-"] {
-        visibility: hidden;
-    }
+  /* nascondo i testi gsap finché non sono animati */
+  [class*="gsap-split-"] {
+    visibility: hidden;
+  }
 </style>
 <script>
-    import { gsap } from "gsap";
-    import { SplitText } from "gsap/SplitText";
-    import { ScrollTrigger } from "gsap/ScrollTrigger";
+  import { gsap } from "gsap";
+  import { SplitText } from "gsap/SplitText";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-    gsap.registerPlugin(SplitText, ScrollTrigger);
+  gsap.registerPlugin(SplitText, ScrollTrigger);
 
-    const splitChars = gsap.utils.toArray<HTMLElement>(".gsap-split-char");
-    const splitWords = gsap.utils.toArray<HTMLElement>(".gsap-split-word");
-    const splitLines = gsap.utils.toArray<HTMLElement>(".gsap-split-line");
+  const splitChars = gsap.utils.toArray<HTMLElement>(".gsap-split-char");
+  const splitWords = gsap.utils.toArray<HTMLElement>(".gsap-split-word");
+  const splitLines = gsap.utils.toArray<HTMLElement>(".gsap-split-line");
 
-    function splitForEach(
-        split_elements: HTMLElement[],
-        split_what: string,
-        mask_what: "lines" | "words" | "chars",
-    ) {
-        split_elements.forEach((split_elem) => {
-            gsap.set(split_elem, { autoAlpha: 1 });
-            SplitText.create(split_elem, {
-                type: split_what,
-                mask: mask_what,
-                autoSplit: true,
-                onSplit(self) {
-                    return gsap.from(self[mask_what], {
-                        duration: 0.6,
-                        y: 100,
-                        autoAlpha: 0.7,
-                        scrollTrigger: split_elem,
-                        stagger: {
-                            amount: 0.4,
-                        },
-                    });
-                },
-            });
-        });
-    }
+  function splitForEach(
+    split_elements: HTMLElement[],
+    split_what: string,
+    mask_what: "lines" | "words" | "chars",
+  ) {
+    split_elements.forEach((split_elem) => {
+      gsap.set(split_elem, { autoAlpha: 1 });
+      SplitText.create(split_elem, {
+        type: split_what,
+        mask: mask_what,
+        autoSplit: true,
+        onSplit(self) {
+          return gsap.from(self[mask_what], {
+            duration: 0.6,
+            y: 100,
+            autoAlpha: 0.7,
+            scrollTrigger: split_elem,
+            stagger: {
+              amount: 0.4,
+            },
+          });
+        },
+      });
+    });
+  }
 
-    splitForEach(splitChars, "lines, words, chars", "chars");
-    splitForEach(splitWords, "lines, words", "words");
-    splitForEach(splitLines, "lines", "lines");
+  splitForEach(splitChars, "lines, words, chars", "chars");
+  splitForEach(splitWords, "lines, words", "words");
+  splitForEach(splitLines, "lines", "lines");
 </script>
