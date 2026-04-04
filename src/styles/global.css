@@ -107,3 +107,13 @@ li > a:hover,
 p > a:hover {
     text-decoration: none;
 }
+
+
+
+.intro-container-title {
+    container-type: inline-size;
+    width: 100vw;
+}
+.intro-large-title {
+    font-size: clamp(3rem, 12cqw, 6rem);
+}
