@@ -6,73 +6,73 @@ import niccoloSvg from "@svg/niccolo.svg?raw";
 ---
 
 <footer class="mt-12 pt-32">
-    <Fragment set:html={niccoloSvg} />
-    <ul class="flex flex-row gap-6 mx-auto w-fit p-2 mt-8">
-        {
-            SOCIALS.map(({ name, link, img }) => (
-                <li class="mix-blend-multiply">
-                    <a
-                        href={link}
-                        rel="me noopener"
-                        target="_blank"
-                        class="group focus:animate-pulse"
-                    >
-                        <Image
-                            loading="lazy"
-                            src={img}
-                            alt={name}
-                            height="48"
-                            width="48"
-                            class="ease-in group-hover:-translate-y-1 group-hover:-rotate-3 duration-150"
-                        />
-                    </a>
-                </li>
-            ))
-        }
-    </ul>
+  <Fragment set:html={niccoloSvg} />
+  <ul class="flex flex-row gap-6 mx-auto w-fit p-2 mt-8">
+    {
+      SOCIALS.map(({ name, link, img }) => (
+        <li class="mix-blend-multiply">
+          <a
+            href={link}
+            rel="me noopener"
+            target="_blank"
+            title={`apri ${name} in una nuova scheda`}
+            class="group focus:animate-pulse"
+          >
+            <Image
+              loading="lazy"
+              src={img}
+              alt={name}
+              height="48"
+              width="48"
+              class="ease-in group-hover:-translate-y-1 group-hover:-rotate-3 duration-150"
+            />
+          </a>
+        </li>
+      ))
+    }
+  </ul>
 
-    <slot />
+  <slot />
 
-    <div class="w-full checkerboard-wrapper">
-        <div class="w-full checkerboard"></div>
-        <div class="w-[calc(100%+var(--size))] -ml-(--size) checkerboard"></div>
-    </div>
-    <div
-        class="bg-accent text-accent-dark uppercase px-2 pt-4 pb-0.5 w-full flex flex-col md:flex-row gap-2 md:items-end"
-    >
-        <p class="font-extrabold text-5xl gsap-split-char">Niccolò Agnoletti</p>
-        <p class="p-1 text-xs">
-            Copyright © 2024-2025 &mdash; <a href="/privacy-policy"
-                >Privacy policy</a
-            > &mdash; <a href="/credits"> Credits </a><br />
-            <strong>IT02487460517</strong> - <a
-                href="https://blazardsky.space"
-                rel="me">blazardsky.space</a
-            > // <span class="text-nowrap">nicc-olo.com</span>
-        </p>
-        <p class="grow md:text-right">
-            📍 Padova, Veneto <br />
-            📍 S. Giovanni V.no, Toscana
-        </p>
-    </div>
+  <div class="w-full checkerboard-wrapper">
+    <div class="w-full checkerboard"></div>
+    <div class="w-[calc(100%+var(--size))] -ml-(--size) checkerboard"></div>
+  </div>
+  <div
+    class="bg-accent text-accent-dark uppercase px-2 pt-4 pb-0.5 w-full flex flex-col md:flex-row gap-2 md:items-end"
+  >
+    <p class="font-extrabold text-5xl gsap-split-words">Niccolò Agnoletti</p>
+    <p class="p-1 text-xs">
+      Copyright © 2024-2025 &mdash; <a href="/privacy-policy">Privacy policy</a> &mdash;
+      <a href="/credits"> Credits </a><br />
+      <strong>IT02487460517</strong> - <a
+        href="https://blazardsky.space"
+        rel="me">blazardsky.space</a
+      > // <span class="text-nowrap">nicc-olo.com</span>
+    </p>
+    <p class="grow md:text-right">
+      📍 Padova, Veneto <br />
+      📍 S. Giovanni V.no, Toscana
+    </p>
+  </div>
 </footer>
 
 <style>
-    .checkerboard-wrapper {
-        --size: 0.75rem;
-        --color-1: black;
-        --color-2: white;
-        height: calc(var(--size) * 2);
-        overflow: clip;
-    }
-    .checkerboard {
-        height: var(--size);
-        background: repeating-linear-gradient(
-            90deg,
-            var(--color-1) 0,
-            var(--color-1) var(--size),
-            var(--color-2) var(--size),
-            var(--color-2) calc(var(--size) * 2)
-        );
-    }
+  .checkerboard-wrapper {
+    --size: 0.75rem;
+    --color-1: black;
+    --color-2: white;
+    height: calc(var(--size) * 2);
+    overflow: clip;
+  }
+  .checkerboard {
+    height: var(--size);
+    background: repeating-linear-gradient(
+      90deg,
+      var(--color-1) 0,
+      var(--color-1) var(--size),
+      var(--color-2) var(--size),
+      var(--color-2) calc(var(--size) * 2)
+    );
+  }
 </style>
