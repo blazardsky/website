@@ -7,13 +7,18 @@ interface Props {
   href: string;
   alt?: string;
   src: string;
+  ariaLabel: string;
 }
 import { Image } from "astro:assets";
-const { href, title, type, src, alt = "" } = Astro.props;
+const { href, title, type, src, alt = "", ariaLabel } = Astro.props;
 ---
 
 <li class="list-none grow sm:w-[50%] relative group">
-  <a href={href} class="w-full block group no-underline!">
+  <a
+    href={href}
+    class="w-full block group no-underline!"
+    aria-label={ariaLabel ?? title}
+  >
     <div
       class={cn(
         type === "creative" &&
