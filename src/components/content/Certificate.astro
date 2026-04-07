@@ -1,33 +1,35 @@
 ---
 import { cn, generateRuggedRectangle } from "@lib/utils";
 interface Props {
-    data: {
-        title: string;
-        subtitle: string;
-        classes: string;
-        oddLast: boolean;
-    };
-    index: number;
+  data: {
+    title: string;
+    subtitle: string;
+    classes: string;
+    oddLast: boolean;
+    titleLang: string;
+  };
+  index: number;
 }
 const { index, data } = Astro.props;
-const { title, subtitle, classes, oddLast } = data;
+const { title, subtitle, classes, oddLast, titleLang } = data;
 ---
 
 <li
-    class={cn(
-        "p-6 flex flex-col items-center justify-center aspect-video",
-        classes,
-        index % 2 === 0 ? "rotate-2" : "-rotate-2",
-        oddLast && "sm:col-span-2 lg:col-span-1",
-    )}
-    style={`clip-path: ${generateRuggedRectangle({ points: 24, seed: index * 34234 })};`}
+  class={cn(
+    "p-6 flex flex-col items-center justify-center aspect-video",
+    classes,
+    index % 2 === 0 ? "rotate-2" : "-rotate-2",
+    oddLast && "sm:col-span-2 lg:col-span-1",
+  )}
+  style={`clip-path: ${generateRuggedRectangle({ points: 24, seed: index * 34234 })};`}
 >
-    <h4
-        class="block uppercase font-extrabold text-2xl md:text-3xl leading-none"
-    >
-        {title}
-    </h4>
-    <p class="mt-2 font-cursive text-xs">
-        {subtitle}
-    </p>
+  <h4
+    class="block uppercase font-extrabold text-2xl md:text-3xl leading-none"
+    lang={titleLang}
+  >
+    {title}
+  </h4>
+  <p class="mt-2 font-cursive text-xs">
+    {subtitle}
+  </p>
 </li>

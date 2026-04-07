@@ -7,9 +7,10 @@ interface Props {
   body: string;
   icon: string;
   class?: string;
+  titleLang?: string;
 }
 
-const { title, body, icon, ...props } = Astro.props;
+const { title, body, icon, titleLang, ...props } = Astro.props;
 ---
 
 <li class={cn("card list-none inline-block flex-1 text-balance")}>
@@ -19,6 +20,7 @@ const { title, body, icon, ...props } = Astro.props;
       props.class,
       "uppercase font-bold text-center text-2xl my-2 gsap-split-char",
     )}
+    lang={titleLang}
   >
     {title}
   </h4>

@@ -28,18 +28,21 @@
   "certificates": [
     {
       "title": "Joy of React",
+      "titleLang": "en",
       "subtitle": "Josh W. Comeau",
       "classes": "bg-technical text-foreground",
       "oddLast": false
     },
     {
       "title": "Total Typescript Generics",
+      "titleLang": "en",
       "subtitle": "Matt Pocock",
       "classes": "bg-foreground text-background",
       "oddLast": false
     },
     {
       "title": "E-Design Illustrazione",
+      "titleLang": "it",
       "subtitle": "Accademia Nemo",
       "classes": "bg-creative text-foreground",
       "oddLast": true

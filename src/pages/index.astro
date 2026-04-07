@@ -109,6 +109,7 @@ import clipHome from "@svg/PortfolioClip_home.svg?raw";
     <ul class="my-12 flex flex-col md:flex-row max-w-6xl mx-auto gap-4">
       <CardIcon
         title="Problem solving"
+        titleLang="en"
         body="Sono abituato a lavorare in autonomia e con più gradi di responsabilità; trovando soluzioni ai problemi individuati."
         icon="problemsolving"
         class="bg-technical text-foreground clip03 p-2"
@@ -166,18 +167,23 @@ import clipHome from "@svg/PortfolioClip_home.svg?raw";
       <p class="font-cursive text-lg text-balance">
         Conosco bene CSS, SASS, JS, REACT, HTML, oltre a Python e PHP. I miei
         framework preferiti in ambito js sono NextJS e Astro. Ho una certa
-        esperienza con WordPress e Shopify (sia in ambito “code” che “no-code”)
-        ma solitamente uso Sanity come CMS headless per creare soluzioni
-        totalmente custom. <wbr />Cerco di creare sempre esperienze web
-        adattabili, responsive, accessibili (a11y/wcag) e ben strutturate
-        (semantic html).
+        esperienza con WordPress e Shopify (sia in ambito <span lang="en"
+          >"code"</span
+        > che <span lang="en">"no-code"</span>) ma solitamente uso Sanity come
+        CMS <span lang="en">headless</span> per creare soluzioni totalmente custom.
+        <wbr />Cerco di creare sempre esperienze web adattabili, <span lang="en"
+          >responsive</span
+        >, accessibili (<attr title="accessibilità">a11y</attr>/<attr
+          lang="en"
+          title="Web Content Accessibility Guidelines">wcag</attr
+        >) e ben strutturate (<span lang="en">semantic html</span>).
       </p>
     </div>
     <div class="block w-full max-w-5xl mx-auto p-2">
       <AnimatedIllustration />
     </div>
     <div class="mx-auto max-w-4xl my-12 p-4">
-      <span class="bg-creative rounded-md p-1 uppercase font-bold"
+      <span lang="en" class="bg-creative rounded-md p-1 uppercase font-bold"
         >Creative</span
       >
       <h4 class="mt-1 mb-2 uppercase text-4xl gsap-split-line">
@@ -206,7 +212,7 @@ import clipHome from "@svg/PortfolioClip_home.svg?raw";
       </p>
       <Image
         src="/assets/images/fiorellini.png"
-        alt="due fiorellini con una faccia sorridente"
+        alt=""
         height="190"
         width="190"
       />
@@ -269,6 +275,7 @@ import clipHome from "@svg/PortfolioClip_home.svg?raw";
         </p>
       </div>
       <svg
+        aria-hidden="true"
         class="absolute -bottom-28 left-[8ch]"
         width="117"
         height="167"
