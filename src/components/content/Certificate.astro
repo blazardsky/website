@@ -16,10 +16,10 @@ const { title, subtitle, classes, oddLast, titleLang } = data;
 
 <li
   class={cn(
-    "p-6 flex flex-col items-center justify-center aspect-video",
+    "p-6 flex flex-col items-center justify-center md:aspect-video",
     classes,
     index % 2 === 0 ? "rotate-2" : "-rotate-2",
-    oddLast && "sm:col-span-2 lg:col-span-1",
+    oddLast && "sm:col-span-2 sm:h-fit lg:col-span-1 lg:h-auto",
   )}
   style={`clip-path: ${generateRuggedRectangle({ points: 24, seed: index * 34234 })};`}
 >
