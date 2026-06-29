@@ -1,21 +1,27 @@
+---
+import { useTranslations, localizedUrl } from "@i18n/utils";
+import type { Lang } from "@i18n/ui";
+
+const locale = Astro.currentLocale as Lang;
+const t = useTranslations(locale);
+---
+
 <aside
   id="cookie-banner"
   data-hidden
   class="cookie-toast bg-foreground text-background"
 >
   <p class="m-0 p-4 text-sm">
-    🍪 Ciao! Questo sito utilizza solo cookie tecnici necessari al suo
-    funzionamento e usa Umami per raccogliere statistiche <b>anonime</b>.
-    Continuando la navigazione accetti l&apos;uso di questi cookie. <a
-      href="/privacy-policy"
-      class="underline">Maggiori informazioni</a
+    🍪 {t("cookie.message")} <a
+      href={localizedUrl(locale, "privacy-policy")}
+      class="underline">{t("cookie.more")}</a
     >.
   </p>
   <button
     id="accept-cookie-btn"
     class="mb-4 mx-4 float-right px-4 py-1 bg-background text-foreground border-foreground border-2 hover:bg-accent hover:border-accent transition-all ease-out"
   >
-    Ok, ho capito
+    {t("cookie.accept")}
   </button>
 </aside>
 

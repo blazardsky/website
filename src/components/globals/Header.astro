@@ -3,18 +3,22 @@ import Menu from "@components/globals/Menu.astro";
 import AccessibilityIcon from "@svg/accessibility.svg?raw";
 
 import { isMenuOpen } from "@lib/store";
-const menuIsOpen = isMenuOpen.get();
+import { useTranslations, localizedUrl, getLocaleSwitchUrl } from "@i18n/utils";
+import type { Lang } from "@i18n/ui";
 
-// English link traduzione google
-const englishLink = `https://nicc--olo-com.translate.goog${Astro.url.pathname}?_x_tr_sl=it&_x_tr_tl=en&_x_tr_hl=it&_x_tr_pto=wapp&_x_tr_hist=true`;
+const menuIsOpen = isMenuOpen.get();
+const locale = Astro.currentLocale as Lang;
+const t = useTranslations(locale);
+const localeSwitchUrl = getLocaleSwitchUrl(Astro.url.pathname, locale);
+const homeUrl = localizedUrl(locale, "");
 ---
 
 <header class="flex flex-row z-50 relative">
   {
-    Astro.url.pathname !== "/" && (
-      <a class="px-4 " href="/">
+    Astro.url.pathname !== homeUrl && Astro.url.pathname !== `${homeUrl}/` && (
+      <a class="px-4 " href={homeUrl}>
         <span class="border-foreground border-b-2 border-x-2 min-h-11 grid place-items-center text-foreground py-1 px-4 md:px-8 font-extrabold text-base uppercase transition-all ease-out hover:scale-y-110 origin-top">
-          HOME
+          {t("nav.home")}
         </span>
       </a>
     )
@@ -24,42 +28,35 @@ const englishLink = `https://nicc--olo-com.translate.goog${Astro.url.pathname}?_
       <li role="menuitem">
         <button
           onclick="toggleReadabilityImprovement()"
-          title="Cambia il font scritto a mano con un monospaziato"
+          title={t("nav.accessibility.title")}
           class="border-foreground grid place-items-center cursor-pointer border-b-2 min-h-11 border-x-2 bg-foreground fill-background p-1 transition-all ease-out hover:scale-y-110 origin-top m-0 focus:border-accent"
         >
-          <span class="sr-only"
-            >Cambia font per rendere il testo più leggibile</span
-          >
+          <span class="sr-only">{t("nav.accessibility")}</span>
           <Fragment set:html={AccessibilityIcon} />
         </button>
       </li>
       <li role="menuitem">
         <a
-          aria-label="Switch language"
-          title="Read in english with Google (opens Google Translate)"
-          href={englishLink}
-          target="_blank"
+          aria-label={t("lang.switch.aria")}
+          title={t("lang.switch.title")}
+          href={localeSwitchUrl}
           class="grid place-items-center no-underline border-foreground border-b-2 min-h-11 border-x-2 bg-foreground text-background p-1 font-extrabold text-base uppercase transition-all ease-out hover:scale-y-110 origin-top m-0"
-          rel="noopener nofollow noreferrer"
         >
-          <abbr class="decoration-accent decoration-dotted" title="ENGLISH"
-            >EN</abbr
+          <abbr class="decoration-accent decoration-dotted" title={t("lang.switch.title")}
+            >{t("lang.switch")}</abbr
           >
         </a>
       </li>
-      <!-- <li role="menuitem" class="border-foreground border-b-2 border-x-2 bg-foreground fill-background p-1 flex m-0">
-						<svg width="16" height="16" viewBox="0 0 16 16" fill="none" class="m-auto" xmlns="http://www.w3.org/2000/svg">
-							<path fill-rule="evenodd" clip-rule="evenodd" d="M8 16C12.4183 16 16 12.4183 16 8C16 3.58172 12.4183 0 8 0C3.58172 0 0 3.58172 0 8C0 12.4183 3.58172 16 8 16ZM13.0973 5.88864C12.82 5.21926 12.4136 4.61104 11.9013 4.09872L8.00002 8L4.09874 11.9013C4.61106 12.4136 5.21928 12.82 5.88866 13.0973C6.55804 13.3745 7.27548 13.5172 8.00002 13.5172C8.72455 13.5172 9.44199 13.3745 10.1114 13.0973C10.7808 12.82 11.389 12.4136 11.9013 11.9013C12.4136 11.389 12.82 10.7807 13.0973 10.1114C13.3746 9.44197 13.5173 8.72453 13.5173 8C13.5173 7.27547 13.3746 6.55803 13.0973 5.88864Z" fill="#EDE1CA"/>
-							</svg>
-					</li> -->
       <li role="menuitem">
         <button
           id="toggleMenu"
           aria-controls="menu"
-          aria-label={menuIsOpen ? "apri il menu" : "chiudi il menu"}
+          aria-label={menuIsOpen ? t("nav.menu.close") : t("nav.menu.open")}
+          data-label-open={t("nav.menu")}
+          data-label-close={t("nav.close")}
           class="border-foreground cursor-pointer border-b-2 min-h-11 border-x-2 bg-foreground text-background p-1 px-4 md:px-8 font-extrabold text-base uppercase block transition-all ease-out hover:scale-y-110 origin-top m-0"
         >
-          menu
+          {t("nav.menu")}
         </button>
       </li>
     </ul>
@@ -74,7 +71,9 @@ const englishLink = `https://nicc--olo-com.translate.goog${Astro.url.pathname}?_
 
   function toggleMenu() {
     const nextMenuState = !isMenuOpen.get();
-    menuBtn.innerHTML = nextMenuState ? "Chiudi" : "Menu";
+    menuBtn.innerHTML = nextMenuState
+      ? menuBtn.dataset.labelClose!
+      : menuBtn.dataset.labelOpen!;
     isMenuOpen.set(nextMenuState);
   }
   menuBtn.addEventListener("click", toggleMenu);

@@ -2,8 +2,12 @@
 import PortfolioButtons from "@components/PortfolioButtons.astro";
 import niccoloSvg from "@svg/niccolo.svg?raw";
 import { isMenuOpen } from "@lib/store";
+import { useTranslations, localizedUrl } from "@i18n/utils";
+import type { Lang } from "@i18n/ui";
 
 const menuIsOpen = isMenuOpen.get();
+const locale = Astro.currentLocale as Lang;
+const t = useTranslations(locale);
 ---
 
 <div
@@ -13,13 +17,13 @@ const menuIsOpen = isMenuOpen.get();
   id="menu"
   aria-hidden={!menuIsOpen}
 >
-  <span id="menuTitle" class="sr-only"
-    >Menu aperto: link rapidi per contattarmi</span
-  >
+  <span id="menuTitle" class="sr-only">{t("menu.title")}</span>
   <Fragment set:html={niccoloSvg} />
   <div class="flex flex-row md:-ml-8">
     <div class="hidden md:block">
-      <span class="font-cursive -rotate-6 -ml-2 inline-block">Contattami</span>
+      <span class="font-cursive -rotate-6 -ml-2 inline-block"
+        >{t("menu.contact")}</span
+      >
       <svg
         width="81"
         height="77"
@@ -48,10 +52,14 @@ const menuIsOpen = isMenuOpen.get();
   <nav>
     <ul role="menu" class="flex flex-row gap-4">
       <li class="m-0 ease-in duration-100 hover:scale-110">
-        <a role="menuitem" href={`/projects`}>(other) Projects</a>
+        <a role="menuitem" href={localizedUrl(locale, "projects")}
+          >{t("menu.projects")}</a
+        >
       </li>
       <li class="m-0 ease-in duration-100 hover:scale-110">
-        <a role="menuitem" href={`/skills`}>Skills</a>
+        <a role="menuitem" href={localizedUrl(locale, "skills")}
+          >{t("menu.skills")}</a
+        >
       </li>
       <li class="m-0 ease-in duration-100 hover:scale-110">
         <a
@@ -59,7 +67,7 @@ const menuIsOpen = isMenuOpen.get();
           href="https://blazardsky.space"
           target="_blank"
           rel="noopener me"
-          hreflang="en">Gallery</a
+          hreflang="en">{t("menu.gallery")}</a
         > &UpperRightArrow;
       </li>
     </ul>

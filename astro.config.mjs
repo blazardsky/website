@@ -20,5 +20,16 @@ export default defineConfig({
   image: {
     domains: ["fmzwhatqbs.microcms.io", "cdn.sanity.io"],
   },
+  i18n: {
+    locales: ["it", "en"],
+    defaultLocale: "it",
+    routing: {
+      prefixDefaultLocale: false,
+      fallbackType: "rewrite",
+    },
+    fallback: {
+      en: "it",
+    },
+  },
   // output: 'server',
 });

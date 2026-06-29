@@ -11,23 +11,26 @@ import Header from "@components/globals/Header.astro";
 import Footer from "@components/globals/Footer.astro";
 import NicPlayer from "@components/globals/NicPlayer.astro";
 import CookieNotice from "@components/CookieNotice.astro";
+import { useTranslations, ogLocales } from "@i18n/utils";
+import type { Lang } from "@i18n/ui";
 
 import "../styles/global.css";
 
 // importo le svg che uso come clip-path per i BigPortfolioButton e per le sezioni colorate e in altri posti nel sito
 import clip01 from "@svg/PortfolioClip_01.svg?raw";
 import clip02 from "@svg/PortfolioClip_02.svg?raw";
+
+const locale = Astro.currentLocale as Lang;
+const t = useTranslations(locale);
 ---
 
 <!doctype html>
-<html lang="it" prefix="og: https://ogp.me/ns#">
+<html lang={locale} prefix="og: https://ogp.me/ns#">
   <head>
     <meta charset="utf-8" />
     <meta
       name="description"
-      content={description
-        ? description
-        : "Portfolio - Niccolò Agnoletti: web developer + designer + digital illustrator."}
+      content={description ? description : t("meta.defaultDescription")}
     />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -38,11 +41,8 @@ import clip02 from "@svg/PortfolioClip_02.svg?raw";
       rel="stylesheet"
     />
     <meta name="author" content="Niccolò Agnoletti" />
-    <meta property="og:locale" content="it_IT" />
-    <meta
-      property="og:title"
-      content="Web Developer, Designer and Digital Illustrator - Niccolò Agnoletti"
-    />
+    <meta property="og:locale" content={ogLocales[locale]} />
+    <meta property="og:title" content={t("meta.ogTitle")} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.nicc-olo.com" />
     <meta

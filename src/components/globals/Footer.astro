@@ -3,6 +3,11 @@ import SOCIALS from "@data/socials.json";
 
 import { Image } from "astro:assets";
 import niccoloSvg from "@svg/niccolo.svg?raw";
+import { useTranslations, localizedUrl } from "@i18n/utils";
+import type { Lang } from "@i18n/ui";
+
+const locale = Astro.currentLocale as Lang;
+const t = useTranslations(locale);
 ---
 
 <footer class="mt-12 pt-32">
@@ -15,7 +20,7 @@ import niccoloSvg from "@svg/niccolo.svg?raw";
             href={link}
             rel="me noopener"
             target="_blank"
-            title={`apri ${name} in una nuova scheda`}
+            title={t("footer.openSocial", { name })}
             class="group focus:animate-pulse"
           >
             <Image
@@ -43,8 +48,10 @@ import niccoloSvg from "@svg/niccolo.svg?raw";
   >
     <p class="font-extrabold text-5xl">Niccolò Agnoletti</p>
     <p class="p-1 text-xs">
-      Copyright © 2024-2025 &mdash; <a href="/privacy-policy">Privacy policy</a> &mdash;
-      <a href="/credits"> Credits </a><br />
+      Copyright © 2024-2025 &mdash; <a href={localizedUrl(locale, "privacy-policy")}
+        >{t("footer.privacy")}</a
+      > &mdash;
+      <a href={localizedUrl(locale, "credits")}> {t("footer.credits")} </a><br />
       <strong>IT02487460517</strong> - <a
         href="https://blazardsky.space"
         rel="me">blazardsky.space</a

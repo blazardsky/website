@@ -8,7 +8,8 @@
       "@layouts/*": ["src/layouts/*"],
       "@svg/*": ["src/svg/*"],
       "@data/*": ["src/data/*"],
-      "@lib/*": ["src/lib/*"]
+      "@lib/*": ["src/lib/*"],
+      "@i18n/*": ["src/i18n/*"]
     },
     "allowImportingTsExtensions": true,
     "allowSyntheticDefaultImports": true
