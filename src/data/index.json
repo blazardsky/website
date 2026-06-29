@@ -34,16 +34,16 @@
       "oddLast": false
     },
     {
-      "title": "Total Typescript Generics",
-      "titleLang": "en",
-      "subtitle": "Matt Pocock",
+      "title": "E-Design Illustrazione",
+      "titleLang": "it",
+      "subtitle": "Accademia Nemo",
       "classes": "bg-foreground text-background",
       "oddLast": false
     },
     {
-      "title": "E-Design Illustrazione",
-      "titleLang": "it",
-      "subtitle": "Accademia Nemo",
+      "title": "Landing Page Academy",
+      "titleLang": "en",
+      "subtitle": "Erik D. Kennedy",
       "classes": "bg-creative text-foreground",
       "oddLast": true
     }
