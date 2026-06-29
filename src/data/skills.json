@@ -41,7 +41,7 @@
   },
   {
     "type": "CMS",
-    "skills": ["sanity", "shopify", "wordpress", "ghost", "microcms"],
+    "skills": ["payloadcms", "sanity", "shopify", "wordpress", "ghost", "microcms"],
     "meta": {
       "bg": "61 170 60",
       "color": "24 24 27"
@@ -75,10 +75,10 @@
     }
   },
   {
-    "type": "Automazione e AI",
+    "type": "AI e Automazione",
     "skills": [
       "Stable Diffusion (comfyui / a111)",
-      "Claude (API)",
+      "Claude Code",
       "Make.com",
       "n8n"
     ],

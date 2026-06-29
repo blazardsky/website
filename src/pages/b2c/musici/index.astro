@@ -1,0 +1,181 @@
+---
+import Layout from "@layouts/Layout.astro";
+import FollowTheLine from "@components/FollowTheLine.astro";
+import { Image } from "astro:assets";
+---
+
+<Layout
+  title="Niccolò Agnoletti — Siti web per band, DJ e musicisti"
+  description="Siti web, date del tour e merch shop per band, DJ e musicisti. Pacchetto su misura per chi fa musica."
+>
+  <main class="px-4 py-12 md:py-20">
+    <p class="text-sm uppercase opacity-70 mb-4">
+      <a href="/b2c" class="underline hover:no-underline">← Creativi</a>
+    </p>
+    <h1
+      class="uppercase font-extrabold leading-none text-4xl md:text-6xl max-w-4xl gsap-split-line"
+    >
+      Siti web per <strong>band</strong>, <strong>DJ</strong> &amp; <strong>musicisti</strong>
+    </h1>
+    <p class="font-cursive text-lg max-w-3xl mt-8 text-balance">
+      Il tuo sito non deve sembrare un template di un'agenzia: deve suonare come
+      te — e far trovare facilmente date, musica e merch ai fan.
+    </p>
+  </main>
+
+  <section class="bg-technical px-4 py-24 clip01">
+    <div
+      class="max-w-5xl mx-auto flex flex-col md:flex-row gap-8 items-center"
+    >
+      <Image
+        src="/assets/images/punkwebdev.png"
+        alt=""
+        height="200"
+        width="200"
+        class="w-auto max-w-xs h-auto pointer-events-none"
+      />
+      <div
+        class="bg-white/50 p-8 sm:p-10 clip03 -rotate-1 flex-1"
+        style="clip-path: polygon(18% 1%, 36% 0, 49% 2%, 55% 1%, 88% 2%, 99% 1%, 100% 42%, 99% 55%, 100% 76%, 99% 88%, 99% 98%, 82% 100%, 36% 99%, 17% 100%, 4% 98%, 1% 91%, 1% 55%, 0% 44%, 1% 29%, 1% 2%);"
+      >
+        <h2 class="uppercase font-extrabold text-2xl md:text-3xl">
+          Perché i musicisti
+        </h2>
+        <p class="font-cursive mt-4">
+          Le mie prime collaborazioni web sono state proprio con amici musicisti:
+          band locali, DJ, progetti solisti. Conosco il giro — rehearsal, uscite,
+          tour, merch fatto in garage — e so quanto sia frustrante avere un sito
+          obsoleto o un linktree che non basta più.
+        </p>
+        <p class="font-cursive mt-4">
+          Per questo offro pacchetti pensati per chi fa musica, non per startup
+          tech.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="px-4 py-24">
+    <h2
+      class="text-center font-extrabold uppercase text-3xl md:text-5xl gsap-split-word"
+    >
+      Cosa include il pacchetto
+    </h2>
+    <ul class="max-w-5xl mx-auto mt-12 flex flex-col gap-6">
+      <li class="bg-technical clip03 p-6 md:p-8 rotate-1">
+        <span class="uppercase font-bold text-xs rounded-md p-1 bg-foreground text-background"
+          >Base</span
+        >
+        <h3 class="uppercase font-extrabold text-2xl md:text-3xl mt-2">
+          Sito web
+        </h3>
+        <p class="font-cursive mt-2 max-w-2xl">
+          Homepage con bio, foto, embed Spotify/SoundCloud/Bandcamp, link ai
+          social e pagina contatti. Design coerente con la tua identità visiva
+          (anche se per ora è solo un logo fatto col marker).
+        </p>
+      </li>
+      <li class="bg-accent clip03 p-6 md:p-8 -rotate-1">
+        <span class="uppercase font-bold text-xs rounded-md p-1 bg-foreground text-background"
+          >Live</span
+        >
+        <h3 class="uppercase font-extrabold text-2xl md:text-3xl mt-2">
+          Date del tour
+        </h3>
+        <p class="font-cursive mt-2 max-w-2xl">
+          Sezione date aggiornabile: prossimi live, festival, club night. Link
+          ai biglietti, mappa o venue. Niente più screenshot delle date su
+          Instagram che spariscono dopo 24 ore.
+        </p>
+      </li>
+      <li class="bg-technical clip03 p-6 md:p-8 rotate-2">
+        <span class="uppercase font-bold text-xs rounded-md p-1 bg-foreground text-background"
+          >Shop</span
+        >
+        <h3 class="uppercase font-extrabold text-2xl md:text-3xl mt-2">
+          Merch shop
+        </h3>
+        <p class="font-cursive mt-2 max-w-2xl">
+          Integrazione Shopify (o soluzione equivalente) per magliette, vinili,
+          cassette, poster. Tu gestisci prodotti e ordini; io collego tutto al
+          sito in modo pulito.
+        </p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="bg-foreground text-background px-4 py-24">
+    <h2
+      class="text-center font-extrabold uppercase text-3xl md:text-5xl gsap-split-word"
+    >
+      Offerta dedicata
+    </h2>
+    <FollowTheLine color="#F7F6DF77" />
+    <div class="max-w-3xl mx-auto mt-12">
+      <p class="font-cursive text-lg text-center text-balance">
+        Per band e DJ con cui lavoro per la prima volta propongo un pacchetto
+        <strong>sito + date</strong> a prezzo ridotto — perché so quanto si
+        stringe il budget all'inizio e perché mi piace supportare chi sta
+        costruendo un publico dal vivo.
+      </p>
+      <ul class="mt-8 space-y-3 font-cursive max-w-xl mx-auto">
+        <li>→ Consulenza iniziale gratuita (30 min, call o messaggi)</li>
+        <li>→ Consegna tipica in 3–6 settimane</li>
+        <li>→ Formazione base per aggiornare date da solo</li>
+        <li>→ Merch shop quotabile a parte, quando sei pronto</li>
+      </ul>
+      <p class="text-sm text-center mt-8 opacity-80">
+        Prezzi su preventivo — ogni progetto è diverso. Niente sorprese a
+        fine lavoro.
+      </p>
+    </div>
+  </section>
+
+  <section class="px-4 py-24">
+    <div
+      class="mx-auto max-w-[94vw] md:max-w-3xl text-2xl md:text-4xl relative"
+      id="cta_musici"
+    >
+      <div
+        class="p-8 md:px-12 md:pt-12 pb-16 mb-16 bg-midground -rotate-2 has-[a:hover]:rotate-2 will-change-transform transition-transform ease-out clip03"
+      >
+        <p class="uppercase font-extrabold text-left">
+          Sei una band, un DJ o un musicista? <a
+            href="mailto:ciao@nicc-olo.com?subject=Sito%20web%20per%20musicisti"
+            class="underline">Contattami</a
+          >
+        </p>
+        <p class="font-cursive text-lg mt-4 normal-case">
+          Mandami link alla tua musica e raccontami cosa ti serve — rispondo
+          entro qualche giorno.
+        </p>
+      </div>
+    </div>
+    <p class="text-sm text-center opacity-70">
+      Cerchi qualcosa per artisti visivi? Vai alla pagina <a
+        href="/b2c/artisti"
+        class="underline hover:no-underline">artisti visivi</a
+      >.
+    </p>
+  </section>
+</Layout>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.fromTo(
+    "#cta_musici",
+    { scale: 0.9, opacity: 0.75, rotate: "-2deg" },
+    {
+      scale: 1,
+      opacity: 1,
+      rotate: 0,
+      delay: 0.3,
+      duration: 0.35,
+      ease: "ease",
+      scrollTrigger: "#cta_musici",
+    },
+  );
+</script>
