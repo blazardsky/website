@@ -1,22 +1,26 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import ProjectList from "@components/ProjectList.astro";
-import PAGEDATA from "@data/projects.json";
+import PROJECTS from "@data/projects.json";
+import { pickLocale } from "@i18n/utils";
+import type { Lang } from "@i18n/ui";
+import type { LocalizedData } from "@i18n/utils";
+import type { ProjectsPageData } from "@lib/types";
+
+const locale = Astro.currentLocale as Lang;
+const page = pickLocale(PROJECTS as LocalizedData<ProjectsPageData>, locale);
 ---
 
-<Layout
-    title="Altri progetti"
-    description="Una raccolta dei miei progetti personali"
->
+<Layout title={page.meta.title} description={page.meta.description}>
     <main class="mx-auto p-4 max-w-3xl">
         <h1
             class="my-20 uppercase font-extrabold text-4xl md:text-6xl gsap-split-word"
         >
-            Raccolta di progetti e idee.
+            {page.meta.heading}
         </h1>
         {
-            Object.entries(PAGEDATA).map((projects) => (
-                <ProjectList key={projects[0]} data={projects[1]} />
+            Object.entries(page.categories).map(([category, items]) => (
+                <ProjectList key={category} data={items} />
             ))
         }
     </main>

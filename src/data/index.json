@@ -1,51 +1,276 @@
 {
-  "testimonials": [
-    {
-      "id": 1,
-      "by": "Giulio M.",
-      "role": "DJ per matrimoni ed eventi",
-      "link": "https://www.djmad.it",
-      "body": "Collaboro con Nic da diverso tempo, abbiamo praticamente iniziato insieme – riesce sempre a catturare la mia energia e il mio stile in un risultato che adoro.",
-      "img": "/assets/images/testimonials/giuliom.png"
+  "it": {
+    "meta": {
+      "title": "Niccolò Agnoletti - Developer, Designer, Illustrator"
     },
-    {
-      "id": 2,
-      "by": "Lorenzo C.",
-      "role": "Esperto di marketing",
-      "link": "https://www.kipoproduzioni.it",
-      "body": "Lavoro con Nic da qualche anno, abbiamo anche uno studio insieme – è senza dubbi il mio socio preferito. È molto bravo anche se dovrebbe lasciarmi lavorare invece di chiedermi di fare queste recensioni...",
-      "img": "/assets/images/testimonials/lorenzoc.jpg"
+    "hero": {
+      "heading": "Ciao! Se sei qui immagino tu stia cercando<wbr /> il mio portfolio. Ecco qui:",
+      "technical": {
+        "title": "Technical Stuff",
+        "ariaLabel": "Portfolio tecnico, sviluppo web",
+        "content": "<strong>FRONT END</strong> WEB<br /><strong>DEVELOPEMENT.</strong>"
+      },
+      "creative": {
+        "title": "Creative Stuff",
+        "ariaLabel": "Portfolio creativo, illustrazioni e grafica",
+        "content": "digital <strong>ILLUSTRATIONS,<br /> GAMES, MAGAZINES.</strong>"
+      }
     },
-    {
-      "id": 3,
-      "by": "Cristina A.",
-      "role": "Mamma di Niccolò",
-      "link": "",
-      "body": "È bravo, anzi bravissimo. Garantisco io!",
-      "img": "/assets/images/testimonials/mamma.png"
+    "about": {
+      "heading": "O forse ti stai chiedendo<br />\"scusa ma, chi <attr title=\"cavolo\">c**</attr> sei?\"",
+      "alt": "Una (brutta) illustrazione di me",
+      "introLabel": "Mi presento:",
+      "p1": "Mi chiamo Niccolò Agnoletti (con due C) e sono uno <strong>sviluppatore web</strong>. Mi occupo principalmente di progettazione di siti web per il marketing.",
+      "p2Before": "Ogni tanto faccio anche",
+      "p2FontLink": "dei font (tipo questo)",
+      "p2After": "e illustrazioni digitali o grafiche per",
+      "p2ProjectsLink": "vari progetti."
+    },
+    "scroll": {
+      "heading": "No? va beh, allora<br /> continua a scrollare"
+    },
+    "whyWork": {
+      "heading": "1. Perché lavorare con me :)",
+      "cards": [
+        {
+          "title": "Problem solving",
+          "titleLang": "en",
+          "body": "Sono abituato a lavorare in autonomia e con più gradi di responsabilità; trovando soluzioni ai problemi individuati.",
+          "icon": "problemsolving",
+          "class": "bg-technical text-foreground clip03 p-2"
+        },
+        {
+          "title": "Multidisciplinarietà",
+          "body": "Ho conoscenze trasversali per cui posso fare \"da ponte\" tra il team di sviluppo e il team di design ed essere versatile in progetti più piccoli.",
+          "icon": "multidisciplinare",
+          "class": "bg-accent text-foreground clip03 p-2"
+        },
+        {
+          "title": "Esperienza mista",
+          "body": "Ho lavorato sia in agenzia che direttamente con clienti e su varie tipologie di progetto.",
+          "icon": "esperienzamista",
+          "class": "bg-creative text-foreground clip03 p-2"
+        }
+      ]
+    },
+    "testimonials": {
+      "heading": "Dicono di me",
+      "items": [
+        {
+          "id": 1,
+          "by": "Giulio M.",
+          "role": "DJ per matrimoni ed eventi",
+          "link": "https://www.djmad.it",
+          "body": "Collaboro con Nic da diverso tempo, abbiamo praticamente iniziato insieme – riesce sempre a catturare la mia energia e il mio stile in un risultato che adoro.",
+          "img": "/assets/images/testimonials/giuliom.png"
+        },
+        {
+          "id": 2,
+          "by": "Lorenzo C.",
+          "role": "Esperto di marketing",
+          "link": "https://www.kipoproduzioni.it",
+          "body": "Lavoro con Nic da qualche anno, abbiamo anche uno studio insieme – è senza dubbi il mio socio preferito. È molto bravo anche se dovrebbe lasciarmi lavorare invece di chiedermi di fare queste recensioni...",
+          "img": "/assets/images/testimonials/lorenzoc.jpg"
+        },
+        {
+          "id": 3,
+          "by": "Cristina A.",
+          "role": "Mamma di Niccolò",
+          "link": "",
+          "body": "È bravo, anzi bravissimo. Garantisco io!",
+          "img": "/assets/images/testimonials/mamma.png"
+        }
+      ]
+    },
+    "skills": {
+      "heading": "2. Le mie competenze",
+      "linkPrefix": "Puoi anche vedere",
+      "linkText": "una lista delle mie competenze",
+      "tech": {
+        "label": "TECH",
+        "heading": "Progettazione e sviluppo di <strong>siti web</strong> completa sia come <strong>codice</strong> che come <strong>ui/ux</strong>.",
+        "body": "Conosco bene CSS, SASS, JS, REACT, HTML, oltre a Python e PHP. I miei framework preferiti in ambito js sono NextJS e Astro. Ho una certa esperienza con WordPress e Shopify (sia in ambito <span lang=\"en\">\"code\"</span> che <span lang=\"en\">\"no-code\"</span>) ma solitamente uso Sanity come CMS <span lang=\"en\">headless</span> per creare soluzioni totalmente custom. <wbr />Cerco di creare sempre esperienze web adattabili, <span lang=\"en\">responsive</span>, accessibili (<attr title=\"accessibilità\">a11y</attr>/<attr lang=\"en\" title=\"Web Content Accessibility Guidelines\">wcag</attr>) e ben strutturate (<span lang=\"en\">semantic html</span>)."
+      },
+      "creative": {
+        "label": "Creative",
+        "heading": "Ideazione e realizzazione di <strong>grafiche</strong> e <strong>illustrazioni</strong> per la stampa e per il digitale.",
+        "body": "Conosco bene Photoshop, Illustrator, InDesign e in generale i programmi Adobe, ma mi sto spostando verso la suite Affinity. Uso spesso anche Procreate e Figma. I miei ambiti preferiti per cui creare artwork sono abbigliamento, magazine e libri, album musicali. Ho una certa esperienza anche con varie AI generative che ho sperimentato fin dai primi modelli."
+      },
+      "socialHint": "Se ti interessa sapere altro puoi inviarmi un messaggio su"
+    },
+    "certificates": {
+      "heading": "3. Ho anche delle certificazioni",
+      "items": [
+        {
+          "title": "Joy of React",
+          "titleLang": "en",
+          "subtitle": "Josh W. Comeau",
+          "classes": "bg-technical text-foreground",
+          "oddLast": false
+        },
+        {
+          "title": "E-Design Illustrazione",
+          "titleLang": "it",
+          "subtitle": "Accademia Nemo",
+          "classes": "bg-foreground text-background",
+          "oddLast": false
+        },
+        {
+          "title": "Landing Page Academy",
+          "titleLang": "en",
+          "subtitle": "Erik D. Kennedy",
+          "classes": "bg-creative text-foreground",
+          "oddLast": true
+        }
+      ]
+    },
+    "portfolioCta": {
+      "beforeTitle": "giunti fin qui"
+    },
+    "contact": {
+      "heading": "Oppure vuoi contattarmi?",
+      "ctaAlt": "una freccia che indica verso il basso, con una scimmietta illustrata",
+      "ctaBefore": "sono disponibile a lavorare da remoto in Europa e nel mondo:",
+      "ctaLink": "contattami",
+      "note": "In particolare per progetti editoriali o se rappresenti uno studio creativo in cerca di collaboratori."
     }
-  ],
-  "certificates": [
-    {
-      "title": "Joy of React",
-      "titleLang": "en",
-      "subtitle": "Josh W. Comeau",
-      "classes": "bg-technical text-foreground",
-      "oddLast": false
+  },
+  "en": {
+    "meta": {
+      "title": "Niccolò Agnoletti - Developer, Designer, Illustrator"
     },
-    {
-      "title": "E-Design Illustrazione",
-      "titleLang": "it",
-      "subtitle": "Accademia Nemo",
-      "classes": "bg-foreground text-background",
-      "oddLast": false
+    "hero": {
+      "heading": "Hi! If you're here, I guess you're looking for my portfolio. Here it is:",
+      "technical": {
+        "title": "Technical Stuff",
+        "ariaLabel": "Technical portfolio, web development",
+        "content": "<strong>FRONT END</strong> WEB<br /><strong>DEVELOPMENT.</strong>"
+      },
+      "creative": {
+        "title": "Creative Stuff",
+        "ariaLabel": "Creative portfolio, illustrations and graphics",
+        "content": "digital <strong>ILLUSTRATIONS,<br /> GAMES, MAGAZINES.</strong>"
+      }
     },
-    {
-      "title": "Landing Page Academy",
-      "titleLang": "en",
-      "subtitle": "Erik D. Kennedy",
-      "classes": "bg-creative text-foreground",
-      "oddLast": true
+    "about": {
+      "heading": "Or maybe you're wondering<br />\"wait, who the <attr title=\"heck\">h**</attr> are you?\"",
+      "alt": "A (bad) illustration of me",
+      "introLabel": "Let me introduce myself:",
+      "p1": "My name is Niccolò Agnoletti (with two C's) and I'm a <strong>web developer</strong>. I mainly work on marketing website design and development.",
+      "p2Before": "Every now and then I also make",
+      "p2FontLink": "fonts (like this one)",
+      "p2After": "and digital illustrations or graphics for",
+      "p2ProjectsLink": "various projects."
+    },
+    "scroll": {
+      "heading": "No? alright then<br /> keep scrolling"
+    },
+    "whyWork": {
+      "heading": "1. Why work with me :)",
+      "cards": [
+        {
+          "title": "Problem solving",
+          "titleLang": "en",
+          "body": "I'm used to working independently with varying levels of responsibility, finding solutions to the problems that come up.",
+          "icon": "problemsolving",
+          "class": "bg-technical text-foreground clip03 p-2"
+        },
+        {
+          "title": "Multidisciplinary",
+          "titleLang": "en",
+          "body": "I have cross-cutting skills that let me bridge dev and design teams, and stay versatile on smaller projects.",
+          "icon": "multidisciplinare",
+          "class": "bg-accent text-foreground clip03 p-2"
+        },
+        {
+          "title": "Mixed experience",
+          "titleLang": "en",
+          "body": "I've worked both in agencies and directly with clients, on many different kinds of projects.",
+          "icon": "esperienzamista",
+          "class": "bg-creative text-foreground clip03 p-2"
+        }
+      ]
+    },
+    "testimonials": {
+      "heading": "What people say",
+      "items": [
+        {
+          "id": 1,
+          "by": "Giulio M.",
+          "role": "Wedding and event DJ",
+          "link": "https://www.djmad.it",
+          "body": "I've been working with Nic for a long time — we basically started together. He always manages to capture my energy and style in a result I love.",
+          "img": "/assets/images/testimonials/giuliom.png"
+        },
+        {
+          "id": 2,
+          "by": "Lorenzo C.",
+          "role": "Marketing expert",
+          "link": "https://www.kipoproduzioni.it",
+          "body": "I've worked with Nic for a few years — we even run a studio together. He's definitely my favourite business partner. He's very good, even if he should let me work instead of asking me to write these reviews...",
+          "img": "/assets/images/testimonials/lorenzoc.jpg"
+        },
+        {
+          "id": 3,
+          "by": "Cristina A.",
+          "role": "Niccolò's mum",
+          "link": "",
+          "body": "He's good — actually, very good. I guarantee it!",
+          "img": "/assets/images/testimonials/mamma.png"
+        }
+      ]
+    },
+    "skills": {
+      "heading": "2. My skills",
+      "linkPrefix": "You can also see",
+      "linkText": "a full list of my skills",
+      "tech": {
+        "label": "TECH",
+        "heading": "End-to-end <strong>website</strong> design and development — both <strong>code</strong> and <strong>UI/UX</strong>.",
+        "body": "I'm comfortable with CSS, SASS, JS, React, HTML, plus Python and PHP. My favourite JS frameworks are NextJS and Astro. I have some experience with WordPress and Shopify (both <span lang=\"en\">code</span> and <span lang=\"en\">no-code</span>), but I usually use Sanity as a <span lang=\"en\">headless</span> CMS for fully custom solutions. I always aim for adaptable, <span lang=\"en\">responsive</span>, accessible (<attr title=\"accessibility\">a11y</attr>/<attr lang=\"en\" title=\"Web Content Accessibility Guidelines\">wcag</attr>) experiences with solid <span lang=\"en\">semantic HTML</span>."
+      },
+      "creative": {
+        "label": "Creative",
+        "heading": "Concept and production of <strong>graphics</strong> and <strong>illustrations</strong> for print and digital.",
+        "body": "I know Photoshop, Illustrator, InDesign and the Adobe suite well, but I'm moving towards Affinity. I also use Procreate and Figma often. My favourite areas for artwork are apparel, magazines and books, and album covers. I've also experimented with generative AI since the early models."
+      },
+      "socialHint": "If you'd like to know more, send me a message on"
+    },
+    "certificates": {
+      "heading": "3. I also have some certifications",
+      "items": [
+        {
+          "title": "Joy of React",
+          "titleLang": "en",
+          "subtitle": "Josh W. Comeau",
+          "classes": "bg-technical text-foreground",
+          "oddLast": false
+        },
+        {
+          "title": "E-Design Illustration",
+          "titleLang": "en",
+          "subtitle": "Accademia Nemo",
+          "classes": "bg-foreground text-background",
+          "oddLast": false
+        },
+        {
+          "title": "Landing Page Academy",
+          "titleLang": "en",
+          "subtitle": "Erik D. Kennedy",
+          "classes": "bg-creative text-foreground",
+          "oddLast": true
+        }
+      ]
+    },
+    "portfolioCta": {
+      "beforeTitle": "made it this far"
+    },
+    "contact": {
+      "heading": "Or would you like to get in touch?",
+      "ctaAlt": "an arrow pointing down, with an illustrated monkey",
+      "ctaBefore": "I'm available for remote work across Europe and worldwide:",
+      "ctaLink": "get in touch",
+      "note": "Especially for editorial projects, or if you represent a creative studio looking for collaborators."
     }
-  ]
+  }
 }

@@ -1,6 +1,12 @@
 import { getRelativeLocaleUrl } from "astro:i18n";
 import { defaultLang, ui, type Lang, type UiKey } from "./ui";
 
+export type LocalizedData<T> = Record<Lang, T>;
+
+export function pickLocale<T>(data: LocalizedData<T>, locale: Lang): T {
+  return data[locale] ?? data[defaultLang];
+}
+
 export function useTranslations(lang: Lang) {
   return function t(key: UiKey, params?: Record<string, string>): string {
     let value: string = ui[lang][key] ?? ui[defaultLang][key];

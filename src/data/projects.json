@@ -1,32 +1,80 @@
 {
-    "Progetti editoriali": [
-      {
-        "titolo": "Il Pentolino dell'Oste",
-        "descrizione": "Rivista digitale a tema culinario",
-        "status": "In pausa",
-        "link": "https://www.ilpentolinodelloste.it"
-      }
-    ],
-    "Abbigliamento": [
+  "it": {
+    "meta": {
+      "title": "Altri progetti",
+      "description": "Una raccolta dei miei progetti personali",
+      "heading": "Raccolta di progetti e idee."
+    },
+    "categories": {
+      "Progetti editoriali": [
         {
-            "titolo": "Brains in pain 🧠🤮",
-            "descrizione": "Serie di T-Shirt demenziali",
-            "status": "In attesa",
-            "link": "https://www.instagram.com/brains_in_pain/"
+          "titolo": "Il Pentolino dell'Oste",
+          "descrizione": "Rivista digitale a tema culinario",
+          "status": "In pausa",
+          "link": "https://www.ilpentolinodelloste.it"
         }
-    ],
-    "Art & Design": [
+      ],
+      "Abbigliamento": [
         {
-            "titolo": "Gallery",
-            "descrizione": "Una raccolta delle mie illustrazioni e grafiche",
-            "status": "",
-            "link": "https://blazardsky.space"
+          "titolo": "Brains in pain 🧠🤮",
+          "descrizione": "Serie di T-Shirt demenziali",
+          "status": "In attesa",
+          "link": "https://www.instagram.com/brains_in_pain/"
+        }
+      ],
+      "Art & Design": [
+        {
+          "titolo": "Gallery",
+          "descrizione": "Una raccolta delle mie illustrazioni e grafiche",
+          "status": "",
+          "link": "https://blazardsky.space"
         },
         {
-            "titolo": "Blazardsky Types",
-            "descrizione": "Font e esperimenti tipografici che ho creato",
-            "status": "",
-            "link": "https://www.dafont.com/it/blazardsky.d6835"
+          "titolo": "Blazardsky Types",
+          "descrizione": "Font e esperimenti tipografici che ho creato",
+          "status": "",
+          "link": "https://www.dafont.com/it/blazardsky.d6835"
         }
-    ]
+      ]
+    }
+  },
+  "en": {
+    "meta": {
+      "title": "Other projects",
+      "description": "A collection of my personal projects",
+      "heading": "A collection of projects and ideas."
+    },
+    "categories": {
+      "Editorial projects": [
+        {
+          "titolo": "Il Pentolino dell'Oste",
+          "descrizione": "Digital magazine about food and cooking",
+          "status": "On hold",
+          "link": "https://www.ilpentolinodelloste.it"
+        }
+      ],
+      "Clothing": [
+        {
+          "titolo": "Brains in pain 🧠🤮",
+          "descrizione": "Series of unhinged T-shirts",
+          "status": "Pending",
+          "link": "https://www.instagram.com/brains_in_pain/"
+        }
+      ],
+      "Art & Design": [
+        {
+          "titolo": "Gallery",
+          "descrizione": "A collection of my illustrations and graphics",
+          "status": "",
+          "link": "https://blazardsky.space"
+        },
+        {
+          "titolo": "Blazardsky Types",
+          "descrizione": "Fonts and typographic experiments I've created",
+          "status": "",
+          "link": "https://www.dafont.com/it/blazardsky.d6835"
+        }
+      ]
+    }
+  }
 }

@@ -1,117 +1,216 @@
-[
-  {
-    "type": "technical",
-    "skills": [
-      "HTML",
-      "React",
-      "NextJS",
-      "Astro",
-      "Typescript",
-      "Javascript",
-      "Hono",
-      "Python",
-      "PHP",
-      "Liquid",
-      "CSS",
-      "Tailwind",
-      "SASS",
-      "GROQ query",
-      "GraphQL",
-      "SQL",
-      "Drizzle"
-    ],
+{
+  "it": {
     "meta": {
-      "bg": "251 160 250",
-      "color": "24 24 27"
-    }
+      "title": "Niccolò Agnoletti - Skills",
+      "description": "Cosa so fare e in che ambito",
+      "heading": "Le mie competenze :)"
+    },
+    "fields": [
+      {
+        "type": "technical",
+        "skills": [
+          "HTML",
+          "React",
+          "NextJS",
+          "Astro",
+          "Typescript",
+          "Javascript",
+          "Hono",
+          "Python",
+          "PHP",
+          "Liquid",
+          "CSS",
+          "Tailwind",
+          "SASS",
+          "GROQ query",
+          "GraphQL",
+          "SQL",
+          "Drizzle"
+        ],
+        "meta": { "bg": "251 160 250", "color": "24 24 27" }
+      },
+      {
+        "type": "creative",
+        "skills": [
+          "digital illustrations",
+          "graphic design",
+          "editorial design",
+          "UI design",
+          "UX design"
+        ],
+        "meta": { "bg": "251 140 0", "color": "24 24 27" }
+      },
+      {
+        "type": "CMS",
+        "skills": [
+          "payloadcms",
+          "sanity",
+          "shopify",
+          "wordpress",
+          "ghost",
+          "microcms"
+        ],
+        "meta": { "bg": "61 170 60", "color": "24 24 27" }
+      },
+      {
+        "type": "devops",
+        "skills": ["github", "cloudflare", "vercel", "render", "docker"],
+        "meta": { "bg": "201 250 100", "color": "24 24 27" }
+      },
+      {
+        "type": "software",
+        "skills": [
+          "excel/spreadsheet",
+          "figma",
+          "procreate",
+          "photoshop",
+          "illustrator",
+          "indesign",
+          "affinity",
+          "da vinci resolve",
+          "premiere pro",
+          "fontself"
+        ],
+        "meta": { "bg": "231 120 180", "color": "24 24 27" }
+      },
+      {
+        "type": "AI e Automazione",
+        "skills": [
+          "Stable Diffusion (comfyui / a111)",
+          "Claude Code",
+          "Make.com",
+          "n8n"
+        ],
+        "meta": { "bg": "91 200 190", "color": "24 24 27" }
+      },
+      {
+        "type": "Lingue",
+        "skills": [
+          "Inglese (C1 Cambridge)",
+          "Italiano (Madrelingua)",
+          "Tedesco (B1)"
+        ],
+        "meta": { "bg": "101 220 170", "color": "24 24 27" }
+      },
+      {
+        "type": "Soft Skills",
+        "skills": [
+          "problem solving",
+          "adattabilità",
+          "attenzione ai dettagli",
+          "curiosità",
+          "autonomia",
+          "intraprendenza"
+        ],
+        "meta": { "bg": "221 205 190", "color": "24 24 27" }
+      }
+    ]
   },
-  {
-    "type": "creative",
-    "skills": [
-      "digital illustrations",
-      "graphic design",
-      "editorial design",
-      "UI design",
-      "UX design"
-    ],
+  "en": {
     "meta": {
-      "bg": "251 140 0",
-      "color": "24 24 27"
-    }
-  },
-  {
-    "type": "CMS",
-    "skills": ["payloadcms", "sanity", "shopify", "wordpress", "ghost", "microcms"],
-    "meta": {
-      "bg": "61 170 60",
-      "color": "24 24 27"
-    }
-  },
-  {
-    "type": "devops",
-    "skills": ["github", "cloudflare", "vercel", "render", "docker"],
-    "meta": {
-      "bg": "201 250 100",
-      "color": "24 24 27"
-    }
-  },
-  {
-    "type": "software",
-    "skills": [
-      "excel/spreadsheet",
-      "figma",
-      "procreate",
-      "photoshop",
-      "illustrator",
-      "indesign",
-      "affinity",
-      "da vinci resolve",
-      "premiere pro",
-      "fontself"
-    ],
-    "meta": {
-      "bg": "231 120 180",
-      "color": "24 24 27"
-    }
-  },
-  {
-    "type": "AI e Automazione",
-    "skills": [
-      "Stable Diffusion (comfyui / a111)",
-      "Claude Code",
-      "Make.com",
-      "n8n"
-    ],
-    "meta": {
-      "bg": "91 200 190",
-      "color": "24 24 27"
-    }
-  },
-  {
-    "type": "Lingue",
-    "skills": [
-      "Inglese (C1 Cambridge)",
-      "Italiano (Madrelingua)",
-      "Tedesco (B1)"
-    ],
-    "meta": {
-      "bg": "101 220 170",
-      "color": "24 24 27"
-    }
-  },
-  {
-    "type": "Soft Skills",
-    "skills": [
-      "problem solving",
-      "adattabilità",
-      "attenzione ai dettagli",
-      "curiosità",
-      "autonomia",
-      "intraprendenza"
-    ],
-    "meta": {
-      "bg": "221 205 190",
-      "color": "24 24 27"
-    }
+      "title": "Niccolò Agnoletti - Skills",
+      "description": "What I can do and in which areas",
+      "heading": "My skills :)"
+    },
+    "fields": [
+      {
+        "type": "technical",
+        "skills": [
+          "HTML",
+          "React",
+          "NextJS",
+          "Astro",
+          "Typescript",
+          "Javascript",
+          "Hono",
+          "Python",
+          "PHP",
+          "Liquid",
+          "CSS",
+          "Tailwind",
+          "SASS",
+          "GROQ query",
+          "GraphQL",
+          "SQL",
+          "Drizzle"
+        ],
+        "meta": { "bg": "251 160 250", "color": "24 24 27" }
+      },
+      {
+        "type": "creative",
+        "skills": [
+          "digital illustrations",
+          "graphic design",
+          "editorial design",
+          "UI design",
+          "UX design"
+        ],
+        "meta": { "bg": "251 140 0", "color": "24 24 27" }
+      },
+      {
+        "type": "CMS",
+        "skills": [
+          "payloadcms",
+          "sanity",
+          "shopify",
+          "wordpress",
+          "ghost",
+          "microcms"
+        ],
+        "meta": { "bg": "61 170 60", "color": "24 24 27" }
+      },
+      {
+        "type": "devops",
+        "skills": ["github", "cloudflare", "vercel", "render", "docker"],
+        "meta": { "bg": "201 250 100", "color": "24 24 27" }
+      },
+      {
+        "type": "software",
+        "skills": [
+          "excel/spreadsheet",
+          "figma",
+          "procreate",
+          "photoshop",
+          "illustrator",
+          "indesign",
+          "affinity",
+          "da vinci resolve",
+          "premiere pro",
+          "fontself"
+        ],
+        "meta": { "bg": "231 120 180", "color": "24 24 27" }
+      },
+      {
+        "type": "AI & Automation",
+        "skills": [
+          "Stable Diffusion (comfyui / a111)",
+          "Claude Code",
+          "Make.com",
+          "n8n"
+        ],
+        "meta": { "bg": "91 200 190", "color": "24 24 27" }
+      },
+      {
+        "type": "Languages",
+        "skills": [
+          "English (C1 Cambridge)",
+          "Italian (Native)",
+          "German (B1)"
+        ],
+        "meta": { "bg": "101 220 170", "color": "24 24 27" }
+      },
+      {
+        "type": "Soft Skills",
+        "skills": [
+          "problem solving",
+          "adaptability",
+          "attention to detail",
+          "curiosity",
+          "autonomy",
+          "initiative"
+        ],
+        "meta": { "bg": "221 205 190", "color": "24 24 27" }
+      }
+    ]
   }
-]
+}

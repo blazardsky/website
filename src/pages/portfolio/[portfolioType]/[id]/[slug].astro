@@ -1,9 +1,12 @@
 ---
 import Layout from '@layouts/Layout.astro'
-import PAGEDATA from '@data/portfolio.json';
+import PORTFOLIO from '@data/portfolio.json';
 import {getDocuments, getDocumentDetail, type Work } from '@lib/microcms.ts';
-import {type Portfolio} from '@lib/types.ts'
+import {type Portfolio, type PortfolioPageData} from '@lib/types.ts'
 import Gallery from '@components/Gallery.astro';
+import { pickLocale } from "@i18n/utils";
+import type { Lang } from "@i18n/ui";
+import type { LocalizedData } from "@i18n/utils";
 
 export async function getStaticPaths() {
   const response = await getDocuments('works', { fields: ["slug", "portfolio", "id"], limit: 100  }); // limita il numero di post massimo a 100 (attualmente ne ho 14. Se il limit è meno di quanti sono realmente i progetti mi crea dei progetti senza pagina dei dettagli, che va in 404)
@@ -19,7 +22,12 @@ export async function getStaticPaths() {
 const { portfolioType, id } = Astro.params;
 
 const document = await getDocumentDetail<Work>('works', id as string);
-const DATA = PAGEDATA[portfolioType as Portfolio];
+const locale = Astro.currentLocale as Lang;
+const portfolioData = pickLocale(
+  PORTFOLIO as LocalizedData<PortfolioPageData>,
+  locale,
+);
+const DATA = portfolioData[portfolioType as Portfolio];
 
 ---
 
