@@ -263,11 +263,11 @@
       ]
     },
     "portfolioCta": {
-      "beforeTitle": "made it this far"
+      "beforeTitle": "made it this far?"
     },
     "contact": {
       "heading": "Or would you like to get in touch?",
-      "ctaAlt": "an arrow pointing down, with an illustrated monkey",
+      "ctaAlt": "an arrow pointing down, with an illustrated monkey hanging from it",
       "ctaBefore": "I'm available for remote work across Europe and worldwide:",
       "ctaLink": "get in touch",
       "note": "Especially for editorial projects, or if you represent a creative studio looking for collaborators."

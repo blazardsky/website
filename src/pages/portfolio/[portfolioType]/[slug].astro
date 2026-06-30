@@ -1,0 +1,153 @@
+---
+import Layout from "@layouts/Layout.astro";
+import PORTFOLIO from "@data/portfolio.json";
+import Gallery from "@components/Gallery.astro";
+import { getCollection, render } from "astro:content";
+import { type Portfolio, type PortfolioPageData } from "@lib/types.ts";
+import {
+  getWorkForLocale,
+  localizedUrl,
+  pickLocale,
+  useTranslations,
+  type LocalizedData,
+} from "@i18n/utils";
+import type { Lang } from "@i18n/ui";
+
+export async function getStaticPaths() {
+  const entries = await getCollection("works");
+  const seen = new Set<string>();
+
+  return entries
+    .filter((entry) => {
+      const key = `${entry.data.portfolio}/${entry.data.slug}`;
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    })
+    .map((entry) => ({
+      params: {
+        portfolioType: entry.data.portfolio,
+        slug: entry.data.slug,
+      },
+    }));
+}
+
+const { portfolioType, slug } = Astro.params;
+const locale = Astro.currentLocale as Lang;
+const t = useTranslations(locale);
+
+const entries = await getCollection("works");
+const entry = getWorkForLocale(entries, slug as string, locale);
+
+if (!entry || entry.data.portfolio !== portfolioType) {
+  return Astro.redirect(localizedUrl(locale, `portfolio/${portfolioType}/`));
+}
+
+const { Content } = await render(entry);
+const work = entry.data;
+
+const portfolioData = pickLocale(
+  PORTFOLIO as LocalizedData<PortfolioPageData>,
+  locale,
+);
+const DATA = portfolioData[portfolioType as Portfolio];
+const category = portfolioType === "technical" ? "Development" : "Editorial";
+const galleryImages = [work.image, ...work.gallery];
+---
+
+<Layout
+  title={`Progetto ${work.title} [${portfolioType} portfolio]`}
+  bodyClass={DATA.bodyClass}
+  description={`${work.title} — ${portfolioType} portfolio`}
+>
+  <section
+    class="w-full bg-no-repeat bg-contain min-h-96 flex items-center z-10 relative"
+    style={DATA.style}
+  >
+    <div class="text-center w-full mx-auto p-4">
+      <p class="font-cursive">{category} Stuff</p>
+      <h1 slot="p" class="leading-none text-4xl gsap-split-line">
+        {
+          work.title.split(" ").map((word) => (
+            <span class="even:font-bold last:font-bold"> {word} </span>
+          ))
+        }
+      </h1>
+      <a
+        class="mt-4 px-4 block w-fit mx-auto"
+        href={localizedUrl(locale, `portfolio/${portfolioType}/`)}
+      >
+        <span
+          class="text-foreground py-1 px-8 font-extrabold text-base uppercase block transition-all ease-out hover:scale-y-110 origin-top"
+          >&larr; {t("portfolio.back")}</span
+        >
+      </a>
+    </div>
+  </section>
+  <article class="-mt-10 mx-auto max-w-5xl flex flex-col md:flex-row gap-8">
+    <main class="w-full">
+      <h2 class="sr-only">{t("portfolio.descriptionHeading")}</h2>
+      <div class="px-4 my-8 font-cursive text-pretty gsap-split-line">
+        <Content />
+      </div>
+    </main>
+    <aside class="w-fit min-w-72 max-w-full px-4">
+      <h2 class="sr-only">{t("portfolio.detailsHeading")}</h2>
+      <h3 class="sr-only">{t("portfolio.infoHeading")}</h3>
+      <ul role="complementary">
+        <li class="mb-6">
+          <b>{t("portfolio.client")}:</b> {work.client}
+        </li>
+        <li class="my-2">
+          <b>{t("portfolio.year")}:</b>
+          <time datetime={work.start_date.toISOString()}>
+            {work.start_date.getFullYear()}</time
+          >
+        </li>
+        <li class="my-2"><b>{t("portfolio.status")}:</b> {work.status}</li>
+        <li class="my-2"><b>{t("portfolio.type")}:</b> {work.type}</li>
+        {
+          work.link && (
+            <li class="mt-6">
+              <b>{t("portfolio.link")}:</b>{" "}
+              <a href={work.link} target="_blank" rel="noopener">
+                {work.link.replace(/http(s?):\/\/(www.)?/gi, "")}
+              </a>
+            </li>
+          )
+        }
+      </ul>
+      {
+        work.notes && (
+          <>
+            <hr class="border-foreground my-4" />
+            <h3 class="sr-only">{t("portfolio.notesHeading")}</h3>
+            <div id="notes" set:html={work.notes} />
+          </>
+        )
+      }
+    </aside>
+  </article>
+  <Gallery images={galleryImages} locale={locale} />
+</Layout>
+
+<style is:inline>
+  #notes h4 {
+    font-weight: 600;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+  #notes ul,
+  #notes ol {
+    padding-left: 0.75rem;
+  }
+  #notes ul {
+    list-style-type: disc;
+  }
+  #notes ol {
+    list-style-type: decimal-leading-zero;
+  }
+  #notes li {
+    margin: 0.125rem;
+  }
+</style>

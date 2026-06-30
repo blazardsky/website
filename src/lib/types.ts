@@ -1,5 +1,18 @@
 export type Portfolio = 'technical' | 'creative';
 
+export type WorkEntry = {
+  title: string;
+  slug: string;
+  portfolio: Portfolio;
+  locale: 'it' | 'en';
+  client: string;
+  start_date: Date;
+  status: string;
+  type: string;
+  link?: string;
+  notes?: string;
+};
+
 export type PageMeta = {
   title: string;
   description?: string;

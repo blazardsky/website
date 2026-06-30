@@ -1,18 +1,13 @@
 ---
-import type { MicroCMSImage } from "microcms-js-sdk";
-import { getDocuments } from "@lib/microcms";
+import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
 import { cn } from "@lib/utils";
+import { getWorksForLocale } from "@i18n/utils";
+import type { Lang } from "@i18n/ui";
 
-type Work = {
-  title: string;
-  image: MicroCMSImage;
-};
-
-const works = await getDocuments<Work>("works", {
-  fields: ["image", "title"],
-  limit: 6,
-}); //"portfolio", "id", "slug"
+const locale = Astro.currentLocale as Lang;
+const entries = await getCollection("works");
+const works = getWorksForLocale(entries, locale).slice(0, 6);
 ---
 
 <section
@@ -23,12 +18,12 @@ const works = await getDocuments<Work>("works", {
     id="worksContainer"
   >
     {
-      works.contents.map((work: Work, index) => (
+      works.map((work, index) => (
         <Image
-          alt={work.title ?? ""}
-          src={work.image.url}
-          height={work.image.height ?? 0}
-          width={work.image.width ?? 0}
+          alt={work.data.title}
+          src={work.data.image}
+          height={work.data.image.height}
+          width={work.data.image.width}
           loading="lazy"
           fetchpriority="low"
           class={cn(

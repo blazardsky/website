@@ -1,0 +1,337 @@
+[
+  {
+    "id": "0kkq5ibsyqh",
+    "slug": "dpg",
+    "portfolio": "technical",
+    "title": "Docenti per gaza",
+    "description": "Docenti per Gaza è un progetto in supporto dei bambini e delle scuole palestinesi colpite dal conflitto. Poco dopo l&#39;inizio dell&#39;assalto da parte di &quot;I&quot;erano pochissimi a esporsi in favore del rispetto per i diritti umani e per la legge internazionale. Su instagram ho trovato per caso una professoressa che aveva deciso di battersi contro il silenzio dei suoi colleghi e delle istituzioni. Mi sono offerto di aiutarla gratuitamente a creare una landing page per una raccolta firme e a creare dei template grafici di base per postare sui social (che poi lei e le sue collaboratrici usano in autonomia). Non sono in molti ad avere il coraggio di Myriam e ad esporsi pubblicamente per una causa così giusta eppure così osteggiata e interpretata in malafede. Adesso abbiamo trasformato il sito in un blog su base wordpress per permettere al gruppo che si è espanso di poter parlare delle proprie iniziative e gestirlo in autonomia.",
+    "client": "Prof.sa Myriam Pettinato",
+    "start_date": "2023-01-01",
+    "status": "Concluso",
+    "type": "Landing page",
+    "link": "https://docentipergaza.it",
+    "notes": "<p>Ho realizzato anche 2 loghi, il primo era una banalissima colomba ripresa dalla foto scelta come visual principale, il secondo è stato scelto dal gruppo DPG.</p>",
+    "imageUrls": [
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/8ac86ac79177426aa9600c742962814d/docentipergaza.it__001.jpg",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/58e5c1c2d86c47a4b9acb35e78125135/docentipergaza.it__002.jpg",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/2d75602c5364418aa4de644a3b65cb8d/docentipergaza.it__003.jpg",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/d24dfce3b5214c6ea4b79e8923683ae5/docentipergaza.it__004.jpg"
+    ],
+    "coverImage": "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/8ac86ac79177426aa9600c742962814d/docentipergaza.it__001.jpg",
+    "galleryImages": [
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/58e5c1c2d86c47a4b9acb35e78125135/docentipergaza.it__002.jpg",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/2d75602c5364418aa4de644a3b65cb8d/docentipergaza.it__003.jpg",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/d24dfce3b5214c6ea4b79e8923683ae5/docentipergaza.it__004.jpg"
+    ]
+  },
+  {
+    "id": "17cwki-czb8",
+    "slug": "arkadia",
+    "portfolio": "technical",
+    "title": "Arkadia APS",
+    "description": "Con il team di Kipo abbiamo realizzato un piano di comunicazione per Arkadia Onlus, un&#39;associazione che si occupa di promozione e inclusione sociale in Valdarno. Abbiamo iniziato creando delle grafiche riutilizzabili per i loro social basandoci su forme geometriche organiche che dessero l&#39;idea di movimento e unicità; gli abbiamo insegnato a seguire un piano editoriale e a gestire i contenuti del sito così che potessero essere totalmente autonomi. Abbiamo creato il sito puntando a raccogliere donazioni con il testo scritto da Lorenzo Bonatti sulla homepage, collegato a un servizio di raccolta fondi open source molto facile da usare. Abbiamo infine realizzato insieme delle brevi video interviste e un cartellone pubblicitario da far girare in Valdarno per 6 mesi in modo da far conoscere il progetto Arkadia al territorio.",
+    "client": "Arkadia Onlus",
+    "start_date": "2024-01-01",
+    "status": "Concluso",
+    "type": "Sito web",
+    "link": "https://www.arkadiaonlus.org",
+    "notes": null,
+    "imageUrls": [
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/7e5658b40e0b41e886e78f91ebe2e25b/Arkadia.jpg",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/c42c6ced58a045cbb527fa455018c43d/Arkadia1.png",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/77d8940b104c4389bb4cc7e1160e23de/Arkadia4.png",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/4ce0b1144c8d4441a3cc9ea7d0c5b63d/Arkadia2.png"
+    ],
+    "coverImage": "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/7e5658b40e0b41e886e78f91ebe2e25b/Arkadia.jpg",
+    "galleryImages": [
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/c42c6ced58a045cbb527fa455018c43d/Arkadia1.png",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/77d8940b104c4389bb4cc7e1160e23de/Arkadia4.png",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/4ce0b1144c8d4441a3cc9ea7d0c5b63d/Arkadia2.png"
+    ]
+  },
+  {
+    "id": "2-k6cvudqi6",
+    "slug": "alta-movie",
+    "portfolio": "technical",
+    "title": "Alta Movie Aerials",
+    "description": "Giovanni è un collaboratore di Kipo, con cui abbiamo realizzato video e riprese per pubblicità dei clienti dell&#39;agenzia. Nel 2022 ci ha chiesto una mano a realizzare il sito web della sua agenzia di riprese aeree che potesse gestire in autonomia. Così gli ho dato una mano a creare un sito web custom con wordpress, con personalizzazioni in codice create specificatamente e un builder per permettergli di modificare e ampliare il sito in autonomia. Il design è un po&#39; cambiato rispetto all&#39;inizio, ma è rimasto comunque coerente e funzionale. I disegni in homepage sono stati realizzati da un collaboratore di Giovanni, foto e video sono naturalmente autoprodotte.",
+    "client": "Giovanni Raiola, Alta Movie Aerials",
+    "start_date": "2022-01-01",
+    "status": "Concluso",
+    "type": "sito web",
+    "link": "https://www.alta-movie.com",
+    "notes": null,
+    "imageUrls": [
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/d4e88d9a6f204056b3f4e92112f14eb1/alta-movie-banner.jpg",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/979c7dd57b834232a5df1af5309ce8e9/altamovie-2.jpg",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/983243a4be9645a4b6d1d21e29c6b1b5/altamovie-1.jpg",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/76178b6b28b24e538c85b51746f8f86a/droni-altamovie.jpg",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/4dac5adcd0e74c239673556ab9e9ce2f/altamovie.jpg",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/d525b8bab57f43729cf9abe0a38ac90e/altamovie-3.jpg"
+    ],
+    "coverImage": "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/d4e88d9a6f204056b3f4e92112f14eb1/alta-movie-banner.jpg",
+    "galleryImages": [
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/979c7dd57b834232a5df1af5309ce8e9/altamovie-2.jpg",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/983243a4be9645a4b6d1d21e29c6b1b5/altamovie-1.jpg",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/76178b6b28b24e538c85b51746f8f86a/droni-altamovie.jpg",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/4dac5adcd0e74c239673556ab9e9ce2f/altamovie.jpg",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/d525b8bab57f43729cf9abe0a38ac90e/altamovie-3.jpg"
+    ]
+  },
+  {
+    "id": "39_zh2td2ob",
+    "slug": "concorso-capodaglio",
+    "portfolio": "technical",
+    "title": "Sito del &quot;Concorso Nazionale Wanda Capodaglio&quot;",
+    "description": "Mi sono occupato della progettazione e dello sviluppo di un tema WordPress custom per il Concorso Nazionale Wanda Capodaglio. Il vecchio sistema non permetteva una gestione agile dei contenuti e non rispondeva alle esigenze di accessibilità e usabilità del team organizzativo. Ho scelto di strutturare un sistema editoriale basato su Advanced Custom Fields (ACF), creando template dedicati e componenti frontend riusabili per gestire in modo semplice edizioni, finalisti, giuria, sponsor e documenti. L’obiettivo era rendere il sito facilmente aggiornabile e più inclusivo nella fruizione. Ho curato la struttura informativa, lo sviluppo in PHP, Tailwind e JavaScript, e l’ottimizzazione della navigazione. Particolare attenzione è stata data all’accessibilità: ho inserito landmark semantici (header, nav, main, aside, footer). Ho utilizzato classi sr-only per etichette contestuali (navigazione articoli, metadati post, pulsanti menu e slider) e implementato pattern ARIA avanzati, come tablist/tab/tabpanel sulla pagina edizione, con gestione di aria-selected, aria-controls e hidden.",
+    "client": "Associazione Culturale Wanda Capodaglio",
+    "start_date": "2025-01-01",
+    "status": "Concluso",
+    "type": "Sito web",
+    "link": "https://www.concorsonazionalewandacapodaglio.it/",
+    "notes": "<h4 id=\"h686ef1f31b\">Tech Stack</h4><ul><li>WordPress</li><li>tailwindcss</li><li>php</li><li>javascript (vanilla)</li></ul><p>Tema basato su _tw</p>",
+    "imageUrls": [
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/b7c105cb45e141cabdc3a705d2554774/ConcorsoNazionale_WandaCapodaglio_preview.jpg",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/5adada94dc154a379db9f9feb4d5138c/ConcorsoNazionale_WandaCapodaglio-05.png",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/d58991a62823472aae02590f426c507d/ConcorsoNazionale_WandaCapodaglio-04.png",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/12fd467d5c774637a294c0b78b0d6849/ConcorsoNazionale_WandaCapodaglio-03.png"
+    ],
+    "coverImage": "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/b7c105cb45e141cabdc3a705d2554774/ConcorsoNazionale_WandaCapodaglio_preview.jpg",
+    "galleryImages": [
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/5adada94dc154a379db9f9feb4d5138c/ConcorsoNazionale_WandaCapodaglio-05.png",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/d58991a62823472aae02590f426c507d/ConcorsoNazionale_WandaCapodaglio-04.png",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/12fd467d5c774637a294c0b78b0d6849/ConcorsoNazionale_WandaCapodaglio-03.png"
+    ]
+  },
+  {
+    "id": "bgnzvfxluzbj",
+    "slug": "ait-fase-1",
+    "portfolio": "technical",
+    "title": "Accademia Italiana del Tartufo - Fase Uno",
+    "description": "L’Accademia Italiana del Tartufo nel mondo (acronimo AIT) nasce da un’ idea di professionisti di vari settori, nel 2014. Mio babbo ne è vice presidente. Avevano bisogno urgente di creare un sito web per la loro associazione, così abbiamo deciso di strutturare il progetto in due fasi. La prima fase in cui creare un sito con le sole pagine e contenuti necessari, senza tralasciare l&#39;esperienza utente e la UI in linea con il loro Magazine &quot;Stile Tartufo&quot;. Per realizzare questo primo sito ho sfruttato Astro.build e tailwind, che mi hanno permesso di avere un sito web reattivo e responsive in brevissimo tempo. La seconda fase prevede di &quot;migrare&quot; il progetto all&#39;interno tra quelli gestiti da Kìpo srl, così da poter avere un team dedicato non solo realizzazione del siti web ma anche quanto riguarda ads, seo, social media ecc. In questa seconda fase aggiungeremo nuovi contenuti e renderemo indipendenti i membri dell&#39;accademia nella creazione di post e gestione del sito tramite CMS con varie integrazioni.",
+    "client": "Accademia Italiana del Tartufo",
+    "start_date": "2022-01-01",
+    "status": "Concluso",
+    "type": "sito web",
+    "link": "https://accademiaitalianadeltartufo.com/",
+    "notes": "<p>2024: Fase 2 non ancora iniziata</p><p><a href=\"https://www.figma.com/design/C5IbaRY8x5AElo2GGuSj6l/Accademia-Italiana-del-Tartufo?node-id=0-1&amp;t=c0tO6Y4V7wvvUF06-1\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">Figma design</a></p>",
+    "imageUrls": [
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/796f21ea80ed4cfb9b007694d63fd23b/ait-fase-1.jpg"
+    ],
+    "coverImage": "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/796f21ea80ed4cfb9b007694d63fd23b/ait-fase-1.jpg",
+    "galleryImages": []
+  },
+  {
+    "id": "d57w8txs0xrl",
+    "slug": "il-maestro",
+    "portfolio": "technical",
+    "title": "Giorgio Butini Scultore",
+    "description": "Il maestro Giorgio Butini è uno scultore fiorentino che ha esposto in importanti gallerie nel mondo. Con Kipo abbiamo rifatto per lui il sito dove esporre alcune delle sue opere. L&#39;idea era di fare un sito molto minimale, un po&#39; come una moderna galleria d&#39;arte, dove far risaltare le opere sopra a tutto.",
+    "client": "Giorgio Butini",
+    "start_date": "2024-01-01",
+    "status": "Concluso",
+    "type": "Sito web",
+    "link": "https://www.giorgiobutiniscultore.com",
+    "notes": "<p>Realizzato con <strong>Kìpo</strong></p>",
+    "imageUrls": [
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/2a67de80de57445ea1063c4ff93cc47a/giorgiobutini-preview.jpg",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/3d8f895232854b16b2cc792c40c0c6d0/giorgiobutini-screenshot-0.jpg",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/09724f7790d74d4ea00b3d539cb59624/giorgiobutini-screenshot-1.jpg"
+    ],
+    "coverImage": "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/2a67de80de57445ea1063c4ff93cc47a/giorgiobutini-preview.jpg",
+    "galleryImages": [
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/3d8f895232854b16b2cc792c40c0c6d0/giorgiobutini-screenshot-0.jpg",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/09724f7790d74d4ea00b3d539cb59624/giorgiobutini-screenshot-1.jpg"
+    ]
+  },
+  {
+    "id": "jn40gpo0x5c",
+    "slug": "showroom-ml-auto",
+    "portfolio": "technical",
+    "title": "Showroom M&amp;L Auto",
+    "description": "Abbiamo realizzato il nuovo sito di annunci auto per lo showroom &quot;M&amp;L Auto&quot; di Montevarchi (AR), rivenditore Suzuki e Hyundai noto nella zona. Il sito che avevano prima era praticamente abbandonato: lento, spesso non caricava bene i contenuti, si bloccava e gli annunci erano completamente inutili poiché non erano indicizzati ed erano di difficile fruizione. Dopo due proposte di design iniziale abbiamo ricreato fedelmente la versione scelta dal cliente, realizzando un sito adattabile e seo-oriented in poco tempo, con automazioni per l&#39;inserimento dei dati delle auto negli annunci per semplificare il lavoro a Luca.",
+    "client": "M&amp;L Auto",
+    "start_date": "2024-01-01",
+    "status": "Concluso",
+    "type": "Sito web",
+    "link": "https://www.mlauto.it",
+    "notes": "<p>Progetto realizzato con <strong>Kìpo srl</strong></p>",
+    "imageUrls": [
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/1081b436c761411990c5b78ca2803eb6/mlauto_presentazione_kipo_nic.jpg",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/5e3e71610acb45dbbd957b6eba13f4e5/mlauto-proposta-kipo-01.jpg",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/679a5d0d0b4a4b3f89822b58fd7a1f35/mlauto-proposta-kipo-02.jpg"
+    ],
+    "coverImage": "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/1081b436c761411990c5b78ca2803eb6/mlauto_presentazione_kipo_nic.jpg",
+    "galleryImages": [
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/5e3e71610acb45dbbd957b6eba13f4e5/mlauto-proposta-kipo-01.jpg",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/679a5d0d0b4a4b3f89822b58fd7a1f35/mlauto-proposta-kipo-02.jpg"
+    ]
+  },
+  {
+    "id": "maddj",
+    "slug": "mad-about-events",
+    "portfolio": "technical",
+    "title": "Mad About Events",
+    "description": "Verso i primi di Luglio ho avuto modo di dedicarmi al rinnovamento del sito del mio amico Giulio, in arte Mad DJ – avevo creato il sito precedente nel 2019, sperimentando con php e bootstrap. Il sito funzionava bene, era responsive ed esteticamente gradevole ma con il passare del tempo ho iniziato a non esserne soddisfatto. Volevo migliorare la navigazione, renderlo più veloce – soprattutto nei tempi di caricamento iniziali – e più moderno. Il vecchio sito si basava su un sistema &quot;fatto in casa&quot; per gestire i testi e le traduzioni, non ottimale. D&#39;accordo con Giulio ho colto l&#39;occasione per semplificare la gestione dei contenuti usando Sanity.io come CMS e Grommet per avere una UI accessibile.",
+    "client": "Giulio Maddii",
+    "start_date": "2022-01-01",
+    "status": "Concluso",
+    "type": "Sito web",
+    "link": "https://www.madaboutevents.it",
+    "notes": "<h4 id=\"h4f41d1c907\">Tech stack:</h4><ul><li>React</li><li>NextJs</li><li>Grommet</li><li>Sanity</li></ul>",
+    "imageUrls": [
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/310b668783b7496f9726e1bf1600694a/giulio_maddii_pagine_sito_2022.jpg"
+    ],
+    "coverImage": "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/310b668783b7496f9726e1bf1600694a/giulio_maddii_pagine_sito_2022.jpg",
+    "galleryImages": []
+  },
+  {
+    "id": "xo4sds39iw0",
+    "slug": "abbicuradite-unigum",
+    "portfolio": "technical",
+    "title": "Abbi Cura di Te - by Unigum",
+    "description": "Con Kipo Produzioni abbiamo realizzato il sito per il progetto &quot;Abbi Cura di Te&quot; di Unigum, azienda leader nel settore della sicurezza sul lavoro. Il progetto vuole portare l&#39;attenzione sul tema della sicurezza tramite un importante messaggio: proteggersi significa prendersi cura di sé. Unigum ha collaborato con il pittore Rindori che ha realizzato delle variazioni di grandi opere d&#39;arte dove i protagonisti indossano i DPI (dispositivi di protezione individuale) venduti dall&#39;azienda. In galleria proposte di stile, mockup e prove iniziali e screenshot del sito finale.",
+    "client": "Unigum spa",
+    "start_date": "2024-01-01",
+    "status": "Concluso",
+    "type": "Sito web",
+    "link": "https://www.abbicuradite.org/",
+    "notes": "<p>Realizzato con <strong>Kìpo.</strong></p><p>Abbi Cura Di Te, Sei Un&apos;Opera D&apos;Arte® è un progetto di <strong>Unigum</strong>.</p><h4 id=\"h686ef1f31b\">Tech Stack</h4><ul><li>NextJS/React</li><li>Sanity CMS</li><li>Tailwind CSS</li><li>Tally.so</li><li>Render</li></ul>",
+    "imageUrls": [
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/10fd3d6319614bfca32162c5504aeb75/abbicuradite-preview.jpg",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/7555741e855d410b8d5a748dc62b5442/abbicuradite-proposte-stile.jpg",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/e1090b1bff314752955f0f038b711b65/abbicuradite-prove-progetto.jpg",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/459051da800f4acfb4bdbe55aaf37959/abbicuradite-mockup-1.jpg",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/315d2f7cd4a6487c9877e97c4470a843/abbicuradite-screenshot.jpg"
+    ],
+    "coverImage": "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/10fd3d6319614bfca32162c5504aeb75/abbicuradite-preview.jpg",
+    "galleryImages": [
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/7555741e855d410b8d5a748dc62b5442/abbicuradite-proposte-stile.jpg",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/e1090b1bff314752955f0f038b711b65/abbicuradite-prove-progetto.jpg",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/459051da800f4acfb4bdbe55aaf37959/abbicuradite-mockup-1.jpg",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/315d2f7cd4a6487c9877e97c4470a843/abbicuradite-screenshot.jpg"
+    ]
+  },
+  {
+    "id": "yp066az8hg",
+    "slug": "cartelloni-valdarno-v2",
+    "portfolio": "technical",
+    "title": "Cartelloni Valdarno (nuovo)",
+    "description": "Dopo qualche mese abbiamo deciso di rimettere mano alla landing page per raccogliere lead interessati al nostro servizio di cartellonistica &quot;Circuito Visivo™&quot;. In primo luogo per integrare direttamente il sito con il crm (difatti lo abbiamo costruito sfruttando il sistema di build visuale fornito dallo stesso), così che il team marketing potesse aggiustare in autonomia e sperimentare con vari A/B test e automazioni. Inoltre abbiamo rivisto e semplificato i testi e creato una struttura più coerente e funzionale.",
+    "client": "Kipo srl",
+    "start_date": "2025-01-01",
+    "status": "Concluso",
+    "type": "Landing page",
+    "link": "https://cartellonivaldarno.it",
+    "notes": "<p>Realizzato tramite il software<strong> Automatore.it</strong></p><p>Video di intro realizzato con <strong>Hailuo AI</strong></p><p></p>",
+    "imageUrls": [
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/4c27a2aef45b47e5ac07d00e99babb40/cartelloni-valdarno_v2__001.jpg",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/fae62a811a134915a463f5c3f981d337/cartelloni-valdarno_v2__005.jpg",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/dbe32ef1578b4c6c99aa11434279de66/cartelloni-valdarno_v2__003.jpg",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/fbbe0910d700435a8357e8d3c3910d75/cartelloni-valdarno_v2__004.jpg"
+    ],
+    "coverImage": "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/4c27a2aef45b47e5ac07d00e99babb40/cartelloni-valdarno_v2__001.jpg",
+    "galleryImages": [
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/fae62a811a134915a463f5c3f981d337/cartelloni-valdarno_v2__005.jpg",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/dbe32ef1578b4c6c99aa11434279de66/cartelloni-valdarno_v2__003.jpg",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/fbbe0910d700435a8357e8d3c3910d75/cartelloni-valdarno_v2__004.jpg"
+    ]
+  },
+  {
+    "id": "283d80fjdur",
+    "slug": "pentolino-dell-oste",
+    "portfolio": "creative",
+    "title": "Il Pentolino dell&#39;Oste - Magazine",
+    "description": "Per &quot;Il Pentolino dell&#39;Oste&quot; che ho avviato insieme al mio amico Andrea Batacchi (ideatore del progetto), ho realizzato 2 illustrazioni: per la cover del mese di Febbraio 2021 e per la cover del mese di Aprile 2021. Ho anche impaginato tutti i volumi e mi sono occupato della distribuzione, del sito web e della brand identity.",
+    "client": "Il Pentolino dell&#39;OSte",
+    "start_date": "2021-01-01",
+    "status": "Concluso",
+    "type": "grafica editoriale e illustrazione",
+    "link": "https://www.behance.net/gallery/180380669/Il-Pentolino-dellOste-Rivista-culinaria",
+    "notes": "<p>Per altre info e aggiornamenti sul progetto: <a href=\"https://ilpentolinodelloste.it\" target=\"_blank\" rel=\"noopener noreferrer nofollow\"><strong>ilpentolinodelloste.it</strong></a></p>",
+    "imageUrls": [
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/d2cd9143bba049c4b5f47bce7f71cba2/ilpentolinodelloste_behance_blazardsky-covers.png",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/1b38740b27e7441e9111db41725a8d17/mockup-pentolino-vol1.png",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/3630b6bcc0dc4907a22b4631ddaab5db/cover-febbraio.webp",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/0d35e01698384baea96d198a60d5c9f1/mockup-pentolino-aprile.jpg",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/3ac5164af3eb4a319a24ac5ba28f8855/cover-aprile-1.webp",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/6299c18d4fc94a019d549a0d29769f2a/a782ebffca4d8b45ecde32ba52f5e71dbce7397c-1440x980.png"
+    ],
+    "coverImage": "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/d2cd9143bba049c4b5f47bce7f71cba2/ilpentolinodelloste_behance_blazardsky-covers.png",
+    "galleryImages": [
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/1b38740b27e7441e9111db41725a8d17/mockup-pentolino-vol1.png",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/3630b6bcc0dc4907a22b4631ddaab5db/cover-febbraio.webp",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/0d35e01698384baea96d198a60d5c9f1/mockup-pentolino-aprile.jpg",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/3ac5164af3eb4a319a24ac5ba28f8855/cover-aprile-1.webp",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/6299c18d4fc94a019d549a0d29769f2a/a782ebffca4d8b45ecde32ba52f5e71dbce7397c-1440x980.png"
+    ]
+  },
+  {
+    "id": "4y-jpfsl70ty",
+    "slug": "ascg-logo",
+    "portfolio": "creative",
+    "title": "ASCG Service Logo",
+    "description": "ASCG SERVICE è un&#39;azienda specializzata in noleggio di impianti audio, luci e video per eventi e manifestazioni nata ad Arezzo nel 2016. Tramite un conoscente comune mi hanno chiesto se potevo aiutarli a sistemare il loro vecchio logo e il sito web. Il vecchio logo era decisamente datato, però volevano mantenere i colori e l&#39;idea iniziale dei classici &quot;pallini in movimento&quot; a indicare il livello del suono. Quando ho creato il nuovo logo ho pensato a qualcosa che potesse essere ben visibile anche in piccolo e su una maglia o un cappellino: ho quindi cercato un font che fosse ben leggibile e che andasse a fondersi armonicamente con il logo creato. Forme rotonde e sinuose insieme a dei tagli netti e geometrici, come per il logo. Dopo varie prove ho realizzato l&#39;icona finale e le varie versioni da utilizzare in piccolo, in grande, bianco e nero, orizzonatle e verticale.",
+    "client": "ASCG Service",
+    "start_date": "2020-01-01",
+    "status": "Concluso",
+    "type": "Logo design",
+    "link": null,
+    "notes": null,
+    "imageUrls": [
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/dc11340f69724b4db3a7ca49035781b4/ascg_Service-logo.jpg"
+    ],
+    "coverImage": "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/dc11340f69724b4db3a7ca49035781b4/ascg_Service-logo.jpg",
+    "galleryImages": []
+  },
+  {
+    "id": "lfuokxldh0",
+    "slug": "seth-ep-covers",
+    "portfolio": "creative",
+    "title": "EP Covers for Seth Burton",
+    "description": "Ho realizzato alcune cover per gli ep/singoli di Seth Burton aka Simone Bracci",
+    "client": "Simone Bracci",
+    "start_date": "2022-01-01",
+    "status": "Concluso",
+    "type": "Music album/eps cover",
+    "link": "https://www.behance.net/gallery/148026245/Arapaima-Seth-Burton",
+    "notes": "<p>Il progetto musicale è stato chiuso.</p>",
+    "imageUrls": [
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/dc99c6ac9bbb432296bc9be05ec37998/sethburtonmusic.com-preview-covres.jpg",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/fb43f67ca19243a3b51f0a056d719c59/ARAPAIMA.webp",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/4ede2dbd020d4db4befb274bcfb898c0/TRAPPIST-1.webp",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/e1707972587a43f5a1924b7d76421bf1/UNTITLED.webp",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/e3d731b999594e23bd3cb183d6abef2e/vinylmockupsethburton.jpg"
+    ],
+    "coverImage": "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/dc99c6ac9bbb432296bc9be05ec37998/sethburtonmusic.com-preview-covres.jpg",
+    "galleryImages": [
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/fb43f67ca19243a3b51f0a056d719c59/ARAPAIMA.webp",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/4ede2dbd020d4db4befb274bcfb898c0/TRAPPIST-1.webp",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/e1707972587a43f5a1924b7d76421bf1/UNTITLED.webp",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/e3d731b999594e23bd3cb183d6abef2e/vinylmockupsethburton.jpg"
+    ]
+  },
+  {
+    "id": "ysrs7a3m1c3",
+    "slug": "upkmae",
+    "portfolio": "creative",
+    "title": "UP-KMAE Logo",
+    "description": "UP-KMAE è il progetto di tesi magistrale del Dott. Alessandro Mini, premiato al QBATs di Lugano come miglior progetto di ricerca in ambito Cyber Security &amp; Data Science. Si tratta di un sistema di profilazione degli utenti sulla rete atto a svolgere funzioni di sicurezza, in particolare in ambito aziendale. Per creare il logo abbiamo pensato a una serie di simboli legati alla sicurezza. Dopo alcune prove tra lucchetti, scudi e qualche freccia verso l&#39;alto (giusto per l&#39;iniziale dell&#39;acronimo UP-Kmae, che per inciso sta per User Profiling [using] K-Means [and] Auto Encoders) ho provato a sfruttare un simbolo un po&#39; più moderno: il pattern che in molti usano o hanno usato per s/bloccare il telefono. Abbiamo deciso quindi di concentrarci su quest&#39;idea e dopo alcune variazioni abbiamo trovato la versione definitiva. La cosa divertente di questo logo è che è modulare, infatti ci ha permesso di sfruttare il pattern anche per creare delle scritte diverse come Grazie / Thanks da mettere alla fine della presentazione.",
+    "client": "A. Mini",
+    "start_date": "2022-01-01",
+    "status": "Concluso",
+    "type": "Logo design",
+    "link": null,
+    "notes": "<p>In coordinato, ma non presentato qui, sono stati realizzati dei biglietti da visita e un template per le presentazioni</p>",
+    "imageUrls": [
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/0954e8d8062a47a89f6849e348264e6f/upkmae.jpg",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/942282e56e7c4b95aef43a4aa29e6363/upkmae-useage.jpg",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/4169251d015e49d0a13cb3fc61192c11/upkmae-pattern.jpg"
+    ],
+    "coverImage": "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/0954e8d8062a47a89f6849e348264e6f/upkmae.jpg",
+    "galleryImages": [
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/942282e56e7c4b95aef43a4aa29e6363/upkmae-useage.jpg",
+      "https://images.microcms-assets.io/assets/364ab488760f449eacc241618d4467ed/4169251d015e49d0a13cb3fc61192c11/upkmae-pattern.jpg"
+    ]
+  }
+]

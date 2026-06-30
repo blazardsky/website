@@ -9,6 +9,8 @@ export type Lang = keyof typeof languages;
 
 export const ui = {
   it: {
+    "open": "apri",
+    "in_new_tab": "in una nuova scheda",
     "nav.home": "HOME",
     "nav.menu": "Menu",
     "nav.close": "Chiudi",
@@ -29,6 +31,7 @@ export const ui = {
     "footer.privacy": "Privacy policy",
     "footer.credits": "Credits",
     "footer.openSocial": "apri {name} in una nuova scheda",
+    "footer.locallyMeet": "Ci possiamo incontrare dal vivo vicino a:",
     "cookie.message":
       "Ciao! Questo sito utilizza solo cookie tecnici necessari al suo funzionamento e usa Umami per raccogliere statistiche anonime. Continuando la navigazione accetti l'uso di questi cookie.",
     "cookie.more": "Maggiori informazioni",
@@ -37,8 +40,23 @@ export const ui = {
       "Portfolio - Niccolò Agnoletti: web developer + designer + digital illustrator.",
     "meta.ogTitle":
       "Web Developer, Designer and Digital Illustrator - Niccolò Agnoletti",
+    "portfolio.readMore": "Approfondisci progetto",
+    "portfolio.back": "torna al portfolio",
+    "portfolio.descriptionHeading": "Descrizione del progetto",
+    "portfolio.detailsHeading": "Dettagli del progetto",
+    "portfolio.infoHeading": "Informazioni del progetto",
+    "portfolio.notesHeading": "Note sul progetto",
+    "portfolio.client": "Realizzato per",
+    "portfolio.year": "Anno",
+    "portfolio.status": "Status",
+    "portfolio.type": "Tipo lavoro",
+    "portfolio.link": "Link",
+    "portfolio.galleryScroll": "Scorri {count} immagin{suffix} →",
+    "portfolioButtons.fixedTitle": "Vuoi vedere i miei lavori?",
   },
   en: {
+    "open": "open",
+    "in_new_tab": "in a new tab",
     "nav.home": "HOME",
     "nav.menu": "Menu",
     "nav.close": "Close",
@@ -58,6 +76,7 @@ export const ui = {
     "footer.privacy": "Privacy policy",
     "footer.credits": "Credits",
     "footer.openSocial": "open {name} in a new tab",
+    "footer.locallyMeet": "I can meet locally near:",
     "cookie.message":
       "Hi! This site uses only essential cookies and Umami for anonymous analytics. By continuing to browse, you accept the use of these cookies.",
     "cookie.more": "Learn more",
@@ -66,6 +85,19 @@ export const ui = {
       "Portfolio - Niccolò Agnoletti: web developer, designer and digital illustrator.",
     "meta.ogTitle":
       "Web Developer, Designer and Digital Illustrator - Niccolò Agnoletti",
+    "portfolio.readMore": "Read more",
+    "portfolio.back": "back to portfolio",
+    "portfolio.descriptionHeading": "Project description",
+    "portfolio.detailsHeading": "Project details",
+    "portfolio.infoHeading": "Project information",
+    "portfolio.notesHeading": "Project notes",
+    "portfolio.client": "Client",
+    "portfolio.year": "Year",
+    "portfolio.status": "Status",
+    "portfolio.type": "Work type",
+    "portfolio.link": "Link",
+    "portfolio.galleryScroll": "Scroll {count} image{suffix} →",
+    "portfolioButtons.fixedTitle": "Want to see my work?",
   },
 } as const;
 
