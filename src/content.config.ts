@@ -6,6 +6,7 @@ const works = defineCollection({
   loader: glob({
     base: "./src/content/works",
     pattern: "**/*.{md,mdx}",
+    generateId: ({ entry }) => entry.replace(/\.mdx?$/, ""),
   }),
   schema: ({ image }) =>
     z.object({

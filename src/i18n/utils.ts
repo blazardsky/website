@@ -59,7 +59,8 @@ export function getWorkForLocale<
   const matches = entries.filter((e) => e.data.slug === slug);
   return (
     matches.find((e) => e.data.locale === locale) ??
-    matches.find((e) => e.data.locale === defaultLang)
+    matches.find((e) => e.data.locale === defaultLang) ??
+    matches[0]
   );
 }
 
@@ -84,7 +85,8 @@ export function getWorksForLocale<
   for (const matches of bySlug.values()) {
     const picked =
       matches.find((e) => e.data.locale === locale) ??
-      matches.find((e) => e.data.locale === defaultLang);
+      matches.find((e) => e.data.locale === defaultLang) ??
+      matches[0];
     if (picked) result.push(picked);
   }
 
