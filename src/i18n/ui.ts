@@ -20,6 +20,7 @@ export const ui = {
       "Cambia font per rendere il testo più leggibile",
     "nav.accessibility.title":
       "Cambia il font scritto a mano con un monospaziato",
+    "nav.accessibility.tooltip": "Se non ci leggi puoi cambiare il font per rendere il testo più leggibile",
     "lang.switch": "EN",
     "lang.switch.title": "Leggi in inglese",
     "lang.switch.aria": "Cambia lingua",
@@ -65,6 +66,7 @@ export const ui = {
     "nav.accessibility": "Switch font for better readability",
     "nav.accessibility.title":
       "Replace the handwritten font with a monospaced one",
+    "nav.accessibility.tooltip": "If you have troubles with the font, you can switch to a more readable one",
     "lang.switch": "IT",
     "lang.switch.title": "Read in Italian",
     "lang.switch.aria": "Switch language",

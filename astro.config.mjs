@@ -31,7 +31,7 @@ export default defineConfig({
     react(),
     partytown(),
     icon({
-      iconDir: "src/svg",
+      iconDir: "src/assets/svg",
     }),
   ],
   image: {

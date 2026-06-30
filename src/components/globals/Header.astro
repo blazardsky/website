@@ -5,6 +5,7 @@ import AccessibilityIcon from "@svg/accessibility.svg?raw";
 import { isMenuOpen } from "@lib/store";
 import { useTranslations, localizedUrl, getLocaleSwitchUrl } from "@i18n/utils";
 import type { Lang } from "@i18n/ui";
+import { Icon } from "astro-icon/components";
 
 const menuIsOpen = isMenuOpen.get();
 const locale = Astro.currentLocale as Lang;
@@ -24,8 +25,12 @@ const homeUrl = localizedUrl(locale, "");
     )
   }
   <div class="w-full flex justify-end px-4">
-    <ul role="menu" class="flex flex-row gap-1">
+    <ul role="menu" class="flex flex-row gap-1 relative">
       <li role="menuitem">
+        <span id="tooltip-help" hidden
+          >{t("nav.accessibility.tooltip")}
+          <Icon name="mouse-click" class="w-8 h-8 click-icon" /></span
+        >
         <button
           onclick="toggleReadabilityImprovement()"
           title={t("nav.accessibility.title")}
@@ -42,8 +47,9 @@ const homeUrl = localizedUrl(locale, "");
           href={localeSwitchUrl}
           class="grid place-items-center no-underline border-foreground border-b-2 min-h-11 border-x-2 bg-foreground text-background p-1 font-extrabold text-base uppercase transition-all ease-out hover:scale-y-110 origin-top m-0"
         >
-          <abbr class="decoration-accent decoration-dotted" title={t("lang.switch.title")}
-            >{t("lang.switch")}</abbr
+          <abbr
+            class="decoration-accent decoration-dotted"
+            title={t("lang.switch.title")}>{t("lang.switch")}</abbr
           >
         </a>
       </li>
@@ -109,3 +115,72 @@ const homeUrl = localizedUrl(locale, "");
     }
   }
 </script>
+
+<script>
+  import { isAccessibilityTooltipSeen } from "@lib/store.ts";
+
+  const tooltip = document.getElementById("tooltip-help");
+
+  const wasSeen = localStorage.getItem("accessibilityTooltipSeen") === "true";
+
+  // show the tooltip first time
+  if (!wasSeen) {
+    tooltip?.removeAttribute("hidden");
+  } else {
+    isAccessibilityTooltipSeen.set(true);
+    localStorage.setItem("accessibilityTooltipSeen", "true");
+  }
+
+  // hide the tooltip after a 5 seconds
+  setTimeout(() => {
+    if (!isAccessibilityTooltipSeen.get()) {
+      tooltip?.setAttribute("hidden", "true");
+    }
+  }, 5000);
+</script>
+
+<style>
+  #tooltip-help {
+    transition: all 0.3s ease-in-out;
+    scale: 0;
+    opacity: 0;
+    left: -100%;
+    font-size: 0.8rem;
+  }
+
+  #tooltip-help[hidden] {
+    display: none !important;
+  }
+  #tooltip-help:not([hidden]) {
+    scale: 1;
+    display: block !important;
+    position: absolute;
+    top: 15px;
+    left: calc(-100% - 14px);
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    transform: rotate(-2deg);
+    background-color: var(--color-foreground);
+    color: var(--color-accent);
+    opacity: 0.9;
+    padding: 1rem;
+  }
+
+  #tooltip-help:not([hidden])::after {
+    content: "";
+    position: absolute;
+    top: 16px;
+    right: -8px;
+    width: 16px;
+    height: 16px;
+    rotate: 45deg;
+    background-color: var(--color-foreground);
+  }
+
+  #tooltip-help .click-icon {
+    position: absolute;
+    right: 0px;
+    top: 10px;
+  }
+</style>
